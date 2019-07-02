@@ -1,0 +1,76 @@
+<div class="form-holder _newForm">
+    <form method="post" id="invoiceForm">
+        <h4 class="_dialogMainTitle">Create expenses</h4>
+        <div class="_formWrap">
+            <div class="_formBlock _equal">
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">Supplier</span>
+                    <div class="_newSelectListWrap">
+                        <a id="supplier"
+                           class="current-selected"
+                           data-id=""
+                           href="javascript:;">Select Supplier</a>
+                    </div>
+                    <span class="tips icon-info" data-id="supplier"></span>
+                </div>
+                <div class="_animateInputBox _withInfo">
+                    <input type="text"
+                           id="supplier_invoice_num"
+                           class="_animate"
+                           value=""
+                           maxlength="32"
+                           required/>
+                    <label for="supplier_invoice_num" class="_animate">Invoice Number</label>
+                    <span class="tips icon-info" data-id="supplier_invoice_num"></span>
+                </div>
+            </div>
+            <div class="_formBlock _equal">
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Invoice Date </span>
+                    <input type="text"
+                           class="_animate"
+                           id="invoice_date"
+                           value=""
+                           maxlength="32"
+                           placeholder="Invoice Date"
+                           readonly/>
+                </div>
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Due Date</span>
+                    <input type="text"
+                           class="_animate"
+                           id="due_date"
+                           value=""
+                           maxlength="32"
+                           placeholder="Due Date"
+                           readonly
+                           required/>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Currency</span>
+                    <div class="_newSelectListWrap">
+                        <a class="current-selected"
+                           href="javascript:;"
+                           id="currencyDd"
+                           data-id="">Select Currency</a>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Expenses Category</span>
+                    <div class="_newSelectListWrap">
+                        <a id="categories"
+                           class="current-selected"
+                           href="javascript:;">
+                            <%=model.parent ? model.parent.name : 'Select'%>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_formWrap">
+            <div class="_formBlock">
+                <div id="invoiceItemsHolder"></div>
+            </div>
+        </div>
+    </form>
+</div>

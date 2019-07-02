@@ -1,0 +1,52 @@
+<table class="list tableFixed  _invoiceTable">
+    <colgroup>
+        <col width="200px">
+        <col width="200px">
+        <col width="60px">
+        <col width="100px">
+        <col width="80px">
+        <col width="80px">
+
+    </colgroup>
+    <thead>
+    <tr class="productListItemsColumns _deleteHeader ">
+        <th data-sort="Product">
+            Product
+        </th>
+        <% if (forSales) {%>
+        <th data-sort="jobs">
+            Job
+        </th>
+        <% } %>
+        <th data-sort="quantity">
+            Quantity
+        </th>
+        <th data-sort="unitPrice">
+            Unit Price
+        </th>
+        <th data-sort="taxes">
+            Taxes
+        </th>
+        <th data-sort="amount">
+            Amount
+        </th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr></tr>
+    </tfoot>
+    <tbody id="productList">
+    <%if(!notAddItem){%>
+    <tr>
+        <td colspan="6" class="addProductItem">
+            <a href="javascript:;" class="btn blue slim">Add an item</a>
+        </td>
+    </tr>
+    <%}%>
+    </tbody>
+</table>
+<div class="clearfix"></div>
+<div id="totalAmountContainer" class="_totalAmountContainer">
+
+</div>
+

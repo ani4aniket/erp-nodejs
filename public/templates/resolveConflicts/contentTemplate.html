@@ -1,0 +1,92 @@
+<div id="resolveConflictsTopBar" class="top-bar" >
+    <div id="btnHolder" class="btnsBlock">
+        <a href="#easyErp/integrations" class="btn slim" title="Back to integrations">Back</a>
+        <a href="#easyErp/integrations" id="resolve-saveBtn" class="btn blue slim">Save</a>
+    </div>
+</div>
+<br>
+<div id="conflictBlock" class="_tableResolveConflictsWrap noPaginationWrap">
+    <% if ((Object.keys(conflictItems)).length) { %>
+    <% var keysSKUs = Object.keys(conflictItems) %>
+    <div class="_integrationTableWrap">
+        <table class="list stripedList">
+            <colgroup>
+                <col width="50px">
+                <col width="120px">
+                <col width="100px">
+                <col width="400px">
+                <col width="150px">
+            </colgroup>
+            <thead>
+            <tr>
+                <th class="centerCell">
+                    <!--<input type="checkbox" id="checkAll"/>-->
+                    <label class="_customCHeckbox">
+                        <input type="checkbox" id="checkAll">
+                        <span></span>
+                    </label>
+                </th>
+                <th class="centerCell">
+                    <div class="dropDownDateRangeContainer">
+                        <div class="changeTableCombobox choseDateRange dropDownDateRange allTable">
+                            <div data-action="skip" class="item">Actions</div>
+                            <div data-action="skip" class="item actionAll">skip</div>
+                            <div data-action="import" class="item actionAll">duplicate</div>
+                            <div data-action="merge" class="item actionAll">merge</div>
+                        </div>
+                    </div>
+                </th>
+                <th class="centerCell">SKU</th>
+                <th class="centerCell">Name</th>
+                <th class="centerCell oe_sortable <%= sortClass ? sortClass : ''%>" data-sort="channel.channelName">
+                    Channel name <span class="arrow down"></span> <span class="arrow up"></span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% _.each(keysSKUs ,function (key) { %>
+            <% var conflict = conflictItems[key][0] %>
+            <% var native = conflictItems[key][1] %>
+
+            <tr>
+                <td class="notForm centerCell">
+                    <!--<input type="checkbox" class="checkbox"/>-->
+                    <label class="_customCHeckbox">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </td>
+                <td class="centerCell">
+                    <div class="dropDownDateRangeContainer">
+                        <div data-sku="<%= key %>"
+                             data-channel="<%= conflict.channel && conflict.channel.id ? conflict.channel.id : ''%>"
+                             class="changeTableCombobox choseDateRange dropDownDateRange">
+                            <div data-action="skip" class="item active">skip</div>
+                            <div data-action="import" class="item">duplicate</div>
+                            <div data-action="merge" class="item">merge</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="centerCell">
+                    <p><%= key %></p>
+                    <p class="native"><%= key %></p>
+                </td>
+                <td class="centerCell">
+                    <p><%= conflict ? conflict.name : '' %></p>
+                    <p class="native"> <%=native ? native.name : '' %></p>
+                </td>
+                <td>
+                    <div class="channelNameWrap">
+                        <div class="channelImg <%= conflict.channel && conflict.channel.channelType || ''%>"
+                             data-content="channelImage"></div>
+                        <span><%= conflict.channel && conflict.channel.channelName || ''%></span>
+                    </div>
+                </td>
+            </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <% } else { %>
+    <div id="conflictInformation">Conflict items are not found</div>
+    <% } %>
+</div>

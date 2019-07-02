@@ -1,0 +1,128 @@
+<div class="form-holder">
+    <form method="post" action="" id="editPersonsForm" class="form">
+        <fieldset>
+            <div class="inner">
+                <ul class="dialog-tabs">
+                    <li><a class="active" href="javascript:;">Main</a></li>
+                    <li><a href="javascript:;">Sales & Purchases</a></li>
+                    <li><a href="javascript:;">Assignees</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <div class="dialog-tabs-items">
+                    <div class="dialog-tabs-item active">
+                        <div class="formTitle">
+                            <h3>Personal Info</h3>
+
+                        </div>
+                        <div class="avatar left">
+                            <div class="upload">
+                                Edit
+                                <input type="file" value="Edit" id="inputImg" accept="image/*">
+                            </div>
+                            <canvas id="avatar" width="140" height="140"></canvas>
+                        </div>
+                        <div class="avatarInfoContainer">
+                            <div class="half-block left">
+                                <dl class="person-info">
+                                    <dt><label for="firstName">First Name</label></dt>
+                                    <dd><input type="text" name="firstName" id="firstName"
+                                               value="<%= model.name.first %>" placeholder="Name" required
+                                               maxlength="32"/></dd>
+                                    <dt><label for="lastName">Last Name</label></dt>
+                                    <dd><input type="text" name="lastName" id="lastName" value="<%= model.name.last %>"
+                                               placeholder="Surname" required maxlength="32"/></dd>
+                                    <dt><label for="jobPositionInput">Job Position</label></dt>
+                                    <dd><input type="text" id="jobPositionInput" value="<%= model.jobPosition%>"
+                                               placeholder="e.g. Sales Manager" maxlength="32"/></dd>
+
+                                    <dt><label for="dateOfBirth">Date Of Birth</label></dt>
+                                    <dd><input id="dateOfBirth" class="dateBirth" type="text"
+                                               value="<%= model.dateBirth%>" placeholder="Birthday" readonly/></dd>
+                                    <dt><label for="emailInput">Email</label></dt>
+                                    <dd><input type="text" id="emailInput" value="<%= model.email%>"
+                                               placeholder="e.g. email@site.com" maxlength="48"/></dd>
+                                    <dt><label for="skypeInputEdit">Skype</label></dt>
+                                    <dd><input type="text" id="skypeInputEdit" value="<%=model.skype%>" placeholder="Skype login"
+                                               maxlength="32"/></dd>
+                                    <dt><label for="LI">LinkedIn</label></dt>
+                                    <dd><input type="text" id="LI" value="<%=model.social.LI%>" placeholder="LinkedIn"
+                                               maxlength="256"/></dd>
+                                    <dt><label for="FB">Facebook</label></dt>
+                                    <dd><input type="text" id="FB" value="<%=model.social.FB%>" placeholder="Facebook"
+                                               maxlength="256"/></dd>
+
+                                    <dt><label for="companiesDd">Company</label></dt>
+                                    <dd class="_newSelectListWrap">
+                                        <a id="companiesDd" data-id="<%=(model.company)?model.company._id:''%>"
+                                           class="current-selected" href="javascript:;"><%=(model.company)?(model.company.name.first):"Select"%></a>
+                                    </dd>
+                                    <!--                                    <dt><label for="tagsDd">Tags</label></dt>
+                                                                        <dd>
+                                                                          <a id="tagsDd" class="current-selected" href="javascript:;">Select</a>
+                                                                          <ul class="newSelectList hidden">
+                                                                            <li>Select</li>
+                                                                          </ul>
+                                                                        </dd>-->
+                                </dl>
+                            </div>
+                            <div class="half-block left">
+                                <!--   <div class='sale-purchase'>
+                                     <span class="left">Address</span>
+                                 </div>-->
+                                <dl class="person-info">
+                                    <dt><label for="addressInput">Street</label></dt>
+                                    <dd><input type="text" id="addressInput" value="<%= model.address.street%>"
+                                               placeholder="Street..." maxlength="32"/></dd>
+                                    <dt><label for="cityInput">City</label></dt>
+                                    <dd><input type="text" id="cityInput" value="<%= model.address.city%>"
+                                               placeholder="City" maxlength="32"/></dd>
+                                    <dt><label for="countryInput">Country</label></dt>
+                                    <dd><input type="text" id="countryInput" value="<%= model.address.country%>"
+                                               placeholder="Country" maxlength="32"/></dd>
+                                    <dt><label for="stateInput">State</label></dt>
+                                    <dd><input type="text" id="stateInput" value="<%= model.address.state%>"
+                                               placeholder="State" maxlength="32"/></dd>
+                                    <dt><label for="zipInput">Zip</label></dt>
+                                    <dd><input type="text" id="zipInput" value="<%= model.address.zip%>"
+                                               placeholder="Zip" maxlength="32"/></dd>
+                                    <dt><label for="phoneInput">Phone </label></dt>
+                                    <dd><input type="text" id="phoneInput" value="<%= model.phones.phone%>"
+                                               placeholder="Phone number" maxlength="20"/></dd>
+                                    <dt><label for="mobileInput">Mobile</label></dt>
+                                    <dd><input type="text" id="mobileInput" value="<%= model.phones.mobile%>"
+                                               placeholder="Mobile number" maxlength="20"/></dd>
+
+                                </dl>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="details-dialog">
+
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="cropImages form" style="display:none;">
+                            <div class="formTitle">
+                                <h3 class="left">Crop Images</h3>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <br/>
+
+                            <div class="image_input" style="float: left;margin-right: 20px;"></div>
+                            <img class="image_output"/>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="dialog-tabs-item">
+                        <div id="salesPurchases-container"></div>
+                    </div>
+                    <div class="dialog-tabs-item">
+                        <div class="assignees-container"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

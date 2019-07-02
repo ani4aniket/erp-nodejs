@@ -1,0 +1,72 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" id="createJobPositionForm">
+        <h4 class="_dialogTitlePositioned">Create new job</h4>
+        <ul class="dialog-tabs">
+            <li><a class="active" href="javascript:;">Main</a></li>
+            <li><a href="javascript:;">Assignees</a></li>
+        </ul>
+        <div class="dialog-tabs-items">
+            <div class="dialog-tabs-item active">
+                <div class="_formWrap">
+                    <div class="_formBlock _equal">
+                        <div class="_animateInputBox _withInfo">
+                            <input type="text"
+                                   name="name"
+                                   class="_animate"
+                                   id="name"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Job Name</label>
+                            <span class="tips icon-info" data-id="name"></span>
+                        </div>
+                        <div class="_animateSelectBox _withInfo">
+                            <span class="_selectTitle">Department</span>
+                            <div class="_newSelectListWrap">
+                                <a id="departmentDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select department</a>
+                            </div>
+                            <span class="tips icon-info" data-id="departmentDd"></span>
+                        </div>
+                    </div>
+                    <div class="_formBlock _equal">
+                        <div class="_animateInputBox _withInfo">
+                            <span class="_staticLabel">Expected in Recruitment</span>
+                            <input type="text"
+                                   name="expectedRecruitment"
+                                   class="_animate onlyNumber"
+                                   id="expectedRecruitment"
+                                   value="0"
+                                   maxlength="4"/>
+                            <span class="tips icon-info" data-id="expectedRecruitment"></span>
+                        </div>
+                        <div class="_animateSelectBox _withInfo">
+                            <span class="_selectTitle">Stage</span>
+                            <div class="_newSelectListWrap">
+                                <a id="workflowsDd"
+                                   data-id=""
+                                   class="current-selected"
+                                   href="javascript:;">Select stage</a>
+                            </div>
+                            <span class="tips icon-info" data-id="workflowsDd"></span>
+                        </div>
+                        <div class="_animateTextareaBox counterWrap">
+                            <textarea maxlength="1000"
+                                  class="_animate"
+                                  id="requirements"
+                                  required></textarea>
+                            <label for="requirements" class="_animate">Job Description</label>
+                            <div class="counter-wrap">
+                                <span class="counter-label">Characters left:</span>
+                                <span class="counter-value" id="counterValue">1000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-tabs-item">
+                <div class="assignees-container _formWrap _innedFlexDiv"></div>
+            </div>
+        </div>
+    </form>
+</div>

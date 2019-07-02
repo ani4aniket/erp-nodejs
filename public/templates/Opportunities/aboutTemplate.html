@@ -1,0 +1,49 @@
+<div class="formTitleWrap">
+    <h3 class="formTitle">About </h3>
+</div>
+<div class="person-info">
+    <div class="_animateInputBox">
+        <input class="_animate editable <%=!name ? 'hideLine' : ''%>"
+               data-id="name"
+               value="<%=name%>"
+               required/>
+        <label class="_animate">Name</label>
+    </div>
+    <div class="_animateInputBox">
+        <input class="_animate editable dealTitlePrice<!-- <%=expectedRevenue && !expectedRevenue.value && expectedRevenue.value !== 0  ? 'hideLine' : ''%>-->"
+               data-id="expectedRevenue_value"
+               value="<%=expectedRevenue.value%>"
+               required/>
+        <label class="_animate">Amount <span class="amountDollar"><%=expectedRevenue.currency || App.organizationSettings && App.organizationSettings.currency.symbol%></span></label>
+    </div>
+    <div class="_animateInputBox">
+        <span class="_staticLabel">Close Date</span>
+        <div class="inputBox">
+            <input class="_animate extrainfo"
+                   type="text"
+                   name="Close Date"
+                   id="expectedClosing"
+                   value="<%=expectedClosing || ''%>"
+                   placeholder="Close Date"
+                   readonly=""
+                   required>
+        </div>
+    </div>
+    <div class="_animateSelectBox">
+        <span class="_selectTitle">Assigned To</span>
+        <div class="inputBox _newSelectListWrap">
+            <a class="current-selected assignName"
+               href="javascript:;" id="salesPersonDd"
+               data-id="salesPerson">
+                <%=(salesPerson) ? salesPerson.name.first + ' ' + salesPerson.name.last : 'Select'%>
+            </a>
+        </div>
+    </div>
+    <div class="tags-container"></div>
+</div>
+<div class="propertyEditBtn" id="formBtnBlock">
+
+    <a href="javascript:;" id="saveBtn" class="btn blue btnSave">Save</a>
+
+    <a href="javascript:;" id="cancelBtn" class="btn">Cancel</a>
+</div>

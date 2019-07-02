@@ -1,0 +1,78 @@
+<table class="list _projectTableLeftAlign tableFixed _invoiceTable">
+    <colgroup>
+        <%if (writeOff) {%>
+            <col width="45%">
+            <col width="25%">
+            <col width="15%">
+            <col width="30px">
+        <% } else { %>
+            <col width="120px">
+        <% if (forSales) {%>
+            <col width="320px">
+        <% } %>
+        <col width="120px">
+        <col width="100px">
+        <col width="140px">
+        <col width="120px">
+        <col width="30px">
+        <% } %>
+    </colgroup>
+    <thead>
+    <tr class="productListItemsColumns _deleteHeader">
+        <th class="width20" data-sort="Product">
+            Product
+        </th>
+        <% if (forSales) {%>
+            <th class="width25" data-sort="jobs">
+                Job
+            </th>
+        <% } %>
+        <!--<th class="width25" data-sort="scheduledDate">
+            Scheduled Date
+        </th>--> <!--commented on 14 Mar, in quotationEdit commit -->
+        <!--<% if (forSales) {%>
+            <th class="width20" data-sort="hours">
+                Hours
+            </th>
+        <% } else {%>
+            <th class="width20" data-sort="quantity">
+                Quantity
+            </th>
+        <% } %>-->
+        <th class="width20" data-sort="quantity">
+            Quantity
+        </th>
+        <% if (!writeOff){%>
+        <th class="width20" data-sort="unitPrice">
+            Unit Price
+        </th>
+        <th class="width20" data-sort="taxes">
+            Taxes
+        </th>
+        <th class="width20" data-sort="subtotal">
+            Subtotal
+        </th>
+        <% }%>
+        <th class="deleteCell"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr></tr>
+    <tr>
+        <td colspan="<%=writeOff ? 4 : 6%>" class="addProductItem">
+            <a href="javascript:;" class="btn blue slim">Add an item</a>
+        </td>
+
+    </tr>
+    <!--<tr>-->
+        <!--<td colspan="<%=writeOff ? 4 : 7%>" class="invisible_border">&nbsp;</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td colspan="<%=writeOff ? 4 : 7%>" class="invisible_border">&nbsp;</td>-->
+    <!--</tr>-->
+    </tbody>
+</table>
+<div class="clearfix"></div>
+<div id="totalAmountContainer" class="_totalAmountContainer _createPopup">
+
+</div>

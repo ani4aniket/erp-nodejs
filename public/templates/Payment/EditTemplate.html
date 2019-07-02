@@ -1,0 +1,80 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" class="payment">
+        <h4 class="_dialogMainTitle">Payment <%=model.name%></h4>
+        <%if (!model.refund) {%>
+        <button class="btn right slim refund">
+            <span>Refund</span>
+        </button>
+        <%}%>
+        <div class="_formWrap">
+            <div class="_formBlock _equal">
+                <dl class="opp-info">
+                    <dt><label for="supplierDD" class="semiBold">Supplier</label></dt>
+                    <dd>
+                            <span id="supplierDd" class=""
+                                  data-id="<%=model.supplier ? model.supplier._id : null%>"><%=model.supplier ? model.supplier.name.first + ' ' +
+                                model.supplier.name.last : ''%></span>
+                    </dd>
+                    <dt>
+                        <label for="paidAmount" class="semiBold">Paid Amount</label>
+                    </dt>
+                    <dd>
+                        <span id="paidAmount"><%=model.currency.symbol %><%=model.paidAmount ? currencySplitter(model.paidAmount) : 0.00%></span>
+                    </dd>
+                    <dt>
+                        <label for="paymentMethod" class="semiBold">Bank account</label>
+                    </dt>
+                    <dd class="_newSelectListWrap">
+                        <span id="paymentMethod"><%=model.paymentMethod ? model.paymentMethod.name : ''%></span>
+                    </dd>
+                    <dt>
+                        <label for="account" class="semiBold">Account</label>
+                    </dt>
+                    <dd class="_newSelectListWrap">
+                        <span id="account"><%=model.bankAccount ? model.bankAccount.name : 'Account not found'%></span>
+                    </dd>
+                    <% if (model.otherIncomeLossAccount) {%>
+                    <dt>
+                        <label for="otherIncomeLossAccount" class="semiBold">Other Income\Loss account</label>
+                    </dt>
+                    <dd class="_newSelectListWrap">
+                        <span id="otherIncomeLossAccount"><%=model.otherIncomeLossAccount.name%></span>
+                    </dd>
+                    <% } %>
+                    <% if (model.bankExpenses && model.bankExpenses.amount) {%>
+                    <dt>
+                        <label for="bankExpenses" class="semiBold">Bank Expenses</label>
+                    </dt>
+                    <dd class="_newSelectListWrap">
+                        <span id="bankExpensesAcc"><%=model.bankExpenses.account.name%></span> <span id="bankExpenses"><%=model.currency.symbol %><%=model.bankExpenses.amount%></span>
+                    </dd>
+                    <% } %>
+                    <dl id="differenceAmountContainer" class="left hidden">
+                        <dt><label class="semiBold">Difference Amount</label></dt>
+                        <dd><span id="differenceAmount"></span></dd>
+                    </dl>
+                </dl>
+            </div>
+            <div class="_formBlock _equal">
+                <dl class="opp-info">
+                    <dt><label for="paymentDate" class="semiBold">Date</label></dt>
+                    <dd>
+                        <span id="paymentDate"><%=model.date%></span>
+                    </dd>
+                    <dt><label for="paymentRef" class="semiBold">Source Document</label></dt>
+                    <dd>
+                            <span id="paymentRef"
+                                  data-id="<%=model.invoice && model.invoice._id ? model.invoice._id :  model.order ? model.order._id : null%>"><%=model.invoice && model.invoice.name ? model.invoice.name :  model.order ? model.order.name : ''%></span>
+                    </dd>
+                    <dt><label for="currencyDd" class="semiBold">Currency</label></dt>
+                    <dd>
+                            <span id="currencyDd"
+                                  data-id="<%= model && model.currency ? model.currency._id : null%>"><%= model && model.currency ?
+                                model.currency.name : ''%></span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="_formBlock" id="chart"></div>
+    </form>
+</div>

@@ -1,0 +1,847 @@
+.countCircle {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  line-height: 22px;
+  color: #fff;
+  background: #9a9a9e;
+  text-align: center;
+  border-radius: 50%;
+  @include rem('font-size', 12px);
+
+  &.red {
+    background: #f94437;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.dateListElementTitle {
+  display: inline-block;
+  margin: 12px 12px 2px;
+  color: #8c8e8f;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: $semibold-font-family;
+
+  .countCircle {
+    margin-left: 8px;
+  }
+}
+
+.dateListItem {
+  display: flex;
+  margin: 8px;
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  box-shadow: 0 4px 7px -3px rgba(0,0,0,.2);
+  transition: all 100ms ease-in-out;
+
+  &:hover {
+    background-color: #fff;
+    box-shadow: 0 6px 8px -3px rgba(0,0,0,.3);
+  }
+
+  &.completed {
+    background-color: #d2e6d0;
+    border-color: #c0debd;
+    box-shadow: none;
+    transition: all .2s ease-in-out .7s;
+  }
+
+  .dateListCheckboxWrap {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .dateListBody {
+    flex-grow: 1;
+    min-width: 1px;
+    padding: 10px 10px 10px 0;
+    cursor: pointer;
+
+    .dateListFooter {
+      margin-top: 5px;
+      @include rem('font-size', 12px);
+
+      .listFooterDate {
+        color: #9a9a9e;
+      }
+    }
+  }
+}
+
+.dateListHeader {
+  display: flex;
+  align-items: center;
+
+  ._tagSmall {
+    flex-shrink: 0;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .dateListDescription {
+    word-break: break-word;
+  }
+}
+
+._taskListWrap {
+  display: flex;
+  height: calc(100vh - 100px);
+  border-bottom: 1px solid #eaeaea;
+
+  ._taskListDateBlock {
+    width: calc(100% - (35% + 159px));
+    overflow: auto;
+    min-width: 420px;
+    background: #f1f1f1;
+
+    ._dateListElement {
+      position: relative;
+      font-size: 14px;
+      padding: 0 12px 20px;
+
+      .dateListItem {
+        &:nth-child(n+7) {
+          display: none;
+        }
+      }
+
+      .hideList {
+        display: none;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 10px;
+        border-radius: 3px;
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        background-color: #7eadcc;
+        color: #fff;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      &.open {
+        max-height: none;
+
+        .dateListItem {
+          &:nth-child(n+6) {
+            display: flex;
+          }
+        }
+
+        .showmore {
+          display: none !important;
+        }
+
+        .hideList {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.collapsed {
+  ._taskListDateBlock {
+    width: calc(100% - (35% + 103px));
+  }
+}
+
+._taskListActivitiesBlock {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  width: calc(35% + 159px);
+  background: #f1f1f1;
+
+  ._activityHolderTitle {
+    flex-shrink: 0;
+    color: #8c8e8f;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: $semibold-font-family;
+    text-transform: uppercase;
+  }
+
+  ._activityHolder {
+    flex-grow: 1;
+
+    padding: 0 10px;
+    font-size: 14px;
+    overflow: auto;
+  }
+
+  .noteMainContainer {
+    padding: 0 16px;
+    border-left: 2px solid #c1c1c1;
+  }
+
+  ._activityListInfo {
+    position: relative;
+    padding: 6px 10px;
+    border-bottom: 1px solid #eaeaea;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: -23px;
+      height: 10px;
+      width: 10px;
+      background-color: #c1c1c1;
+      border-radius: 50%;
+      transition: transform 150ms ease-in;
+    }
+  }
+
+  ._activityDescription {
+    line-height: 1.3;
+    padding: 5px 10px;
+
+    &:empty {
+      &:after {
+        content: 'no data';
+      }
+    }
+  }
+}
+
+.collapsed {
+  ._taskListActivitiesBlock {
+    width: calc(35% + 103px);
+  }
+}
+
+.showmore {
+  display: none;
+}
+
+._dateListElement {
+
+  .showmore {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    background-color: #7eadcc;
+    color: #fff;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .dateListHeader {
+
+  }
+}
+
+._activitiesListItem {
+  position: relative;
+  margin: 10px 0;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+
+  &:hover {
+    border-color: #7eadcc;
+
+    &:before {
+      border-color: transparent #6b9bbb transparent transparent;
+    }
+
+    ._activityListInfo {
+      &:after {
+        background-color: #7eadcc;
+        transform: scale(1.4);
+      }
+    }
+  }
+  
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  &:before {
+    top: 8px;
+    left: -9px;
+    border: {
+      color: transparent #e0dede transparent transparent;
+      width: 9px 9px 9px 0;
+      style: solid;
+    };
+  }
+
+  &:after {
+    top: 9px;
+    left: -8px;
+    border: {
+      color: transparent #fff transparent transparent;
+      width: 8px 8px 8px 0;
+      style: solid;
+    };
+  }
+}
+
+.payrollListWrapOuter {
+  height: 100%;
+}
+
+._payrollListWrap {
+  height: 100%;
+  padding: 20px 80px;
+  overflow: auto;
+
+  ._payrollListItem {
+    display: flex;
+    padding: 8px 20px 8px 30px;
+    border: 2px dashed $payroll-border-gray;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    transition: .2s all ease-in;
+    position: relative;
+
+    &.checked {
+      background-color: #F8F8F8;
+      border: 2px solid $payroll-border-blue;
+
+      &:after {
+        content: "\e904";
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: $payroll-border-blue;
+        font-family: $icon-font;
+      }
+
+      &._weeklyItem,
+      &._payItem,
+      &._structureItem,
+      &._bankItem,
+      &._employeesItem {
+        ._payrollListImage {
+          &:after {
+            color: $payroll-border-blue;
+          }
+        }
+      }
+
+      ._payrollListSteps {
+        color: $payroll-steps-color;
+      }
+      ._payrollListAction {
+        color: $payroll-font-indigo3;
+      }
+      ._payrollListDescription {
+        color: $payroll-font-darkgray;
+      }
+
+      &:hover {
+        border-style: solid;
+
+        ._payrollListImage {
+          border-style: solid;
+        }
+      }
+
+      ._payrollListImage {
+        border: 2px solid $payroll-border-blue;
+      }
+    }
+
+    &:hover {
+      border: 2px dashed $payroll-border-blue;
+
+      ._payrollListImage {
+        border: 2px dashed $payroll-border-blue;
+      }
+    }
+
+    &._weeklyItem,
+    &._payItem,
+    &._structureItem,
+    &._bankItem,
+    &._employeesItem {
+      ._payrollListImage {
+        &:after {
+          font-family: $icon-font;
+          margin: auto;
+          color: $payroll-border-gray;
+          font-size: 24px;
+        }
+      }
+    }
+
+    &._weeklyItem {
+      ._payrollListImage {
+        &:after {
+          content: "\e075";
+        }
+      }
+    }
+    &._payItem {
+      ._payrollListImage {
+        &:after {
+          content: "\e077";
+        }
+      }
+    }
+    &._structureItem {
+      ._payrollListImage {
+        &:after {
+          content: "\e924";
+        }
+      }
+    }
+    &._bankItem {
+      ._payrollListImage {
+        &:after {
+          content: "\e025";
+        }
+      }
+    }
+    &._employeesItem {
+      ._payrollListImage {
+        &:after {
+          content: "\e001";
+        }
+      }
+    }
+
+    + ._payrollListItem {
+      margin-top: 20px;
+    }
+
+    ._payrollListImage {
+      display: flex;
+      width: 60px;
+      height: 60px;
+      border: 2px dashed $payroll-border-gray;
+      border-radius: 50%;
+      background-color: $white;
+      transition: .2s border-color ease-in;
+    }
+
+    ._payrollListBody {
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+
+    ._payrollListSteps {
+      text-transform: uppercase;
+      color: $payroll-font-indigo2;
+      font-family: $semibold-font-family;
+      font-size: 10px;
+    }
+
+    ._payrollListAction {
+      font-size: 20px;
+      color: $payroll-font-darkgray;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    ._payrollListDescription {
+      margin-top: 10px;
+      color: $payroll-font-darkgray;
+      font-size: 12px;
+    }
+  }
+}
+
+._tagsCellWrap {
+  min-width: 100px;
+  padding-bottom: 5px;
+
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+
+  ._showMoreTagsBtn {
+    display: none;
+
+    float: left;
+    color: #364150;
+    padding: 3px 4px;
+    margin-top: 5px;
+    font-family: $semibold-font-family;
+    border-radius: 3px;
+  }
+
+  &._showLess {
+
+    ._showMoreTagsBtn {
+      display: block;
+    }
+
+    ._tagSmall {
+      &:nth-child(n+6) {
+        display: none;
+      }
+    }
+  }
+
+  ._tagSmall {
+    float: left;
+    margin: 5px 5px 0 0;
+  }
+}
+
+._priorityCell {
+
+  .Hot,
+  .Medium,
+  .Cold,
+  .Trivial {
+    width: 30px;
+    height: 35px;
+    margin: 0 auto;
+    background-image: url('../images/priority_icons.png');
+    background-size: 132px;
+  }
+
+  .Hot {
+    background-position: -2px -3px;
+  }
+  .Medium {
+    background-position: -69px -3px;
+  }
+  .Cold {
+    background-position: -35px -3px;
+  }
+
+  .Trivial {
+    background-position: -103px -3px;
+  }
+}
+
+._contractJobsListWrap {
+  table-layout: fixed;
+
+  ._contractJobsListItem {
+
+    td {
+      vertical-align: top;
+
+      &._contractJobsStatusBlock {
+        vertical-align: middle;
+      }
+
+      + td {
+        padding-top: 10px !important;
+        border-left: 1px solid #d7d7d7;
+      }
+    }
+
+    ._contractJobsStatusBlock {
+      font-family: $semibold-font-family;
+
+      &.finished,
+      &.inProgress {
+        color: #fff;
+      }
+
+      &.finished {
+        background-color: $contractJobs-green-bg;
+      }
+
+      &.inProgress {
+        background-color: $contractJobs-blue-bg;
+      }
+    }
+
+    ._contractJobsJobBlock {
+
+      > div {
+        line-height: 20px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      ._contractJobsName {
+        font-size: 16px;
+        font-family: $bold-font-family;
+      }
+      ._contractJobsCustomer {
+        font-style: italic;
+      }
+    }
+
+    ._contractJobsInvoiceBlock {
+      > div {
+        line-height: 20px;
+      }
+    }
+
+    ._contractJobsRevenueBlock {
+      > div {
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+._contractJobsCostBlock,
+._contractJobsProfitBlock,
+._contractJobsRevenueBlock {
+
+  > div {
+    padding: 3px 0;
+  }
+}
+
+.workflow-list-wrapper,
+.workflow-sub-list-wrapper {
+  width: 170px;
+}
+
+.workflow-sub-list {
+  li {
+    @extend %text-overflow;
+  }
+}
+
+.workflow-list,
+.workflow-sub-list {
+  color: #2A6496;
+  width: 100%;
+  font-size: 13px;
+
+  li {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid  transparent;
+
+    &:hover:not(.quickEdit) {
+      background-color: lighten($bg-main, 15%);;
+
+      a {
+        text-decoration: none;
+      }
+
+    }
+    &.active {
+      border-color: $border-color-main;
+      border-right-color: transparent;
+      display: list-item;
+
+      &.first {
+        border-top-color: rgba(0, 0, 0, 0);
+      }
+
+      &:hover {
+        background-color: $defaultBgHover-color;
+      }
+      &:after {
+        display: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      width: 1px;
+      height: 40px;
+      background-color: $border-color-main;
+    }
+
+    a {
+      padding: 10px 15px;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .editProfileContainer {
+      margin-left: 10px;
+      margin-right: 12px;
+      .editProfileName {
+        width: 100%;
+        padding-left: 5px;
+      }
+    }
+
+    .edit-holder {
+      a {
+        padding: 0;
+      }
+    }
+
+    .wNameEdit {
+      width: 92%;
+      position: relative;
+      top: -10px;
+    }
+
+    .saveAll, .cancelAll {
+      padding: 0;
+      position: relative;
+      top: -30px;
+    }
+  }
+}
+
+.workflow-list {
+  li.active {
+    line-height: 38px;
+    font-family: $semibold-font-family;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+/*added from _icons.scss 22.09*/
+
+.btn-list {
+  //@extend .defaultBorRad;
+  height: 24px;
+  margin: 0 12px 0 5px;
+  border: 1px solid #7f7f80; //@thin-border @border-color-main;
+  float: left;
+
+  li {
+    display: block;
+    height: 23px;
+    width: 24px;
+    padding: 3px;
+    margin: 0;
+    float: left;
+
+    &:nth-child(n+2) {
+      border-left: 1px solid #7f7f80; //@thin-border @border-color-main;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+
+      &.fa {
+        line-height: 18px;
+        font-size: 16px !important;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .selected {
+    color: #3e88b9;//@selected-filters-color;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+
+/*23.09*/
+.newSelectList {
+  //max-width: 200px;
+  text-align: center;
+
+  li {
+    @extend %text-overflow;
+  }
+
+  .miniStylePagination {
+    min-width: 160px;
+    line-height: 28px;
+    text-align: center;
+    position: relative;
+
+    &:hover {
+      background-color: white;
+    }
+
+    .next,
+    .prev {
+      position: absolute;
+      top: 6px;
+      line-height: normal;
+
+      &.disabled {
+        display: none;
+      }
+    }
+
+    .next {
+      right: 5px;
+    }
+
+    .prev {
+      left: 5px;
+    }
+
+    span {
+      padding: 0;
+    }
+  }
+
+  > input#selectInput {
+    width: 100% !important;
+    height: 24px;
+    margin: 0;
+    padding: 0 5px;
+    border: 0;
+    border-bottom: 1px solid #7f7f80;
+    text-align: left;
+    float: left;
+  }
+}
+
+.filter-check-list {
+  display: none;
+  width: 150px;
+  background-color: white;
+  border: 1px solid  silver;
+  position: absolute;
+  top: -1px;
+  right: 118px;
+  z-index: 1000;
+
+  li {
+    @extend %text-overflow;
+    cursor: pointer;
+    line-height: 20px;
+    overflow: hidden;
+
+    &:hover {
+      background-color: #EEE;
+    }
+  }
+
+  input {
+    margin: 0 5px;
+  }
+}

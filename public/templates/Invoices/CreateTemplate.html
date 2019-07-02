@@ -1,0 +1,137 @@
+<div class="form-holder">
+    <form method="post" action="" class="form " id="invoiceForm">
+        <fieldset>
+            <div class="inner">
+                <ul class="dialog-tabs" data-class="mainTabs">
+                    <!--<li class="right">
+                        <button class="btn approve">
+                            <span>Approve</span>
+                        </button>
+                    </li>-->
+                </ul>
+                <div class="clearfix"></div>
+                <div class="dialog-tabs-items mainTabs">
+                    <div class="dialog-tabs-item mainTabs active">
+                        <div class="half-block left">
+                            <dl class="opp-info">
+                                <dt><label for="supplier_Create">Supplier</label></dt>
+                                <dd class="_newSelectListWrap">
+                                    <a id="supplier_Create" href="javascript:;" class="current-selected">Select</a>
+                                </dd>
+
+                                <!--<dt><label for="source_document">Source Document</label></dt>-->
+                                <!--<dd>-->
+                                <!--<input type="text"  id="source_document" name="source_document" placeholder="" maxlength="32"/>-->
+                                <!--</dd>-->
+
+                                <dt><label for="supplier_invoice_num">Invoice Number</label></dt>
+                                <dd>
+                                    <input type="text" id="supplier_invoice_num" name="supplier_invoice_num"
+                                           placeholder="" maxlength="32"/>
+                                </dd>
+
+                            </dl>
+                        </div>
+                        <div class="half-block left">
+                            <dl class="opp-info">
+
+                                <dt><label for="invoice_date_Create">Invoice Date</label></dt>
+                                <dd>
+                                    <input class="extrainfo" type="text" name="invoiceDate" id="invoice_date_Create" value=""
+                                           readonly="" placeholder="Invoice Date">
+                                </dd>
+
+                                <dt><label for="due_date_Create">Due Date</label></dt>
+                                <dd>
+                                    <input class="extrainfo" type="text" name="dueDate" id="due_date_Create" value=""
+                                           readonly="" placeholder="Due Date">
+                                </dd>
+
+
+                                <dt><label for="journal_Create">Journal</label></dt>
+                                <dd class="_newSelectListWrap">
+                                    <a id="journal_Create" href="javascript:;" class="current-selected" >Select</a>
+                                </dd>
+
+                                <dt><label for="currencyDd">Currency</label></dt>
+                                <dd class="_newSelectListWrap">
+                                    <a id="currencyDd" class="current-selected" href="javascript:;">Select</a>
+                                </dd>
+
+                            </dl>
+                        </div>
+                        <div class="clearfix"></div>
+                        <ul class="dialog-tabs" data-class="childTabs">
+                            <li><a class="active" href="javascript:;">Invoice</a></li>
+                            <li><a href="javascript:;">Other Info</a></li>
+                            <li><a href="javascript:;">Payments</a></li>
+                            <li><a href="javascript:;">Attachments</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                        <div class="dialog-tabs-items childTabs">
+                            <div class="dialog-tabs-item childTabs active">
+                                <div id="productItemsHolder">
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="dialog-tabs-item childTabs">
+                                <div class="other-info-container">
+                                    <div class="half-block left">
+                                        <dl class="opp-info">
+                                            <dt><label for="bank_account">Bank Account</label></dt>
+                                            <dd>
+                                                <a id="bank_account" href="javascript:;">Select</a>
+                                            </dd>
+
+                                            <dt><label for="payment_terms_Create">Payment Terms</label></dt>
+                                            <dd class="_newSelectListWrap">
+                                                <a id="payment_terms_Create" class="current-selected" href="javascript:;">Select</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="half-block left">
+                                        <dl class="opp-info">
+                                            <!--<dt><label >Journal Entry</label></dt>-->
+                                            <!--<dd></dd>-->
+
+                                            <dt><label for="force_period">Force Period</label></dt>
+                                            <dd>
+                                                <a id="force_period" href="javascript:;">Select</a>
+                                            </dd>
+
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog-tabs-item childTabs">
+                                <div id="payments-container"></div>
+                            </div>
+                            <div class="dialog-tabs-item childTabs">
+                                <div class="formTitle">
+                                    <h3 class="left">
+                                        <legend>Note</legend>
+                                    </h3>
+                                </div>
+                                    <div class="area_holder">
+                                 <textarea id="internalNotes" class="internal_Notes" placeholder="Internal notes..." maxlength="500"
+                                           class="opp-internal-create"></textarea>
+                                        <a href="javascript:;" class="attach_file">
+                                            <span class="icon-attach"></span>
+                                        </a>
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                <div id="attach-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dialog-tabs-item mainTabs">
+                        <div class="assignees-container"></div>
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="addNote editedNote">
+    <div class="itemCircle">
+        <span class="icon-calendar" aria-hidden="true"></span>
+    </div>
+    <% var login = note.user ? (App.currentUser._id === note.user._id) ? 'You': note.user.login : '' %>
+    <div class="editedNoteTitle editNewBox clearfix">
+        <span class="noteType"><b><%=login%></b> left a Note </span>
+        <span class="dateNote"><%=note.date%></span>
+    </div>
+    <textarea class="noteText" id="noteArea"><%=note.note%></textarea>
+    <div>
+        <div class="editNoteBtnBlock clearfix">
+            <% if (note.attachment){%>
+            <div class="noteType attachContainer">
+                <div>
+                    <a href="download/<%= note.attachment.shortPas%>" id="<%= note.attachment._id%>"><%= note.attachment.name  %></a>
+                </div>
+            </div>
+            <%}%>
+            <a href="javascript:;" data-id="<%=note._id%>" class=" btn blue saveNote">Save</a>
+            <a href="javascript:;" data-id="<%=note._id%>" class=" btn cancelNote">Cancel</a>
+        </div>
+    </div>
+</div>

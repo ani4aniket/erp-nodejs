@@ -1,0 +1,72 @@
+<div class="pagination _pagination">
+
+    <div class="countOnPage _countOnPage">
+
+        <div class="_pagesInfo">
+            <span class="_value" id="gridStart"></span>
+            <span class="_separator">-</span>
+            <span class="_value" id="gridEnd"></span>
+            <span class="_separator">of</span>
+            <span class="_value" id="gridCount"></span>
+            <span class="_separator">items</span>
+
+        </div>
+
+        <div class="_quantityListWrap">
+            <span class="_listTitle">show :</span>
+            <ul class="pageList _quantityList">
+                <li class="itemsNumber _listItem">25</li>
+                <li class="itemsNumber _listItem">50</li>
+                <li class="itemsNumber _listItem">100</li>
+                <li class="itemsNumber _listItem">200</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="nextPrev _pageActionBlock">
+        <button class="_paginationBtn first_ShowPage"
+                id="firstShowPage"
+                type="button"
+                disabled="disabled">
+            <span class="icon-cheveronL"></span>
+        </button>
+        <button class="_paginationBtn previous_Page"
+                id="previousPage"
+                type="button"
+                disabled="disabled">
+            <span class="icon-arrow-left2"></span>
+        </button>
+
+        <div class="_item">Page</div>
+
+        <div class="_actionBlock">
+            <input id="currentShowPage"
+                   class="_currentPage"
+                   type="text">
+            <div class="allPage _pagesListWrap">
+                <button class="_paginationBtn currentPageList">
+                    <span class="icon-arrow-up2"></span>
+                </button>
+                <ul id="pageList" class="_pagesList allNumberPerPage"></ul>
+            </div>
+        </div>
+
+        <div class="_item">
+            <span>of</span>
+            <span id="lastPage" class="_lastPage"></span>
+        </div>
+
+        <button class="_paginationBtn next_Page"
+                id="nextPage"
+                type="button"
+                disabled="disabled">
+            <span class="icon-arrow-right2"></span>
+        </button>
+        <button class="_paginationBtn last_ShowPage"
+                id="lastShowPage"
+                type="button"
+                disabled="disabled">
+            <span class="icon-cheveronR"></span>
+        </button>
+    </div>
+</div>

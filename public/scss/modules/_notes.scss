@@ -1,0 +1,597 @@
+.noteBtnBlock {
+  .btnBlue {
+    width: 47px;
+  }
+}
+
+.editedNoteTitle {
+  padding: 10px 15px;
+  border: 1px solid #C8C9D3;
+  border-radius: 3px 3px 0 0;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.noteBtnBlock,
+.editNoteBtnBlock {
+  height: 0;
+  margin-top: -1px;
+  border: 1px solid #4d7188;
+  border-top: none;
+  overflow: hidden;
+  transition: all .2s ease;
+
+  .btn {
+    margin: 8px 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    + .btn {
+      margin-left: 10px;
+    }
+  }
+}
+
+.editNoteBtnBlock {
+  height: auto;
+  min-height: 44px;
+  border: none;
+
+  .btnBlue {
+    width: 65px;
+  }
+}
+
+.editedNote {
+
+  .noteType {
+    float: left;
+  }
+  .editNoteBtnBlock {
+    .noteType {
+      padding: 10px 5px 0 5px;
+    }
+  }
+  .noteText {
+    padding: 10px !important;
+    margin: 0 !important;
+    border: 1px solid #C8C9D3;
+    border-top: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      outline: 0 !important;
+    }
+
+    &.active {
+      padding: 0;
+    }
+  }
+}
+
+.noteTitle {
+  margin-top: 10px;
+}
+
+.addTask {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .buttons {
+    margin-top: 10px;
+  }
+}
+
+//.addTaskTitle {
+//  padding: 5px 0;
+//}
+
+.noteWrapper {
+  width: 100%;
+
+  &.projects-dialog {
+    width: 98%;
+    margin: 0 auto;
+    .addNote textarea {
+      max-width: inherit;
+      resize: none;
+    }
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  > label {
+    font-size: 16px;
+    color: $formColum-main-text-color;
+  }
+
+  ul.chart-tabs {
+    border-bottom: 1px solid #c8c8d3;
+  }
+
+  #noteBody {
+    .noteContainer {
+      margin: 10px 0;
+
+      .name {
+        margin-right: 15px;
+        font-size: 11px;
+      }
+
+      .date {
+        font-size: 11px;
+        color: #777;
+      }
+
+      .dateNote {
+        float: right;
+      }
+
+      .noteTitle {
+        font-size: 15px;
+      }
+
+      .noteText,
+      .noteTitle {
+        word-break: break-word;
+        color: $mainText-color;
+        margin-bottom: 10px;
+      }
+
+      .right {
+        float: right;
+
+        .sep {
+          padding: 0 3px;
+          font-size: 12px;
+          color: #CCC;
+        }
+      }
+
+      &:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+    }
+
+    .noteBody {
+      padding: 10px;
+      border: 1px solid #7f7f80;//$thin-border $border-color-main;
+    }
+  }
+
+  .noteText {
+    word-wrap: break-word;
+  }
+
+  .noteTitle {
+    word-wrap: break-word;
+  }
+
+  .addNote,  .addTask {
+    margin-top: 6px;
+    background-color: inherit;
+
+    &.createHolder {
+      .area_holder {
+        textarea {
+          border-top: 0;
+          //border-radius: 0 3px 3px 3px;
+        }
+
+        textarea::-webkit-input-placeholder {
+          color: #a0a9b4 !important;
+        }
+        textarea:-moz-placeholder {
+          color: #a0a9b4 !important;
+        }
+        textarea::-moz-placeholder {
+          color: #a0a9b4 !important;
+        }
+        textarea:-ms-input-placeholder {
+          color: #a0a9b4 !important;
+        }
+      }
+    }
+
+    label {
+      color: #555;
+      display: none;
+    }
+
+    .area_holder {
+      position: relative;
+      .attach_file {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-size: 18px;
+      }
+    }
+
+    .counter-wrap {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 3px 5px;
+    }
+
+    .addTitle {
+      display: none;
+    }
+
+    .title-wrapper {
+      display: none;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      input {
+        width: 100%;
+        max-width: inherit;
+        background-color: white;
+      }
+    }
+
+    #cancelNote,
+    #addNote {
+      display: none;
+    }
+
+    input {
+      display: none;
+      width: 100%;
+      margin-right: 10px;
+      padding-left: 0;
+      padding-right: 0;
+      border-radius: 0;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px 10px 15px;
+      resize: none;
+      box-sizing: border-box;
+      @extend .defaultBorRad;
+
+      &.noteText {
+        border-radius: 0 0 3px 3px;
+      }
+    }
+
+    .area_holder {
+      textarea {
+        height: 130px;
+        border-radius: 0;
+      }
+    }
+
+    &.active {
+      padding: 10px 0 10px 0;
+      width: 100%;
+      .buttons {
+        margin-top: 3px;
+        @extend .dialog-buttons;
+
+        input {
+          width: auto;
+        }
+
+        input, a {
+          float: left;
+        }
+
+        #cancelNote, #addNote {
+          display: inline-block;
+        }
+      }
+
+      label {
+        display: block;
+        color: $formColum-main-subText-color;
+      }
+
+      textarea {
+        resize: none;
+        color: $black;
+      }
+
+
+      input {
+        display: block;
+        background-color: transparent;
+
+        &:focus {
+          box-shadow: 0 0 5px rgba(82, 168, 236, 0.5);
+        }
+      }
+
+      .addTitle {
+        display: block;
+        line-height: 30px;
+      }
+
+    }
+  }
+
+  .editedNote {
+    &.active {
+      padding: 0;
+    }
+  }
+
+  .attachContainer {
+    padding: 0;
+    margin: 0;
+  }
+
+  .showmore,
+  .hideList {
+    display: block;
+    color: #428bca;
+    width: 70px;
+    cursor: pointer;
+    &:hover {
+      color: #2a6496;
+    }
+  }
+}
+
+.counter-wrap {
+  //prevent global style
+  .counter-label {
+    font-size: 10px;
+    color: #999;
+  }
+
+  .counter-value {
+    color: #6398bb;
+    font-family: $semibold-font-family;
+    font-size: 11px;
+  }
+}
+
+._pureTemplate {
+  .timeNote {
+    .itemCircleWrap {
+      position: absolute;
+      left: -20px;
+      top: 0;
+      height: 100%;
+
+      &:before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        left: 34px;
+        background-color: #c8c8d3;
+      }
+
+      .itemCircle {
+        line-height: 24px;
+      }
+    }
+  }
+
+  .itemCircle {
+    flex-shrink: 0;
+    position: absolute;
+    top: 8px;
+    left: auto;
+    margin: 0 10px;
+    background-color: #fff;
+
+    .icon-edit-list,
+    .icon-edit-list2 {
+      color: #e6aa08;
+    }
+    .icon-coment {
+      color: #7ab2cc;
+    }
+    .icon-usd {
+      color: #1aaf5d;
+    }
+  }
+
+  .timeNote {
+
+    .noteContainer {
+      padding-left: 0;
+      margin-top: 0;
+
+      &:before {
+        display: none;
+      }
+
+      &:last-child {
+        .itemCircleWrap {
+          &:before{
+            top: 0;
+            height: 10px !important;
+          }
+        }
+      }
+
+      .noteBody {
+        position: relative;
+        min-height: 45px;
+        padding: 10px 0 0 35px;
+        border: 0;
+        box-shadow: none;
+        @include rem('font-size', 11px);
+      }
+
+      .noteText {
+        padding: 0 15px 0;
+      }
+
+      .dateNote,
+      .changed_field,
+      .noteType {
+        padding: 8px 0 0;
+      }
+
+      .changed_field {
+        color: #879697;
+        line-height: 15px;
+      }
+
+      .dateNote {
+        display: block;
+      }
+
+      .noteType {
+        color: #879697;
+        display: inline-block;
+
+        + .noteType {
+          margin-left: 10px;
+        }
+
+        > a {
+          color: inherit;
+        }
+      }
+
+      .noteText {
+        padding: 8px 15px 0;
+      }
+
+    }
+    .historyContent {
+      &:first-child {
+        padding-top: 0;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .dateNote {
+    color: #7eadcc;
+    font-family: $semibold-font-family;
+    @include rem('font-size', 11px);
+  }
+
+  .editDelNote {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin: 2px 5px;
+    line-height: 22px;
+    text-align: center;
+    border: 1px solid #c8c8d3;
+    border-radius: 50%;
+
+    &:hover {
+      text-decoration: none;
+      background-color: #efefef;
+      transition: .2s ease;
+    }
+    &:after {
+      content: '\e054';
+      display: block;
+      font-family: $icon-font;
+    }
+  }
+
+  .noteWrapper {
+    .noteContainer {
+
+      &:nth-child(n+3) {
+        .itemCircleWrap {
+          &:before{
+            top: 0;
+            height: 10px;
+          }
+        }
+      }
+      &:nth-child(n+4) {
+        display: none;
+      }
+      &:first-child {
+        &:before {
+          display: none;
+        }
+        .itemCircleWrap {
+          &:before{
+            top: 10px;
+            height: calc(100% - 8px);
+          }
+        }
+      }
+    }
+    .hideList {
+      display: none;
+    }
+    &.open {
+      .noteContainer {
+        &:nth-child(n+3) {
+          .itemCircleWrap {
+            &:before{
+              top: 0;
+              height: 100%;
+            }
+          }
+        }
+        &:nth-child(n+4) {
+          display: block;
+        }
+      }
+      .hideList {
+        display: block;
+      }
+      .showmore {
+        display: none !important;
+      }
+    }
+  }
+
+  ._noteTextarea {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .btn#addNote {
+    margin-top: 10px;
+  }
+
+  .noteText {
+    display: inline-block;
+  }
+}
+
+.search-view {
+  position: relative;
+  background-color: #fff;
+}
+
+._formNotes {
+  ._animateTextareaBox {
+    margin-bottom: 0;
+  }
+
+  .buttons {
+    margin-top: 15px;
+  }
+
+  ._timeline {
+    max-height: 300px;
+    padding: 0 0 10px;
+    overflow: auto;
+  }
+}
+._thisNotes{
+  height: 202px;
+}

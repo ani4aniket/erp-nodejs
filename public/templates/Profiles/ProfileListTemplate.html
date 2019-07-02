@@ -1,0 +1,39 @@
+<div class="inner-holder _settingsHolder">
+    <div class="workflow-list-wrapper left">
+        <ul id="profilesList" class="workflow-list profile-list">
+            <% profilesCollection.forEach(function(profile,index){ %>
+            <li>
+                <a href="#easyErp/Profiles" data-id="<%= profile._id%>" title="<%= profile.profileName %>"><%=
+                    profile.profileName %> Profile</a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+    <div id="profileTableWrapper" class="left">
+        <table class="list _modulesAccessTable" id="modulesAccessTable">
+            <colgroup>
+                <col width="55%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>Module Name
+                </th>
+                <th>View<br/>
+                        <input type="checkbox" disabled="disabled"/>
+                </th>
+                <th>Write/Edit<br/>
+                        <input type="checkbox" disabled="disabled"/>
+                </th>
+                <th>Delete<br/>
+                        <input type="checkbox" disabled="disabled"/>
+                </th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+

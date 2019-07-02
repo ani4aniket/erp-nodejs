@@ -1,0 +1,130 @@
+@import "colors/colors";
+@import "colors/dark_theme";
+@import "colors/white_theme";
+
+
+
+/*Imported from Less folder*/
+@import "colors/_darkColor";
+@import "colors/_whiteColor";
+
+// usage: color("name_of_array", "name_of_color")
+// to avoid to repeating map-get($colors, ...)
+
+@function color($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @warn "Unknown `#{$type}` in #{$color}.";
+  @return null;
+}
+
+// Base ------------------
+$base-bg     : $white;
+$base-text   : $white;
+$base-link   : $white;
+$base-border : $white;
+// -----------------------
+
+// Buttons ---------------
+$btnBorderColor: map-get($erp-colors, 'light-gray');
+$btnTextColor: map-get($erp-colors, 'lighter-gray');
+$btnBgColor: map-get($erp-colors, 'white');
+// -----------------------
+
+// Header ----------------
+
+// -----------------------
+
+// Buttons ---------------
+
+// -----------------------
+
+// Tables ----------------
+
+// -----------------------
+
+// Forms -----------------
+$ui-dialog-bg: $white;
+// -----------------------
+
+// Opportunities  --------
+$dateRage-border-color:  map-get($colors-dark, 'darker-gray');
+$property-box-border-color:  #7eadcc;
+$property-text-color: map-get($erp-colors, 'light-gray');
+$property-text-color: map-get($erp-colors, 'light-gray');
+$property-link-color: map-get($erp-colors, 'blue');
+$property-link-color: map-get($erp-colors, 'blue');
+$drop-down-list-bg: map-get($erp-colors, 'lighter-gray');
+$add-company-btn-hover-bg: map-get($erp-colors, 'lighter-gray');
+$create-bg: map-get($erp-colors, 'lighter-gray');
+$note-border-color: map-get($erp-colors, 'light-gray');
+$note-inner-border-color: map-get($erp-colors, 'dark-gray');
+$note-bg: map-get($erp-colors, 'light-gray');
+$sales-modal-select-border-color: map-get($erp-colors, 'light-gray');
+$sales-modal-select-text-color: map-get($erp-colors, 'dark-gray');
+// -----------------------
+
+// Holidays --------------
+$error-content-border:  map-get($colors-dark, 'red');
+$delete-asks-border-color: $black;
+// -----------------------
+
+// Dashboard -------------
+$vocation-filter-border-color: $black;
+$frame-detail-bg: $white;
+$dashboard-text-color: map-get($erp-colors, 'dark-gray');
+$dashboard-cell-shadow:  1px 1px 5px rgba(126, 142, 159, 0.4);
+$dashboard-cell-bigger-shadow:  5px 5px 10px rgba(126, 142, 159, 0.4);
+$dashboard-panel-border: #d7dde4;
+// -----------------------
+
+// Create Tasks ----------
+$tasks-border-color: map-get($erp-colors, 'lighter-gray');
+$remove-select-color-hover: map-get($erp-colors, 'lighter-gray');
+$tab-list-color: map-get($erp-colors, 'dark-gray');
+$tab-list-color-active: $white;
+$tasks-item-color: map-get($erp-colors, 'blue');
+$tasks-item-bg: map-get($erp-colors, 'lighter-gray');
+$passed-bg: map-get($erp-colors, 'green');
+// -----------------------
+
+// Import -------------
+$importStepColor: map-get($erp-colors, 'gray');
+$importFieldItemBorderColor: map-get($erp-colors, 'light-gray');
+$importTabsBorderColor: map-get($erp-colors, 'light-gray');
+$importTabsBorderBgActive: map-get($erp-colors, 'blue');
+$importHoverRowBg: map-get($erp-colors, 'blue');
+$importFooterBorder: map-get($erp-colors, 'light-grey');
+$importProgressBarContainerBg: map-get($erp-colors, 'lighter-gray');
+$importProgressBarBg: map-get($erp-colors, 'green');
+$importAttachBorderColor: map-get($erp-colors, 'light-grey');
+$importAttachBg: map-get($erp-colors, 'lighter-gray');
+$importCellContainerBorder: map-get($erp-colors, 'light-gray');
+$importCellContainerBg: map-get($erp-colors, 'lighter-gray');
+$importTableTrBg: map-get($erp-colors, 'lighter-gray');
+$importCellContainer: map-get($erp-colors, 'blue');
+$importWarningIcon: map-get($erp-colors, 'yellow');
+// -----------------------
+
+// HR/Employees ----------
+$error-content-border: map-get($erp-colors, 'red');
+// -----------------------
+
+// Payroll----------------
+$payroll-border-blue: map-get($erp-colors, 'light-blue');
+$payroll-steps-color: map-get($erp-colors, 'light-blue');
+$payroll-border-gray: map-get($erp-colors, 'light-gray');
+$payroll-font-gray: map-get($erp-colors, 'light-gray');
+$payroll-font-darkgray: map-get($erp-colors, 'dark-gray');
+$payroll-font-indigo2: map-get($erp-colors, 'indigo2');
+$payroll-font-indigo3: map-get($erp-colors, 'indigo3');
+// -----------------------
+
+// Contract jobs----------
+$contractJobs-green-bg: map-get($erp-colors, 'green');
+$contractJobs-blue-bg: map-get($erp-colors, 'blue');
+// -----------------------

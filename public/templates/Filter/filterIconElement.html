@@ -1,0 +1,21 @@
+<%
+var filterView;
+
+if (!savedFilter) {
+    filterView = filterName === 'letter' ? 'letter' : key;
+}
+%>
+
+<div class="forFilterIcons">
+    <% if (!savedFilter) { %>
+    <span class="icon-filter funnelIcon"></span>
+    <span data-value="<%= filterView %>" class="filterValues">
+        <%= filterName %>
+    </span>
+    <% } else { %>
+    <span class="icon-star2 funnelIcon"></span>
+    <span class="filterValues"><%= filterName %></span>
+    <% } %>
+    <span class="removeValues icon-close3"></span>
+</div>
+

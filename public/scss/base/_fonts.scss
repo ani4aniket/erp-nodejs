@@ -1,0 +1,55 @@
+// Fotns include
+$first: 1;
+
+@for $i from $first through $base-font-count {
+  @font-face {
+    font-family: map-get($base-font-name, $i);
+    font-style: normal;
+    src: url('#{$font-path}#{$base-font-path}#{map-get($base-font-file, $i)}.woff2') format('woff2'),
+    url('#{$font-path}#{$base-font-path}#{map-get($base-font-file, $i)}.woff') format('woff'),
+    url('#{$font-path}#{$base-font-path}#{map-get($base-font-file, $i)}.ttf') format('truetype');
+    font-weight: map-get($base-font-weight, $i);
+  }
+}
+
+
+//
+//@font-face {
+//  font-family: 'erp-icons';
+//  src:    url('../font/erp-icons.ttf?dhexcm') format('truetype'),
+//          url('../font/erp-icons.woff?dhexcm') format('woff'),
+//          url('../font/erp-icons.svg?dhexcm#erp-icons') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+@font-face {
+  font-family: 'erp-icons';
+  src:
+          url('../font/erp-icons.ttf?7kacul') format('truetype'),
+          url('../font/erp-icons.woff?7kacul') format('woff'),
+          url('../font/erp-icons.svg?7kacul#erp-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:before {
+    font-family: $icon-font !important;
+  }
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+

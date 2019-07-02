@@ -1,0 +1,354 @@
+<div class="_breadcrunmbs">
+    <span class="_breadcrunmbsTitle">Back to:</span>
+    <a href="#easyErp/reports">General</a>
+    <span class="_breadcrunmbItem"> / CRM</span>
+</div>
+<div>
+    <ul class="chart-tabs dashboard">
+        <li><a href="javascript:;" class="leadsByResearcher">Leads By Manager</a></li>
+        <li><a href="javascript:;" class="leadsBySource">Leads By Source</a></li>
+        <li><a href="javascript:;" class="opportunityConversion">Opportunity Conversion</a></li>
+        <li><a href="javascript:;" class="opportunityAging">Opportunity Aging</a></li>
+        <li><a href="javascript:;" class="opportunities">Opportunities</a></li>
+        <li><a href="javascript:;" class="wonLost">Won / Lost</a></li>
+        <li><a href="javascript:;" class="salesByCountry">Sales by Country</a></li>
+        <li><a href="javascript:;" class="leadsByDate">Leads by Date</a></li>
+        <li><a href="javascript:;" class="leadsByNames">Leads by Names</a></li>
+    </ul>
+
+    <div class="chart-tabs-items">
+        <div class="chart-tabs-item active">
+            <div class="clearfix"></div>
+            <h3 class="dashboard">Who created most leads?</h3>
+            <div class="chartTopBox">
+                <div class="legend-box small">
+                    <div class="total">
+                        <div class="square" style="background: linear-gradient(to left, #ACC7F2, #FFA17F); opacity: 1">
+                        </div>
+                        <div class="text">
+                            Total Leads
+                        </div>
+                    </div>
+                    <div class="opportunities">
+                        <div class="square" style="background: linear-gradient(to left, #6b456c, #98aac4)">
+                        </div>
+                        <div class="text">
+                            Opportunities
+                        </div>
+                    </div>
+                </div>
+                <div id="LeadsBySaleDateFilter" class="vocationFilter _filterDropDownWrap"></div>
+            </div>
+            <svg class="chart salesChart"></svg>
+        </div>
+        <div class="chart-tabs-item">
+            <div class="clearfix"></div>
+            <h3 class="dashboard">What are our best primary campaigns?</h3>
+            <div class="dashbordActions chartTopBox">
+                <div id="LeadsBySourceDateFilter" class="vocationFilter _filterDropDownWrap"></div>
+                <div class="legend-box small clearfix">
+                    <div class="total">
+                        <div class="square" style="background: linear-gradient(to left, #ACC7F2, #FFA17F); opacity: 1">
+                        </div>
+                        <div class="text">
+                            Total Leads
+                        </div>
+                    </div>
+                    <div class="opportunities ">
+                        <div class="square" style="background: linear-gradient(to left, #6b456c, #98aac4)">
+                        </div>
+                        <div class="text">
+                            Opportunities
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <svg class="chart sourcesChart"></svg>
+        </div>
+        <div class="chart-tabs-item">
+            <h3 class="dashboard">What is the conversion rate per Sale?</h3>
+            <div class="_clearfix">
+                <div class="dropDownDateRangeContainer">
+                    <div id="OpportunitiesConversionDateFilter" class="choseDateRange dropDownDateRange">
+                    </div>
+                </div>
+                <div class="legend-box medium opportunities">
+                    <div class="new">
+                        <div style="background-color: rgb(38, 167, 222);" class="square">
+                        </div>
+                        <div class="text">
+                            Finished Opportinities
+                        </div>
+                    </div>
+                    <div class="convertRate">
+                        <div style="background-color: #66ff66" class="square">
+                        </div>
+                        <div class="text">
+                            Opportunity Conversion Rate
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <svg class="opportunitieConversionAmount"></svg>
+            <svg class="opportunitieConversionCount"></svg>
+        </div>
+        <div class="chart-tabs-item">
+            <div class="clearfix"></div>
+            <h3 class="dashboard">How long last activity was?</h3>
+            <div class="legend-box opportunities medium">
+                <div class="new">
+                    <div style="background-color: #93648D;" class="square">
+                    </div>
+                    <div class="text">
+                        New
+                    </div>
+                </div>
+                <div class="new">
+                    <div style="background-color: #4CC3D9;" class="square">
+                    </div>
+                    <div class="text">
+                        To estimate
+                    </div>
+                </div>
+                <div class="new">
+                    <div style="background-color: #F1DD9E;" class="square">
+                    </div>
+                    <div class="text">
+                        Done estimate
+                    </div>
+                </div>
+                <div class="% 25-50">
+                    <div style="background-color: #7BC8A4;" class="square">
+                    </div>
+                    <div class="text">
+                        Send offer
+                    </div>
+                </div>
+                <div class="% 50-75">
+                    <div style="background-color: #FFC65D;" class="square">
+                    </div>
+                    <div class="text">
+                        PM approve
+                    </div>
+                </div>
+                <div class="% 75-100">
+                    <div style="background-color: #5D4C46;" class="square">
+                    </div>
+                    <div class="text">
+                        Pre-development
+                    </div>
+                </div>
+                <div class="% 75-100">
+                    <div style="background-color: #EB6E44;" class="square">
+                    </div>
+                    <div class="text">
+                        In development
+                    </div>
+                </div>
+                <div class="% 75-100">
+                    <div style="background-color: #93073E;" class="square">
+                    </div>
+                    <div class="text">
+                        Lost
+                    </div>
+                </div>
+            </div>
+            <svg class="opportunitieAgingSum"></svg>
+            <svg class="opportunitieAgingCount"></svg>
+        </div>
+        <div class="chart-tabs-item">
+            <h3 class="dashboard">What stage are my opportunities in?</h3>
+            <div>
+                <div class="dropDownDateRangeContainer">
+                    <div id="OpportunitiesDateFilter" class="choseDateRange dropDownDateRange">
+                    </div>
+                </div>
+                <div class="legend-box opportunities">
+                    <div class="new">
+                        <div style="background-color: #93648D;" class="square">
+                        </div>
+                        <div class="text">
+                            New
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div style="background-color: #4CC3D9;" class="square">
+                        </div>
+                        <div class="text">
+                            To estimate
+                        </div>
+                    </div>
+                    <div class="new">
+                        <div style="background-color: #F1DD9E;" class="square">
+                        </div>
+                        <div class="text">
+                            Done estimate
+                        </div>
+                    </div>
+                    <div class="% 25-50">
+                        <div style="background-color: #7BC8A4;" class="square">
+                        </div>
+                        <div class="text">
+                            Send offer
+                        </div>
+                    </div>
+                    <div class="% 50-75">
+                        <div style="background-color: #FFC65D;" class="square">
+                        </div>
+                        <div class="text">
+                            PM approve
+                        </div>
+                    </div>
+                    <div class="% 75-100">
+                        <div style="background-color: #5D4C46;" class="square">
+                        </div>
+                        <div class="text">
+                            Pre-development
+                        </div>
+                    </div>
+                    <div class="% 75-100">
+                        <div style="background-color: #EB6E44;" class="square">
+                        </div>
+                        <div class="text">
+                            In development
+                        </div>
+                    </div>
+                    <div class="% 75-100">
+                        <div style="background-color: #93073E;" class="square">
+                        </div>
+                        <div class="text">
+                            Lost
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <svg class="opportunitiesChart"></svg>
+            </div>
+        </div>
+        <div class="chart-tabs-item">
+            <h3 class="dashboard">How many of our opportunities do we win?</h3>
+            <div class="dropDownDateRangeContainer left">
+                <div class="choseDateRange dropDownDateRange choseDateItem" data-type="WonLost">
+                    <div class="item active" data-item="D">Day</div>
+                    <div class="item" data-item="W">Week</div>
+                    <div class="item" data-item="M">Month</div>
+                    <div class="item" data-item="DW">Day of Week</div>
+                    <div class="item" data-item="DM">Day of Month</div>
+                    <span class="selectArrow"></span>
+                </div>
+            </div>
+
+            <div class="legend-box wonLegend">
+                <div class="converted ">
+                    <div class="square" style="background: #6CC062">
+                    </div>
+                    <div class="text">
+                        Won Count
+                    </div>
+                    <div class="square" style="background: #00B4EA">
+                    </div>
+                    <div class="text">
+                        Open Count
+                    </div>
+                    <div class="square" style="background: #F68065">
+                    </div>
+                    <div class="text">
+                        Lost Count
+                    </div>
+                    <div class="square legendCircle" style="background: #6CC062">
+                    </div>
+                    <div class="text">
+                        Win % (Count)
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropDownDateRangeContainer">
+                <div id="WonLostDateFilter" class="choseDateRange dropDownDateRange">
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <svg class="winAndLostOpportunitiesChart"></svg>
+        </div>
+        <div class="chart-tabs-item">
+            <h3>Sales by country</h3>
+            <div class="filterWrap salesTab">
+                <div id="SalesByCountryDateFilter" class="vocationFilter _filterDropDownWrap"></div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="dashboardGraphicsWrap">
+                <div class="treemap_sales halfWidth leftMap"></div>
+                <div class="halfWidth">
+                    <svg class="salesByCountryChart"></svg>
+                </div>
+                <div class="fullWidth">
+                    <svg class="salesByCountryBarChart"></svg>
+                </div>
+            </div>
+        </div>
+        <div class="chart-tabs-item leadsTab">
+            <h3>Leads</h3>
+            <div class="leadsTop align-left clearfix">
+                <div class="col xs-4">
+                    <div id="LeadsDateFilter" class="vocationFilter _filterDropDownWrap"></div>
+                    <div data-type="Leads" class="choseDateItem">
+                        <div class="item active" data-item="createdBy">Created By</div>
+                        <div class="item" data-item="assignedTo">Assigned To</div>
+                    </div>
+                </div>
+                <div class="col xs-8">
+                    <div class="legend-box">
+                        <div class="converted">
+                            <div class="square" style="background: #57D0B5">
+                            </div>
+                            <div class="text">
+                                Converted Leads
+                            </div>
+                        </div>
+
+                        <div class="unconverted">
+                            <div class="square" style="background: #00B4EA">
+                            </div>
+                            <div class="text">
+                                Unconverted Leads
+                            </div>
+                        </div>
+
+                        <div class="convertRate">
+                            <div class="square" style="background: #00B4EA">
+                            </div>
+                            <div class="text">
+                                Opportunity Conversion Rate
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="clearfix"></div>
+            <div>
+                <svg class="leadsBarChart"></svg>
+            </div>
+        </div>
+        <div class="chart-tabs-item">
+
+            <h3>Leads By Names</h3>
+            <div class="leadsTop align-left">
+                <div id="LeadsByNameDateFilter" class="vocationFilter _filterDropDownWrap"></div>
+                <div data-type="LeadsByName" class="choseDateItem">
+                    <div class="item active" data-item="leadsBySales">Assigned To</div>
+                    <div class="item" data-item="qualifiedBy">Qualified By</div>
+                    <div class="item" data-item="qualifiedFrom">Qualified From</div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <svg class="leadsByNameBarChart"></svg>
+
+        </div>
+    </div>
+</div>

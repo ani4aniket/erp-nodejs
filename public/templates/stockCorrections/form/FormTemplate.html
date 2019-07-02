@@ -1,0 +1,53 @@
+<div class="_listInfo">
+    <form method="post" action="" id="stockCorrection">
+        <div class="_listHeader">
+            <div class="_titleWrap">
+                <h4 class="_listTitle">Stock Correction</h4>
+                <span class="_dateOfCreation">
+                    <span class="_title">Created on</span>
+                    <%=model.createdBy ? model.createdBy.date : ''%>
+                </span>
+            </div>
+
+            <div class="_listRow">
+                <div class="_listCell">
+                    <div class="_title">Adjusted By</div>
+                    <div class="_value"><%=model.createdBy  && model.createdBy.user ? model.createdBy.user.login : ''%></div>
+                </div>
+
+                <div class="_listCell">
+                    <div class="_title text-right">Warehouse</div>
+                    <div class="_value text-right"><%=model.warehouse ? model.warehouse.name : ''%></div>
+                </div>
+            </div>
+
+            <div class="_listDescriptionWrap">
+                <div class="_descriptionTitle">Descriptoin</div>
+                <div class="_listDescription"><%=model.description%></div>
+            </div>
+        </div>
+        <div class="_listBody">
+            <table class="_tableLight">
+                <colgroup>
+                    <col width="50%">
+                    <col width="50%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Adjusted</th>
+                </tr>
+                </thead>
+                <tbody id="tbodyProducts">
+                <% model.orderRows.forEach(function(elem){%>
+                <tr>
+                    <td><%=elem.product ? elem.product.name : ''%></td>
+                    <td><%=elem.quantity%></td>
+                </tr>
+                <% })%>
+                </tbody>
+            </table>
+            <div id="productItemsHolder"></div>
+        </div>
+    </form>
+</div>

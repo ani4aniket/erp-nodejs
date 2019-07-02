@@ -1,0 +1,163 @@
+.col1-4 {
+  width: 25%;
+}
+
+.col1-3 {
+  width: 33%;
+}
+
+.col4-10 {
+  width: 40%;
+}
+
+.col6-10 {
+  width: 60%;
+}
+
+.ui-dialog-buttonset {
+  border: none;
+  border-top: 1px solid #7eadcc;
+  padding-top: 10px;
+  float: none;
+
+  .btn + .btn {
+    margin-left: 10px;
+  }
+}
+
+.task-content {
+  padding: 5px;
+  color: $black;
+
+  .info {
+    margin-bottom: 10px;
+  }
+
+  .taskContentTitle {
+    margin-bottom: 5px;
+  }
+
+  .dateLabel {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+.tasksItemList {
+  margin-top: 9px;
+}
+
+.tasksItemIcon {
+  display: inline-block;
+  vertical-align: middle;
+  color: $tasks-item-color;
+
+  & + .tasksItemIcon {
+    margin-left: 8px;
+  }
+
+  img {
+    width: 20px;
+  }
+}
+
+.tabListWrap {
+  display: flex;
+  padding: 10px;
+
+  .tabListItem {
+    position: relative;
+    padding: 11px 15px;
+    margin: 0;
+    text-align: center;
+    font-size: 11px;
+    cursor: pointer;
+    overflow: visible;
+    background: $tasks-item-bg;
+    flex-grow: 1;
+    width: 10px;
+    white-space: nowrap;
+
+    &.active {
+      background: #7eadcc;
+
+      span {
+        color: $tab-list-color-active;
+      }
+
+      &:after {
+        border-left-color: #7eadcc;
+      }
+    }
+
+    & + .tabListItem {
+      padding-left: 33px;
+    }
+
+    &.passed {
+      background: $passed-bg;
+
+      &:after {
+        border-left-color: $passed-bg;
+      }
+
+      span {
+        color:  $tab-list-color-active;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    &:before {
+      top: -4px;
+      right: -21px;
+      border-top: 21px solid transparent;
+      border-bottom: 21px solid transparent;
+      border-left: 22px solid $white;
+      z-index: 1;
+    }
+
+    &:after {
+      top: 0;
+      right: -17px;
+      border-top: 17px solid transparent;
+      border-bottom: 17px solid transparent;
+      border-left: 18px solid $tasks-border-color;
+      z-index: 2;
+    }
+
+    span {
+      @extend %text-overflow;
+      display: block;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: $tab-list-color;
+    }
+
+    &:first-child {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &:last-child {
+      border-radius: 0 3px 3px 0;
+
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+._dealTaskForm {
+
+  textarea._animate {
+    height: 252px;
+  }
+}

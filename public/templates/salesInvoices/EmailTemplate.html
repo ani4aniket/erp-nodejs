@@ -1,0 +1,44 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" id="sendEmailForm">
+        <h4 class="_dialogMainTitle">Email Delivery Note</h4>
+        <div class="_formWrap _enlargedItemMargin">
+            <div class="_formBlock">
+                <div class="_animateInputBox">
+                    <input type="text"
+                           class="_animate"
+                           id="To"
+                           value="<%= emails.To %>"
+                           multiple
+                           required/>
+                    <label for="To" class="_animate">To:</label>
+                    <span class="tips icon-info" data-id="To"></span>
+                </div>
+                <div class="_animateInputBox">
+                    <input type="text"
+                           class="_animate"
+                           id="Cc"
+                           value="<%= emails.Cc %>"
+                           multiple
+                           required/>
+                    <label for="Cc" class="_animate">Cc:</label>
+                    <span class="tips icon-info" data-id="Cc"></span>
+                </div>
+                <%if (attachments.length){%>
+                <div class="_attachmentBox">
+                    <span class="_attachmentLabel">Attachments:</span>
+                    <ul id="Attachments-list" class="_attachContainer">
+                        <% attachments.forEach(function(att) { %>
+                        <li class="_attachItem">
+                            <a href="download/<%=att.shortPas%>">
+                                <span class="icon-attach"></span>
+                                <span class="_attachInfo"><%=att.name %></span>
+                            </a>
+                        </li>
+                        <% }); %>
+                    </ul>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </form>
+</div>

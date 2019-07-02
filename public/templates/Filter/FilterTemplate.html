@@ -1,0 +1,47 @@
+<div class="search-view">
+    <div class="search-field">
+        <span class="search icon-search"></span>
+
+        <div id="searchGlobalContainer">
+            <div id="searchFilterContainer">
+            </div>
+            <div id="searchInput" data-text="Search" contenteditable></div>
+        </div>
+        <span class="search-content icon-caret-down"></span>
+    </div>
+    <div class="search-options hidden">
+        <ul class="filter-dialog-tabs">
+            <li data-value="#filtersContent" class="filterTabs active">
+                <span class="icon-filter"></span>
+                Filters
+                <span class="caret"></span>
+            </li>
+            <li data-value="#favoritesContent" class="filterTabs">
+                <span class="icon-star2"></span>
+                Favorites
+                <span class="caret"></span>
+            </li>
+        </ul>
+
+        <div class="drop-down-filter">
+            <ul class="condition hidden">
+                <span class="CondParagraph">Condition</span>
+                <li class="conditionAND">
+                    <input type="checkbox" checked id="logicCondition" value="and">
+                    <label for="logicCondition">AND</label>
+                </li>
+            </ul>
+            <!--<li class="hidden">
+                <input type="checkbox" id="defaultFilter" value="empty">
+                <label for="defaultFilter">Clear</label>
+            </li>-->
+
+            <li class="hidden group btn btn-default customFilter">
+                Add Custom Filter
+            </li>
+
+            <div id="filtersContent" class="tabContent"></div>
+            <div id="favoritesContent" class="tabContent hidden"></div>
+        </div>
+    </div>
+</div>

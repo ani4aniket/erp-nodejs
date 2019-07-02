@@ -1,0 +1,45 @@
+<div class="form-holder _newForm">
+    <h3 class="_dialogMainTitle">Cash Transfer</h3>
+    <form method="post" id="createJournalForm" class="createJournalForm">
+        <div class="_formWrap _enlargedItemMargin">
+            <div class="_formBlock">
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Date</span>
+                    <input id="date"
+                           name="date"
+                           class="_animate"
+                           value=""
+                           required
+                           placeholder="Date"
+                           readonly>
+                </div>
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">From</span>
+                    <div class="cashBalanceRow _newSelectListWrap">
+                        <a id="debitAccount" class="current-selected" href="javascript:;">Select Account</a>
+                    </div>
+                    <span class="tips icon-info" data-id="debitAccount"></span>
+                </div>
+                <div class="cashBalanceBlock">
+                    <span class="_cashTitle">Balance</span>
+                    <span id="maxAmount" class="_cashValue"></span>
+                </div>
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">To</span>
+                    <div class="cashBalanceRow _newSelectListWrap">
+                        <a id="creditAccount" class="current-selected" href="javascript:;">Select Account</a>
+                    </div>
+                    <span class="tips icon-info" data-id="creditAccount"></span>
+                </div>
+                <div class="_animateInputBox _currency">
+                    <input id="amount"
+                           value="0"
+                           class="_animate"
+                           required/>
+                    <label for="amount" class="_animate">Amount</label>
+                    <span class="_currencyValue" id="currency"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

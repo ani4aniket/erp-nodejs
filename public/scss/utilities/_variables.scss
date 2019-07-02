@@ -1,0 +1,103 @@
+//Added drom Less folder variables subfolder in utilites
+//------ font variables ------
+$baseFontSize: 16;
+
+$fontLight     : 'OpenSans Light', sans-serif, Verdana;
+$fontRegular   : 'OpenSans Regular', sans-serif, Verdana;
+$fontSemiBold  : 'OpenSans SemiBold', sans-serif, Verdana;
+$fontBold      : 'OpenSans Bold', sans-serif, Verdana;
+$fontExtraBold : 'OpenSans ExtraBold', sans-serif, Verdana;
+
+$iconFont: 'erp-icons';
+
+// Grid vars ------------
+$num-cols     : 12 !default;
+$gutter-width : 1.875rem !default;
+
+$screen-breakpoints : (
+    small  : 544px,
+    medium : 768px,
+    large  : 992px,
+    xlarge : 1200px
+);
+
+$small-container    : 576px;
+$medium-container   : 720px;
+$large-container    : 940px;
+$xlarge-container   : 1140px;
+$extra-large-screen : 1490px;
+
+$small-screen       : map_get($screen-breakpoints, 'small');
+$medium-screen      : map_get($screen-breakpoints, 'medium');
+$large-screen       : map_get($screen-breakpoints, 'large');
+$xlarge-screen      : map_get($screen-breakpoints, 'xlarge');
+// ----------------------
+
+// Grid vars -1 ---------
+$small-screen-down  : (map_get($screen-breakpoints, 'small') - 1);
+$medium-screen-down : (map_get($screen-breakpoints, 'medium') - 1);
+$large-screen-down  : (map_get($screen-breakpoints, 'large') - 1);
+$xlarge-screen-down : (map_get($screen-breakpoints, 'xlarge') - 1);
+// ----------------------
+
+// Grid vars +1 ---------
+$small-screen-up    : (map_get($screen-breakpoints, 'small') + 1);
+$medium-screen-up   : (map_get($screen-breakpoints, 'medium') + 1);
+$large-screen-up    : (map_get($screen-breakpoints, 'large') + 1);
+$xlarge-screen-up   : (map_get($screen-breakpoints, 'xlarge') + 1);
+// ----------------------
+
+// Header ---------------
+$logo : (
+    'width'  : 60px,
+    'height' : 60px,
+);
+
+$header : (
+    xsmall : 60px,
+    small  : 90px,
+    medium : 90px,
+    large  : 90px,
+);
+// ----------------------
+
+$vars : (
+    'logo'   : $logo,
+    'header' : $header,
+);
+
+// usage: var("name_of_var", "type_of_var")
+// to avoid to repeating map-get($vars, ...)
+
+@function var($var, $type) {
+  @if map-has-key($vars, $var) {
+    $curr_var: map-get($vars, $var);
+    @if map-has-key($curr_var, $type) {
+      @return map-get($curr_var, $type);
+    }
+  }
+  @warn "Unknown `#{$type}` in #{$var}.";
+  @return null;
+}
+
+// flexgrid variables
+
+$container-width: 100%;
+$sm-break       : 30em;  // 480px
+$md-break       : 45em;  // 720px
+$lg-break       : 60em;  // 960px
+$xl-break       : 90em;  // 1440px
+$gutter         : 16px;
+$cols           : 12;
+
+$small-spacing  : 4px;
+$medium-spacing : 16px;
+$large-spacing  : 24px;
+
+// Elements variables
+$paginationHeight: 24px;
+$topbarHeight: 40px;
+$subTopbar: 40px;
+$sideMenuTopMargin: $topbarHeight;
+$searchByLetterBlockHeight: 40px;
+$breadcrunmbsHeight: 40px;

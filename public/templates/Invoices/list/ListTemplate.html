@@ -1,0 +1,38 @@
+<% invoiceCollection.forEach(function(Invoice, index){ %>
+<% var currency =(Invoice.currency && Invoice.currency._id ? Invoice.currency._id.symbol : '')%>
+<tr data-id="<%=Invoice._id%>">
+    <td class="notForm centerCell"><input type="checkbox" value="<%=Invoice._id%>"
+                                          class="checkbox <%=Invoice.removable ? '' : 'notRemovable'%>"/>
+    <td><%=(Invoice.supplier) ? Invoice.supplier.name.first + ' ' + Invoice.supplier.name.last : ' - - - '%></td>
+    <td><%=Invoice.name%></td>
+    <!--<td><%=Invoice.supplierInvoiceNumber%></td>-->
+    <td><%=(Invoice.salesPerson && Invoice.salesPerson.name)? Invoice.salesPerson.name.first + ' ' +
+        Invoice.salesPerson.name.last: ''%>
+    </td>
+    <td><%=Invoice.dueDate%></td>
+    <td class="balance"><%=currency %><%=currencySplitter(Invoice.paymentInfo.balance)%></td>
+    <td class="paid"><%=currency %><%=(Invoice.paymentInfo && Invoice.paid) ?
+        currencySplitter(Invoice.paid.toFixed(2)) : '0.00'%>
+    </td>
+    <td class="total"><%=currency %><%=(Invoice.paymentInfo) ?
+        currencySplitter(Invoice.paymentInfo.total) : '0.00'%>
+    </td>
+    <td id='<%=Invoice._id%>'>
+        <%if(Invoice.workflow){%>
+        <%if(Invoice.workflow.status === 'In Progress'){%>
+        <span class="<%=Invoice.workflow.status.toLowerCase().replace(' ', '')%>"><%=Invoice.workflow.name%></span>
+        <% } else {%>
+        <%if(Invoice.approved){%>
+        <span class="<%=Invoice.workflow.name.toLowerCase()%>"><%=Invoice.workflow.name%></span>
+        <% } else {%>
+        <span class="notApproved">Not Approved</span>
+        <%}%>
+        <%}%>
+        <% } else {%>
+        <span> </span>
+        <%}%>
+    </td>
+    <td><%=Invoice.invoiceDate%></td>
+    <!--<td class="validated"><a href="javascript:;" class="selectList <%=Invoice.validated%>"><%=Invoice.validated%></a></td>-->
+</tr>
+<% }) %>

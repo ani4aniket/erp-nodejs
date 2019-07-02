@@ -1,0 +1,131 @@
+// General variables ----
+$defaultFonts: Arial, Helvetica, sans-serif;
+$font-path: '../font/';
+// ----------------------
+
+// Fonts path -----------
+$base-font-path  : 'opensans/';
+// Fonts file count -----
+$base-font-count  : 5;
+// ----------------------
+
+// Fonts files ----------
+$base-font-file  : (
+        1: 'opensans-light',
+        2: 'opensans-regular',
+        3: 'opensans-semibold',
+        4: 'opensans-bold',
+        5: 'opensans-extrabold'
+);
+// ----------------------
+
+// Fonts name -----------
+$base-font-name  : (
+        1: 'OpenSans Light',
+        2: 'OpenSans Regular',
+        4: 'OpenSans SemiBold',
+        3: 'OpenSans Bold',
+        5: 'OpenSans ExtraBold'
+);
+// ----------------------
+// Fonts svg id ---------
+$base-font-svg-id  : (
+        1: 'opensans-light',
+        2: 'opensans-regular',
+        3: 'opensans-semibold',
+        4: 'opensans-bold',
+        5: 'opensans-extrabold'
+);
+// ----------------------
+// Fonts weight ---------
+$base-font-weight  : (
+        1: 300,
+        2: 400,
+        3: 600,
+        4: 700,
+        5: 800
+);
+// ----------------------
+$base-font : (
+        'light'    : 'OpenSans Light',
+        'regular'  : 'OpenSans Regular',
+        'semibold' : 'OpenSans SemiBold',
+        'bold'     : 'OpenSans Bold',
+        'extrabold': 'OpenSans ExtraBo'
+);
+// ----------------------
+// All fonts array
+$fonts: (
+        "base-font"  : $base-font
+);
+// ----------------------
+// usage: font("type_of_font", "name_of_font")
+// to avoid to repeating map-get($fonts, ...)
+
+@function font($font, $type) {
+  @if map-has-key($fonts, $font) {
+    $curr_font: map-get($fonts, $font);
+    @if map-has-key($curr_font, $type) {
+      @return map-get($curr_font, $type);
+    }
+  }
+  @warn "Unknown `#{$type}` in `#{$font}`.";
+  @return null;
+}
+
+// Fonts family variables
+$icon-font: 'erp-icons';
+$light-font-family     : font("base-font", "light"), $defaultFonts !default;
+$base-font-family      : font("base-font", "regular"), $defaultFonts !default;
+$semibold-font-family  : font("base-font", "semibold"), $defaultFonts !default;
+$bold-font-family      : font("base-font", "bold"), $defaultFonts !default;
+$extrabold-font-family : font("base-font", "extrabold"), $defaultFonts !default;
+// ----------------------
+// Typography -----------
+@function lineHeight($x, $y) {
+  @return $x / $y; // values in px
+}
+
+$size-body : (
+        null   : (16px, lineHeight(20, 16)),          // 1rem, 1.25
+        small  : (16px, lineHeight(22, 16))           // 1rem, 1.375
+);
+
+$size-h1   : (
+        null   : (32px, lineHeight(40, 32), 20px),   // 2rem, 1.25
+        small  : (40px, lineHeight(45, 40), 22px),   // 2.5rem, 1.125
+        medium : (48px, lineHeight(50.4 ,48), 22px)  // 3rem, 1.05
+);
+
+$size-h2   : (
+        null   : (26px, lineHeight(30, 26), 20px),   // 1.625rem, 1.1538
+        small  : (32px, lineHeight(40, 32), 22px),   // 2rem, 1.25
+        medium : 36px                                // 2.25 rem
+);
+
+$size-h3   : (
+        null   : (22px, lineHeight(25, 22), 20px),   // 1.375rem, 1.1363
+        small  : (24px, lineHeight(30, 24), 22px),   // 1.5rem, 1.25
+        medium : 28px                                // 1.75rem
+);
+
+$size-h4   : (
+        null   : (18px, lineHeight(20, 18), 20px),   // 1.125rem, 1.1111
+        small  : (18px, lineHeight(22, 18), 22px)    // 1.125rem, 1.2222
+);
+
+$size-h5   : (
+        null   : (16px, lineHeight(20, 16), 20px),   // 1rem, 1.25
+        small  : (16px, lineHeight(22, 16), 22px)    // 1rem, 1.375
+);
+
+$size-h6   : (
+        null   : (14px, lineHeight(20, 14), 20px),   // 0.875rem, 1.4285
+        small  : (14px, lineHeight(22, 14), 22px)    // 0.875rem, 1.5714
+);
+
+$size-q    : (
+        null   : (20px, lineHeight(25, 20)),         // 1.25rem, 1.25
+        small  : (24px, lineHeight(35, 24))          // 1.5rem, 1.4583
+);
+// ----------------------

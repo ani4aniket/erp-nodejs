@@ -1,0 +1,21 @@
+<div class="_newForm _integrationForm _channelNameContainer" id="channelNameContainer" data-type="<%= type || ''%>">
+    <h4 class="_dialogMainTitle">Create Channel</h4>
+    <div class="_formWrap _enlargedItemMargin mainContent">
+        <div class="_formBlock">
+            <div class="channelImg <%= type || ''%>"
+                 data-content="channelImage"
+                 id="channelImgContainer">
+            </div>
+        </div>
+        <div class="_formBlock _equal">
+            <div class="_animateInputBox" data-content="channelInfo">
+                <input type="text"
+                       class="_animate"
+                       id="channelName"
+                       maxlength="30"
+                       required>
+                <label for="channelName" class="_animate">Channel Name</label>
+            </div>
+        </div>
+    </div>
+</div>

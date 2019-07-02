@@ -1,0 +1,95 @@
+<div class="form-holder _newForm">
+    <form method="post"
+          class="form _warehouseForm"
+          id="invoiceForm">
+        <h3 class="_dialogMainTitle">New <%=title%></h3>
+        <div class="_formWrap">
+            <div class="_formBlock _equal">
+                <div class="_animateInputBox">
+                    <input type="text"
+                           class="_animate"
+                           id="name"
+                           required/>
+                    <label class="_animate">Warehouse Name</label>
+                </div>
+                <div class="_animateInputBox">
+                    <div class="row">
+                        <div class="col m-6">
+                            <label class="_animatedCheckbox">
+                                <input type="checkbox"
+                                       id="isOwn"
+                                       checked/>
+                                <span></span>
+                            </label>
+                            <label for="isOwn">Is Own</label>
+                        </div>
+                        <div class="col m-6">
+                            <label class="_animatedCheckbox">
+                                <input type="checkbox"
+                                       id="main"/>
+                                <span></span>
+                            </label>
+                            <label for="main">Mark As Main</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <div class="_modalLabel">
+                        <span class="_selectTitle">account</span>
+                        <div class="_newSelectListWrap">
+                            <a class="account current-selected"
+                               id="account"
+                               name="account">Select Account</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="_animateInputBox">
+                    <input type="text"
+                           class="_animate address"
+                           id="street"
+                           name="street"
+                           maxlength="60"
+                           required/>
+                    <label class="_animate">Street</label>
+                </div>
+                <div class="_animateInputBox">
+                    <input type="text"
+                           class="_animate address"
+                           id="city"
+                           name="city"
+                           maxlength="60"
+                           required/>
+                    <label class="_animate">City</label>
+                </div>
+            </div>
+            <div class="_formBlock _equal">
+                <div class="_animateInputBox">
+                    <input type="text"
+                           class="_animate address"
+                           id="state"
+                           name="state"
+                           maxlength="32"
+                           required/>
+                    <label class="_animate">State</label>
+                </div>
+                <div class="_animateInputBox">
+                    <input type="text"
+                           class="_animate address"
+                           id="zip"
+                           name="zip"
+                           maxlength="32"
+                           required/>
+                    <label class="_animate">Zip</label>
+                </div>
+                <div class="_animateSelectBox">
+                    <label class="_selectTitle">Country</label>
+                    <div class="_newSelectListWrap">
+                        <a class="address current-selected"
+                           id="country"
+                           name="address_country">Select Country</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

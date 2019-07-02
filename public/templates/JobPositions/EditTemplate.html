@@ -1,0 +1,70 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" id="editJobPositionForm" class="form" data-id="<%=model._id%>">
+        <h4 class="_dialogTitlePositioned">Edit new job</h4>
+        <ul class="dialog-tabs">
+            <li><a class="active" href="javascript:;">Main</a></li>
+            <li><a href="javascript:;">Assignees</a></li>
+        </ul>
+        <div class="dialog-tabs-items">
+            <div class="dialog-tabs-item active">
+                <div class="_formWrap">
+                    <div class="_formBlock _equal">
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   name="name"
+                                   class="_animate"
+                                   id="name"
+                                   value="<%=model.name%>"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Job Name</label>
+                        </div>
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Department</span>
+                            <div class="_newSelectListWrap">
+                                <a class="current-selected"
+                                   id="departmentDd"
+                                   data-id="<%=(model.department) ? model.department._id : ''%>"
+                                   href="javascript:;"><%=(model.department && model.department.name)?model.department.name:'Select'%></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_formBlock _equal">
+                        <div class="_animateInputBox">
+                            <span class="_staticLabel">Expected in Recruitment</span>
+                            <input type="text"
+                                   name="expectedRecruitment"
+                                   class="_animate onlyNumber"
+                                   id="expectedRecruitment"
+                                   value="<%=model.expectedRecruitment%>"
+                                   maxlength="4"/>
+                        </div>
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Stage</span>
+                            <div class="_newSelectListWrap">
+                                <a id="workflowsDd"
+                                   data-id="<%=(model.workflow) ? model.workflow._id : ''%>"
+                                   class="current-selected"
+                                   href="javascript:;"><%=(model.workflow)?model.workflow.name:'Undefinded'%></a>
+                            </div>
+                        </div>
+                        <div class="_animateTextareaBox counterWrap">
+                            <textarea maxlength="1000"
+                                      class="_animate"
+                                      id="requirements"
+                                      required></textarea>
+                            <label for="requirements" class="_animate"><%=model.requirements%></label>
+                            <div class="counter-wrap">
+                                <span class="counter-label">Remainder:</span>
+                                <span class="counter-value" id="counterValue">1000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-tabs-item">
+                <div class="assignees-container _formWrap _innedFlexDiv"></div>
+            </div>
+        </div>
+    </form>
+</div>

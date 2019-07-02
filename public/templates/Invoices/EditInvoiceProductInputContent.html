@@ -1,0 +1,36 @@
+<% products.forEach(function(product){ %>
+<tr class="productItem" data-id="<%=product.product ? product.product._id : 'err'%>">
+    <td data-name="productName">
+        <div class="jobsWescWrap _newSelectListWrap">
+            <span class="productsDd" ><%=product.product ? product.product.name : '- - -' %></span>
+            <textarea class="productDescr" <%= approved  ? 'readonly' : ''%>><%= product ? product.product.info.description || product.description : ''%></textarea>
+        </div>
+    </td>
+    <% if (forSales) {%>
+    <td data-name="jobs" class="jobs">
+        <div class="jobsWescWrap">
+            <span class="" id="jobs" data-id="jobs" data-content="<%=product.jobs ? product.jobs._id : ''%>"> <%=product.jobs ? product.jobs.name : ' --- '%></span>
+            <textarea class="jobsDescription" <%=approved  ? 'readonly' : ''%>><%=product.jobs.description%></textarea>
+        </div>
+
+    </td>
+    <% } %>
+
+    <td data-name="quantity" class="">
+        <span>
+           <%=product.quantity ? product.quantity : ''%>
+        </span>
+    </td>
+
+
+    <td data-name="price"><span><%=(currency && currency._id ? currency._id.symbol : '') %></span><span class="sum"><%= (product.unitPrice ? currencySplitter(product.unitPrice.toString()): '')%>
+        </span>
+    </td>
+    <td class="taxes"><span><%=(currency && currency._id ? currency._id.symbol : '') %></span><span class="sum"><%=(product.taxes ? currencySplitter(product.taxes.toString()): '')%>
+        </span>
+    </td>
+    <td class="subtotal"><span><%=(currency && currency._id ? currency._id.symbol : '') %></span><span class="sum"><%=(product.subTotal ? currencySplitter(product.subTotal.toString()): '')%>
+        </span>
+    </td>
+</tr>
+<% }); %>

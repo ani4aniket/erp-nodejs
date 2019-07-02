@@ -1,0 +1,76 @@
+<div id="payRoll-Table">
+    <table class="list enable_hover stripedList" id="payRoll-listTable">
+        <colgroup>
+            <col width="43px">
+            <col width="32%">
+            <col width="17%">
+            <col width="17%">
+            <col width="17%">
+            <col width="17%">
+        </colgroup>
+        <thead>
+        <tr>
+            <th class="notForm centerCell">
+                <label class="_customCHeckbox">
+                    <input type="checkbox" id="checkAll"/>
+                    <span></span>
+                </label>
+            </th>
+            <th class="oe_sortable" data-sort="employee.name.first">Complete Name<span class="arrow down"></span><span
+                    class="arrow up"></span></th>
+            <th>Month</th>
+            <th class="oe_sortable" data-sort="calc">Calc<span class="arrow down"></span><span
+                    class="arrow up"></span></th>
+            <th class="oe_sortable" data-sort="paid">Paid<span class="arrow down"></span><span
+                    class="arrow up"></span></th>
+            <th class="oe_sortable" data-sort="diff">Diff<span class="arrow down"></span><span
+                    class="arrow up"></span></th>
+        </tr>
+        </thead>
+        <tbody id="payRoll-TableBody">
+        <% var total = 0;%>
+        <% collection.forEach(function(model, index){ %>
+
+        <tr data-id="<%=model._id%>" class="mainTr">
+            <td class="notForm centerCell">
+                <label class="_customCHeckbox">
+                    <input id="<%=model._id%>" type="checkbox" value="<%=model._id%>" class="checkbox"/>
+                    <span></span>
+                </label>
+            </td>
+            <td data-id="<%=model.employee._id%>" data-content="employee"><%=model.employee ? model.employee.name.first + ' ' + model.employee.name.last : ''%></td>
+            <td data-content="dataKey"><%=model.month + '/' + model.year%></td>
+            <td data-type="input" data-content="onCash" data-cash="<%=model.calc%>" class="autoCalc cash calc money"><%=currencySplitter(model.calc.toFixed(2))%></td>
+            <td data-type="input" data-content="onCash" data-cash="<%=model.paid%>" class="autoCalc cash paid money"><%=currencySplitter(model.paid.toFixed(2))%></td>
+            <td data-content="onCash" data-cash="<%=model.diff%>" class="diff
+                                <% if (model.diff < 0) { %>
+                                negativeMoney"><%=currencySplitter((model.diff * (-1)).toFixed(2))%>
+            </td>
+            <%} else {%>
+            money"><%=currencySplitter(model.diff.toFixed(2))%></td>
+            <%}%>
+        </tr>
+
+        <% }) %>
+        </tbody>
+        <tfoot id="payRoll-listTotal">
+        <tr>
+            <td colspan="4"></td>
+            <td>
+                <label>Calc: </label>
+                <span data-id="value" class="money" id="totalCalc" data-cash="0">0</span>
+            </td>
+            <td>
+                <label>Paid: </label>
+                <span data-id="value" class="money" id="totalPaid" data-cash="0">0</span>
+            </td>
+            <td>
+                <label>Diff: </label>
+                <span data-id="value" class="money" id="totalDiff" data-cash="0">0</span>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+

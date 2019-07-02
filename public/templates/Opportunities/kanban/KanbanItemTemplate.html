@@ -1,0 +1,47 @@
+<div class="inner" id="<%=model._id%>" data-id="<%=model._id%>" data-sequence="<%=model.sequence%>">
+    <div class="opportunity-header">
+        <h4 class="bold left blue" style="max-width:56%"><%=model.name%></h4>
+
+        <%if(model.expectedRevenue.value){%>
+        <h3 class="dollar"><%=(currencySplitter(model.expectedRevenue.value.toString()))%></h3>
+        <%} else {%>
+        <h3></h3>
+        <%}%>
+
+        <div class="clearfix">
+        </div>
+    </div>
+    <div class="opportunity-content">
+        <div class="half-block left">
+            <p class="left customerName"><%=(model.customer) && (model.customer.name) ? model.customer.name.first + ' ' +
+                model.customer.name.last : ''%></p>
+          <!--  <p class="left">Project Type</p>-->
+            <p class="left saleName"><%=(model.salesPerson) ? model.salesPerson.name.first + ' ' + model.salesPerson.name.last :
+                ''%></p>
+        </div>
+        <div class="half-block right">
+            <p class="right projectType" style="text-align:right;"> <%=model.expectedClosing || ''%></p>
+
+          <!--  <p class="right"><a data-id="<%=model.projectType?model.projectType:''%>"
+                                class="current-selected" href="javascript:;"><%=model.projectType?
+                model.projectType:'Select'%></a></p>-->
+            <span class="right commentWrap <%=model.notes.length ? '' : 'hidden' %>">
+                <i class="fa fa-comment-o" aria-hidden="true"></i>
+                <span> <%= model.notes.length %></span>
+            </span>
+            <span class="right attachmentWrap <%=model.attachments.length ? '' : 'hidden' %>">
+                 <span class="icon-attach"></span>
+                <span> <%= model.attachments.length %> </span>
+            </span>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="tags">
+        <%if (model.tags ){%>
+        <%model.tags.forEach(function(elem ){%>
+        <span class="left" data-id="<%=elem._id%>" data-color="<%=elem.color%>"><%=elem.name%> </span>
+        <%})%>
+        <%}%>
+    </div>
+</div>

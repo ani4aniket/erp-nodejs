@@ -1,0 +1,21 @@
+@media (max-width: 1400px) {
+  ._projectsTablesWrap {
+    > .left {
+      width: calc(100% - 345px) !important;
+      min-width: 300px;
+    }
+    > .right {
+      width: 330px !important;
+    }
+  }
+  .form-holder.employee {
+    padding: 0 10px 20px;
+  }
+}
+
+@media (max-width: 1430px) {
+  #top-bar #createBtnHolder._journalEntry_correction {
+    clear: both;
+    margin: 0 0 10px 10px;
+  }
+}

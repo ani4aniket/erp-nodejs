@@ -1,0 +1,278 @@
+<%
+    var firstProduct = true
+    var singleProduct = products.length === 1;
+%>
+<% products.forEach(function(product){ %>
+<% var colorRow = (product.quantity === product.shipped) ? '' : (product.onHand || (product.quantity === product.fulfilled))  ? 'green' : 'red' %>
+<%var rowSpan = product.product ? 2 : 0;%>
+<%var colSpan = 0;%>
+<tr data-id="<%=product._id%>" data-hand="<%=product.onHand || 0%>"
+    <% if (product.product) { %>
+    class="productItem"
+    <% } else { %>
+    id='shippingRow' class="item"
+<% } %>
+>
+    <% if (!expense) { %>
+    <td data-name="productName"
+        class="text-left"
+        rowspan="<%=rowSpan%>">
+            <% if (notEditable) { %>
+                <% if (product.product) { %>
+                <span class="_staticInfo productsDd"
+                      data-content="productsDd"
+                      data-id="<%= product && product.product ?
+                                   product.product._id :
+                                   null%>"><%= product && product.product && product.product.info ?
+                                               product.product.info.SKU || product.product.name :
+                                               'Not selected' %>
+                </span>
+                <% } else { %>
+                <span class="_staticInfo"
+                      id="shippingDd"
+                      data-id="<%= shippingMethod ?
+                                   shippingMethod._id :
+                                   null%>"><%= shippingMethod ?
+                                               shippingMethod.name :
+                                               'Shipments' %>
+                </span>
+                <% } %>
+            <%} else { %>
+
+                <% if (product.product) { %>
+                    <% if(product.allocated || product.fulfilled) { %>
+                    <span class="productsDd"
+                          data-content="productsDd"
+                          data-id="<%= product && product.product ?
+                                       product.product._id :
+                                       null %>"><%= product && product.product && product.product.info ?
+                                                    product.product.info.SKU || product.product.name :
+                                                    'Not selected' %>
+                    </span>
+                    <% } else {%>
+                    <div class="_animateSelectBox">
+                        <div class="_newSelectListWrap">
+                            <a href="javascript:;"
+                               class="current-selected productsDd"
+                               data-content="productsDd"
+                               data-id="<%= product && product.product ?
+                                            product.product._id :
+                                            null%>"><%= product && product.product && product.product.info ?
+                                                        product.product.info.SKU || product.product.name :
+                                                        'Not selected' %>
+                            </a>
+                        </div>
+                    </div>
+                    <% } %>
+
+                <% } else {%>
+                <div class="_animateSelectBox">
+                    <div class="_newSelectListWrap">
+                        <a href="javascript:;"
+                           class="current-selected"
+                           id="shippingDd"
+                           data-id="<%= shippingMethod ?
+                                        shippingMethod._id :
+                                        null%>"><%= shippingMethod ?
+                                                    shippingMethod.name :
+                                                    'Shipments'%>
+                        </a>
+                    </div>
+                </div>
+                <% } %>
+
+            <% } %>
+        <%colSpan++;%>
+    </td>
+    <%}%>
+    <td data-name="description"
+        class="jobs selectJobTd"
+        rowspan="<%=rowSpan%>">
+            <div class="jobsWescWrap">
+                <textarea class="productDescr _animate" <%=notEditable ? 'readonly' : ''%>><%= product.description %></textarea>
+            </div>
+        <%colSpan++;%>
+    </td>
+    <td data-name="account" class="account">
+        <div class="_newSelectListWrap">
+            <% colSpan++;%>
+            <% var account = forSales ? product.creditAccount : product.debitAccount %>
+            <% var taxes = (product.taxes && product.taxes.length && product.taxes[0])  || null; %>
+            <% var accountName = product.product || account ? (account ? account.name : '') : (App && App.organizationSettings && App.organizationSettings.shipping ? App.organizationSettings.shipping.name: '');%>
+            <% var accountId = product.product  || account? (account ? account._id : null) : (App && App.organizationSettings && App.organizationSettings.shipping ? App.organizationSettings.shipping._id: null);%>
+           <span class="accountDd"
+                 data-content="accountDd"
+                 data-id="<%=accountId%>"><%=accountName || ''%></span>
+        </div>
+    </td>
+    <td data-name="taxCode" class="taxCodeLine">
+        <%colSpan++;%>
+        <% if (channel) {%>
+        <ul class="_taxList">
+            <% product.taxes.forEach(function(tax){ %>
+            <li class="taxLines"
+                data-code="<%= tax.taxCode ?
+                               tax.taxCode._id :
+                               null %>"><%= tax.taxCode ?
+                                            tax.taxCode.fullName:
+                                            ''%>
+            </li>
+            <% }); %>
+        </ul>
+        <%} else {%>
+            <% if (notEditable) { %>
+            <span class="_staticInfo taxCode"
+                  data-content="taxCode"
+                  data-id="<%= (taxes && taxes.taxCode) ?
+                                taxes.taxCode._id :
+                                null%>"><%= (taxes && taxes.taxCode) ?
+                                             taxes.taxCode.fullName :
+                                             ''%>
+            </span>
+            <%} else {%>
+            <div class="_animateSelectBox">
+                <div class="_newSelectListWrap ellipsis">
+                    <a href="javascript:;"
+                       class="current-selected taxCode"
+                       data-content="taxCode"
+                       data-tax="<%= (taxes && taxes.taxCode) ?
+                                      taxes.taxCode.rate :
+                                      null %>"
+                       data-id="<%= (taxes && taxes.taxCode) ?
+                                     taxes.taxCode._id :
+                                     null%>"><%= (taxes && taxes.taxCode) ?
+                                                  taxes.taxCode.fullName :
+                                                  'Select Tax Code' %>
+                    </a>
+                </div>
+            </div>
+            <% } %>
+        <% } %>
+    </td>
+    <td data-name="quantity"
+        class="<%=!forSales ? 'editable' : ''%> forNum">
+        <%colSpan++;%>
+            <% if (notEditable) { console.log('/Products/orderRows/ItemsEditList.html',product);%>
+            <span class="_staticInfo"><%= product.quantity%></span>
+            <% } else { %>
+            <input type="text"
+                   id="quantity"
+                   class="_animate quantity statusInfo forNum"
+                   maxlength="9"
+                   size="10"
+                   <%= !product.product ? 'disabled' : '' %>
+                   value="<%= product.quantity%>"/>
+            <% } %>
+    </td>
+    <td data-name="price"
+        class="<%=notEditable  ? '' : 'editable'%> forNum">
+        <%colSpan++;%>
+            <% if(notEditable) { %>
+            <span class="_staticInfo"><%=currencySplitter(product.unitPrice.toString())%></span>
+            <% } else { %>
+            <input type="text"
+                   id="editInput"
+                   class="_animate statusInfo"
+                   maxlength="9"
+                   size=7
+                   value="<%=currencySplitter(product.unitPrice.toString())%>"/>
+            <%} %>
+    </td>
+    <td data-name="taxes">
+        <%colSpan++;%>
+        <%if (channel) {%>
+        <ul class="_taxList">
+            <% product.taxes.forEach(function (tax) {%>
+            <li>
+                <span><%=(currency && currency._id ? currency._id.symbol : '') %></span>
+                <span class="sum"><%= tax ?  currencySplitter(tax.tax.toString()) : ''%></span>
+            </li>
+            <%});%>
+        </ul>
+        <%} else {%>
+        <ul class="_taxList">
+            <li>
+                <span><%=(currency && currency._id ? currency._id.symbol : '') %></span>
+                <span class="sum"><%= taxes ?  currencySplitter(taxes.tax.toString()) : ''%></span>
+            </li>
+        </ul>
+        <%}%>
+    </td>
+    <td data-name="subtotal"
+        class="subtotal">
+        <%colSpan++;%>
+        <div class="_staticInfo">
+            <span><%=(currency && currency._id ? currency._id.symbol : '') %></span>
+            <span class="sum "><%= product.subTotal ? currencySplitter(product.subTotal.toString()) : ''%></span>
+        </div>
+    </td>
+    <td></td>
+</tr>
+<%if (rowSpan) {%>
+<tr class="info"
+    data-id="<%=product._id%>">
+    <td colspan="<%=colSpan - 2%>" class="fullfilledHolder <%if (product.product) {%>
+       <%= colorRow %> scuItemHolder
+    <%}%>>">
+        <div class="fullfilledWrap">
+            <% if (forSales && product.product){ %>
+            <div class="fullfilledInfo">
+                <div class="scuList">
+                    <% if (product.goodsNotes && product.goodsNotes.length){%>
+                    Delivery Out Notes:
+                    <% product.goodsNotes.forEach(function(elem,ind){%>
+                    <%var filter = {name: {key: '_id',value: []}};%>
+                    <%filter.name.value.push(elem._id);%>
+                    <%var href = '/#easyErp/goodsOutNotes/tform/'+ elem._id + '/p=1/c=50/filter=' +
+                    encodeURIComponent(JSON.stringify(filter));%>
+                    <a href="<%=href%>"><%=ind !== 0 ? ', ' + elem.name || '___' : elem.name%></a><span><%=' (' + elem.quantity + ')'%></span>
+                    <%})} %>
+                </div>
+                <% if (product.fulfilled === product.quantity) { %>
+                <span id="fullfilled"><%=(product.fulfilled || 0)%></span>
+                <span> fulfilled,<%=(product.inStock || 0)  + ' in Stock, ' + (product.onHand || 0) + ' on Hand' %></span>
+                <% } else { %>
+                <input type="number"
+                       id="allocated"
+                       class="_alocated"
+                       value="<%=product.allocated || 0%>"
+                        <% availableVisible ?
+                           ' title="To allocate products enter required amount and press Save button or click Allocate all" ' :
+                           'disabled title="To allocate products go back to Order" ' %>
+                        />
+                <span>allocated,</span>
+                <span id="fullfilled"><%=(product.fulfilled || 0)%></span>
+                <span>fulfilled,<%=(product.inStock || 0)  + ' in Stock, ' + (product.onHand || 0) + ' on Hand' %></span>
+                <%}%>
+            </div>
+
+            <%} else {%>
+            <%if (!expense && product.product) {%>
+            <div class="fullfilledInfo">
+                <span id="fullfilled"><%=(product.fulfilled || 0)%></span>
+                <span> received, <%=(product.inStock || 0)  + ' in Stock, ' + (product.onHand || 0) + ' on Hand' %></span>
+            </div>
+            <%}%>
+            <%}%>
+        </div>
+    </td>
+
+    <% if (!singleProduct) { %>
+    <td class="deleteCell centerCell">
+        <span title="Delete" class="icon-close5 removeProduct"></span>
+    </td>
+    <% } %>
+</tr>
+<%}%>
+<tr>
+    <td colspan="<%=expense ? '8' : '9'%>" class="addProductItem"></td>
+</tr>
+<% }); %>
+<%if(!notEditable) {%>
+<tr>
+    <td colspan="<%=expense ? '8' : '9'%>" class="addProductItem">
+        <a href="javascript:;" class="btn blue slim">Add an item</a>
+    </td>
+</tr>
+<%}%>
+

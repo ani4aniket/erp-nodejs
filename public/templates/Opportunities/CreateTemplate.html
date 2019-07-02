@@ -1,0 +1,103 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" id="createOpportunities" class="_createOpportunities">
+        <h2 class="_dialogMainTitle">Add New Opportunity</h2>
+        <div class="_formWrap _enlargedItemMargin">
+            <div class="_formBlock">
+                <div class="_animateInputBox _withInfo">
+                    <input type="text"
+                           class="_animate"
+                           id="name"
+                           autofocus
+                           required
+                           maxlength="48"/>
+                    <label class="_animate">Subject</label>
+                    <span class="tips icon-info" data-id="name"></span>
+                </div>
+                <div class="_animateInputBox _withInfo">
+                    <input type="text"
+                           class="_animate onlyNumber date-min"
+                           id="expectedRevenueValue"
+                           value="0"
+                           required
+                           maxlength="9"/>
+                    <label class="_animate">Expected Revenue</label>
+                    <span class="tips icon-info" data-id="expectedRevenueValue"></span>
+                </div>
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">Contact</span>
+                    <div class="_newSelectListWrap">
+                        <a id="customerDd"
+                           class="current-selected"
+                           href="javascript:;"
+                           data-id="<%=parentModel && parentModel.type==='Person' ? parentModel._id : ''%>">
+                            <%=parentModel && parentModel.type ==='Person' ? parentModel.fullName : 'Select contact'%>
+                        </a>
+                    </div>
+                    <span class="tips icon-info" data-id="customerDd"></span>
+                </div>
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">Company</span>
+                    <div class="_newSelectListWrap">
+                        <a id="companyDd"
+                           class="current-selected"
+                           href="javascript:;"
+                           data-id="<%=parentModel && parentModel.type==='Company' ? parentModel._id : ''%>">
+                            <%=parentModel && parentModel.type ==='Company' ? parentModel.fullName : 'Select company'%>
+                        </a>
+                    </div>
+                    <span class="tips icon-info" data-id="companyDd"></span>
+                </div>
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">Assigned to</span>
+                    <div class="_newSelectListWrap">
+                        <a id="salesPersonDd"
+                           class="current-selected"
+                           href="javascript:;">Select assignee
+                        </a>
+                    </div>
+                    <span class="tips icon-info" data-id="salesPersonDd"></span>
+                </div>
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">Stage</span>
+                    <div class="_newSelectListWrap">
+                        <a id="workflowDd"
+                           class="current-selected"
+                           href="javascript:;">Select stage
+                        </a>
+                    </div>
+                    <span class="tips icon-info" data-id="workflowDd"></span>
+                </div>
+                <div class="_animateInputBox _withInfo">
+                    <span class="_staticLabel">Expected Closing</span>
+                    <input type="text"
+                           class="_animate"
+                           id="expectedClosing"
+                           placeholder="Date"
+                           readonly
+                           maxlength="32"/>
+                    <span class="tips icon-info" data-id="expectedClosing"></span>
+                </div>
+                <div class="_animateTextareaBox counterWrap withAttach">
+                    <textarea id="internalNotes"
+                              placeholder="Description. Max 500 symbols."
+                              class="_animate internal_Notes"
+                              maxlength="500"
+                              required></textarea>
+                    <label for="internalNotes"
+                           class="_animate">Internal notes</label>
+
+                    <div class="counter-wrap">
+                        <span class="counter-label">Characters left:</span>
+                        <span class="counter-value" id="counterValue">500</span>
+                    </div>
+
+
+                    <a href="javascript:;"
+                       class="attach_file">
+                        <span class="icon-attach"></span>
+                    </a>
+                </div>
+                <div class="attach-container"></div>
+            </div>
+    </form>
+</div>

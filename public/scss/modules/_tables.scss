@@ -1,0 +1,815 @@
+table {
+  width: 100%;
+
+  &.kanban {
+    tbody {
+      td {
+        margin: 0 5px;
+        text-overflow: clip;
+        background: linear-gradient(0deg, #efefef 0, rgba(255, 255, 255, 0.298039) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 100%), linear-gradient(90deg, #efefef 0, rgba(255, 255, 255, 0.298039) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 100%);
+        background-position: -1px -1px;
+        background-origin: padding-box;
+        background-clip: border-box;
+        background-size: 7px 7px;
+
+        &:nth-child(n+2) {
+          border-left: 9px solid #fff;
+        }
+      }
+    }
+  }
+  td.editable {
+    cursor: pointer;
+
+    &.errorContent {
+      border-bottom: 1px solid red;
+
+      &:before {
+        content: '* Please, choose';
+        color: red;
+        position: relative;
+      }
+    }
+  }
+
+  .errorContent{
+    input {
+      border: 1px solid red;
+    }
+    &:after {
+      display: none;
+    }
+  }
+
+  .hasDatepicker {
+    font-size: 13px;
+    color: #3e88b9;
+    cursor: pointer;
+  }
+}
+
+td {
+  ._widthLimit {
+    //max-width: 200px;
+    white-space: nowrap;
+  }
+
+  ._staticInfo {
+    display: inline-block;
+    min-height: 26px;
+    padding: 5px;
+    font-size: 13px;
+  }
+}
+
+tr.redBorder {
+  background-color: red !important;
+
+  * {
+    color: #fff !important;
+  }
+
+  td {
+    border-color: red !important;
+  }
+
+  &:hover {
+    background-color: red !important;
+    * {
+      color: #fff !important;
+    }
+
+    td {
+      border-color: red !important;
+      background-color: red !important;
+    }
+  }
+}
+
+tr.greyBorder {
+  background-color: #e5d7e8;
+}
+
+.checkboxRow {
+  width: 40px;
+  padding: 10px;
+  vertical-align: middle;
+  text-align: center;
+
+  label._customCHeckbox {
+    position: relative;
+
+    .checkbox {
+      left: 3px;
+      top: 3px;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+td.editable {
+  position: relative;
+}
+
+.projectMembersTable {
+  ._newSelectListWrap {
+    display: inline-block;
+
+    .newSelectList {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+.list:not(.stripedList):not(._dialogTable),
+._balanceSheetTable{
+  tbody tr {
+    &.mainTr,
+    &.childTr,
+    &.subTr {
+      td {
+        text-align: left;
+      }
+    }
+
+    &.childTr {
+      td {
+        &:nth-child(n+2) {
+          padding-left: 36px;
+        }
+        &:nth-child(n+2) {
+          padding-right: 20px;
+        }
+      }
+    }
+
+    &.subTr {
+      td {
+        &:nth-child(n+2) {
+          padding-left: 66px;
+        }
+      }
+    }
+  }
+}
+
+.list:not(.stripedList):not(._dialogTable) {
+  font-family: $fontRegular;
+  width: 100%;
+
+  td, th {
+    padding: 0 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #000000;
+    font-size: 12px;
+  }
+
+  th {
+    &.oe_sortable,
+    &.oe_sortable_sub {
+      height: 30px;
+      padding-right: 20px;
+    }
+  }
+
+  thead {
+    tr {
+      border: none;
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    th {
+      font-family: $semibold-font-family; //@fontSemiBold;
+      text-align: right;
+    }
+  }
+
+  tbody {
+
+    td {
+      text-align: right;
+      height: 45px;
+      &.changeContent {
+        border-top: 2px solid #5cb85c; //@success;
+        border-bottom: 2px solid #5cb85c; //@success;
+      }
+    }
+
+    tr {
+      &:first-child {
+        border-top:none;
+      }
+      &:last-child {
+        border-bottom: 1px solid #d7d7d7; //@thin-border @list-border-color;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid #d7d7d7; //@thin-border @list-border-color;
+    }
+  }
+
+  tfoot {
+    td {
+      height: 45px;
+      text-align: right;
+    }
+  }
+
+  thead,
+  tfoot {
+    tr {
+      background: inherit !important; //hover should not work in a hover and footer tr
+    }
+  }
+
+  .notForm {
+    input {
+      margin-top: 3px;
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  .centerCell {
+    text-align: center;
+  }
+
+  .leftBorderNone {
+    border-left: none;
+  }
+
+  .cancelled {
+    a {
+      text-decoration: line-through;
+    }
+  }
+
+  &.enable_hover {
+    tbody {
+      tr {
+        &:hover {
+          background-color: #d9d9d9; //@defaultBgHover-color;
+        }
+      }
+    }
+  }
+
+  .overtime {
+    background-color: #ffe332 !important; //@list-overtime-bg !important;
+  }
+
+  thead th:first-of-type {
+    width: 15%;
+  }
+
+  .datepicker {
+    width: 90%
+  }
+
+  .datepicker.notVisible {
+    display: none;
+  }
+}
+
+.mainTr {
+  cursor: pointer;
+}
+
+.subTr + .childTr {
+  td {
+    &:nth-child(n+2) {
+      padding-left: 36px;
+    }
+    &:first-child {
+      border-top: none !important;
+    }
+  }
+}
+
+._projectWeekTable {
+  &.list {
+    tbody td,
+    thead th {
+      text-align: center;
+    }
+    tbody td {
+      width: 35px;
+      > input.editing {
+        text-align: center;
+      }
+    }
+  }
+}
+
+._projectTableVisible {
+  overflow: initial;
+}
+
+._timeCardTableWrap {
+  position: relative;
+  min-height: calc(100% - 42px);
+  padding: 10px 0;
+  padding-top: 5px;
+  overflow: auto;
+
+  > .stripedList {
+    min-width: 1550px;
+    //position: absolute;
+  }
+}
+
+._quotationTableWrap,
+._ordersTableWrap {
+  > .stripedList {
+    min-width: 1000px;
+  }
+}
+
+._invoiceTableWrap,
+._proformaTableWrap {
+  > .stripedList {
+    min-width: 1150px;
+  }
+}
+
+._paymentsTableWrap,
+._membersTableWrap {
+
+  > .stripedList {
+    min-width: 800px;
+  }
+}
+
+._weeklySheduler,
+._structureTypes,
+._schedulePay,
+._earningsType {
+
+  ._dialogTableTitle {
+    margin: 15px 0 30px;
+  }
+}
+
+._weeklySheduler {
+  ._dialogTable {
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+
+    th {
+      font-family: $semibold-font-family;
+    }
+
+    th,td {
+      height: 23px;
+      padding: 0 6px;
+      font-size: 12px;
+      border-top: 1px solid #d7d7d7;
+      text-align: left;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+    tr {
+      &:last-child {
+        td {
+          border-bottom: 1px solid #d7d7d7;
+        }
+      }
+    }
+
+    tbody {
+      td {
+        height: 45px;
+      }
+    }
+  }
+}
+
+#pmsTable {
+  tfoot {
+    tr {
+      border-top: 1px solid #d7d7d7;
+    }
+  }
+}
+
+._earningsType {
+  .form {
+    textarea {
+      width: 100%;
+      border-bottom: 0;
+    }
+  }
+  &.form-holder {
+    form {
+      dd {
+        float: right;
+      }
+    }
+  }
+
+  ._listModal {
+    padding-bottom: 0;
+  }
+}
+
+._tablePayoutWrap,
+._salaryReportTableWrap {
+  min-height: calc(100% - 16px);
+  overflow: auto;
+}
+
+._tableBonusTypeWrap {
+  min-height: calc(100% - 30px);
+}
+
+._tableWrap {
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
+
+._balanceSheetTableWrap,
+._totalBalanceTableWrap {
+  padding-top: 20px;
+}
+
+
+._balanceSheetTableWrap {
+  padding: 20px 20px 0;
+  margin: 0 20px;
+  background-color: #fff;
+
+  ._balanceSheetTable {
+
+    thead {
+      tr {
+        border-top: 0;
+        th {
+          text-align: left;
+
+          &:first-child {
+            width: 20px;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          height: 23px;
+        }
+
+        &.mainTr {
+          td {
+            &:first-child {
+              text-align: left;
+            }
+          }
+        }
+
+        &.childTr {
+          td {
+            &:first-child {
+              text-align: right;
+            }
+          }
+        }
+
+        &.subTr {
+          border-top: 0;
+
+          td {
+            &:first-child {
+              text-align: right;
+              cursor: pointer;
+            }
+
+            &:nth-child(n+2) {
+              padding-left: 20px;
+            }
+
+            &:nth-child(n+3) {
+              padding-right: 36px;
+            }
+          }
+        }
+      }
+    }
+
+    thead,
+    tbody,
+    tfoot {
+      tr {
+        td, th {
+          padding: 5px 0;
+          color: #666674;
+
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    tfoot {
+      tr {
+        td {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  td.source {
+    cursor: default;
+  }
+
+  td.expand {
+    width: 30px;
+  }
+}
+
+._taxList {
+  display: flex;
+  flex-direction: column;
+
+  > li {
+    line-height: 24px;
+  }
+}
+
+._formTable {
+  table-layout: fixed;
+
+  th._titleCell {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #c8c8d3;
+    color: #3d7fab;
+    font-family: $semibold-font-family;
+  }
+
+  ._locationZoneWrap .newSelectList {
+    right: 0;
+    left: auto;
+  }
+}
+
+._productOptionsTitle {
+  margin-bottom: 15px;
+  color: #323a43;
+  font-family: $semibold-font-family;
+}
+
+// drag table styles start
+.dragtable-sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+    float: left;
+    font-size: 1em;
+    background: white;
+
+
+    &:first-child {
+
+      th,
+      td {
+        border-left: 1px solid #CCC;
+      }
+    }
+  }
+
+  th,
+  td{
+    border-left: 0;
+  }
+}
+
+.ui-sortable-helper {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+
+.ui-sortable-placeholder {
+  box-shadow: 4px 5px 4px #C6C6C6 inset;
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #CCCCCC;
+  visibility: visible !important;
+  background: #EFEFEF !important;
+
+  * {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// drag table styles end
+#productItemsHolder {
+  margin-top: 13px;
+
+  ._editAllocateAll {
+    margin-top: -20px;
+    margin-bottom: 8px;
+  }
+}
+
+.jobsWescWrap {
+  textarea._animate {
+    height: 27px;
+    margin-top: 0;
+  }
+}
+
+.productItem.deleteRow {
+  .current-selected {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.fullfilledHolder {
+
+  .fullfilledInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+
+    span {
+      display: block;
+      padding: 0 8px;
+      text-align: center;
+      font-family: "OpenSans SemiBold", Arial, Helvetica, sans-serif;
+      color: #fff;
+    }
+
+    input:not([type="checkbox"]) {
+      width: 40px;
+      border: 0;
+      background-color: #fff;
+    }
+  }
+
+  &.red {
+    .fullfilledInfo {
+      background-color: #F44336;
+    }
+  }
+
+  &.green {
+    .fullfilledInfo {
+      background-color: #4caf50;
+    }
+  }
+}
+
+
+span.accountDd {
+  color: #666682;
+  line-height: 24px;
+}
+
+._productTable {
+  table-layout: fixed;
+
+  tr {
+    height: 26px;
+
+    &.info {
+      height: 0;
+    }
+  }
+
+  thead {
+    font-family: $semibold-font-family;
+    color: #3a424c;
+  }
+
+  tbody {
+
+    tr {
+      vertical-align: top;
+    }
+  }
+
+  td,
+  th {
+    padding: 6px;
+    text-align: right;
+
+    > * {
+      text-align: right;
+    }
+
+    &:first-child {
+      text-align: left;
+
+      > * {
+        text-align: left;
+      }
+    }
+  }
+
+  ._productInput,
+  ._productDescription {
+    border: 0;
+    border-bottom: 1px solid #7eadcc;
+    transition: box-shadow .2s ease-in-out;
+
+    &:focus {
+      box-shadow: 0 1px 0 0 #7eadcc;
+    }
+
+    &:disabled,
+    &[readonly] {
+      border-bottom-color: transparent;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  ._productInput {
+    height: 26px;
+  }
+
+  ._productDescription {
+    padding: 0 6px;
+    height: 100px;
+    text-align: left;
+
+    &:focus {
+      box-shadow: 0 1px 0 0 #7eadcc;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: #f9f8f8;
+    }
+  }
+  td {
+    ._animateSelectBox {
+      margin-bottom: 0;
+    }
+  }
+}
+
+._overviewOrderWrap {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+
+  ._overviewItem {
+    flex-grow: 1;
+    width: 30px;
+    min-width: 33%;
+    background: #f8f9fb;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.revenueCountWrap {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+  ._revenueItem {
+    width: 50%;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+#listTotal {
+  color: #666666 !important;
+  font-family: "OpenSans SemiBold", Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,254 @@
+.noteMainContainer {
+  position: relative;
+  word-break: break-all;
+}
+
+.timeNote {
+  .noteContainer {
+    position: relative;
+    padding-left: 50px;
+    margin-top: 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 25px;
+      width: 1px;
+      height: calc(100% + 32px);
+      background: $note-bg;
+    }
+
+    &:first-child {
+      //margin-top: 12px;
+
+      &:before {
+        top: -20px;
+      }
+    }
+
+    &:last-child {
+      &:before {
+        height: 25px;
+      }
+    }
+
+    .noteTopBox {
+      padding: 10px 15px;
+      border-bottom: 1px solid $note-border-color;
+    }
+
+    .loadAttach {
+      padding: 10px 15px 0;
+    }
+
+    .itemCircle {
+      position: absolute;
+      left: 11px;
+      top: 4px;
+      height: 28px;
+      width: 28px;
+      border: 1px solid $note-border-color;
+      border-radius: 50%;
+      background: $white;
+      font-size: 14px;
+      line-height: 27px;
+      text-align: center;
+      color: $note-border-color;
+      z-index: 10;
+    }
+
+    .noteBody {
+      padding: 0 0 12px;
+      border: 1px solid $note-border-color;
+      box-shadow: 1px 1px 3px 0 rgba($black, 0.05);
+      word-break: break-all;
+
+      .noteTopBox {
+        margin-left: -1px;
+        border-left: 3px solid #7eadcc;
+      }
+    }
+
+    .noteBtnBlock {
+      border: none;
+    }
+
+    .noteText,
+    .noteContent,
+    .changed_field,
+    .assignedTo {
+      padding: 10px 15px 0;
+    }
+
+    .singleNote {
+      padding: 7px 15px 0 0;
+
+      .dateNote {
+        float: right;
+        padding-top: 11px;
+        padding-left: 5px;
+      }
+    }
+
+    .noteText {
+      cursor: pointer;
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .noteContent {
+      margin-bottom: 10px;
+    }
+  }
+
+  .historyContent {
+    &:first-child {
+      padding-top: 8px;
+    }
+  }
+
+  .itemCircle {
+    > [class^="icon-"],
+    > [class*=" icon-"] {
+      line-height: 26px;
+      display: block;
+    }
+    .icon-calendar {
+      line-height: 26px;
+      display: block;
+    }
+  }
+}
+
+.noteInner {
+  border: 1px solid #7eadcc;
+  padding: 5px 20px 20px;
+
+  .dateNote {
+    float: none !important;
+    margin-left: 5px;
+  }
+}
+
+.noteBtn {
+  margin-top: 15px;
+  text-align: right;
+
+  span + span {
+    margin-left: 10px;
+  }
+}
+
+.editNewBox {
+  .noteType {
+    float: left;
+  }
+
+  .dateNote {
+    float: right;
+  }
+}
+
+.noteTopBox {
+  .noteUserTitle {
+    float: left;
+    display: block;
+    line-height: 30px;
+  }
+
+  .dateNote {
+    float: right;
+    font-size: 13px !important;
+  }
+}
+
+.form {
+  .personsTaskArea {
+    min-height: 95px ;
+  }
+}
+
+.attachContainer {
+  padding: 7px 0;
+  width: 100%;
+  margin-top: 10px;
+
+  li {
+    border-bottom: dashed 1px #c8c8d3;//$lightgrey;
+    line-height: 24px;
+    vertical-align: top;
+    position: relative;
+    padding-left: 25px;
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: $mainBlack-color;
+
+    .deleteAttach {
+      display: none;
+      float: right;
+
+      .calculateTotal {
+        width: 50%;
+        text-align: right;
+
+        .totalAmount {
+          border-top: 1px solid grey;
+        }
+      }
+    }
+
+    &:before {
+      content: "\e093";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-family: $icon-font !important;
+      font-size: 22px;
+      color: $mainBlack-color;
+    }
+
+    &:hover {
+      background-color: $bg-hover-drop-down-color;
+
+      .deleteAttach {
+        display: block;
+        padding-right: 10px;
+        float: right;
+        line-height: 22px;
+
+        .calculateTotal {
+          width: 50%;
+          text-align: right;
+
+          .totalAmount {
+            border-top: 1px solid grey;
+          }
+        }
+      }
+    }
+  }
+}
+
+.opportunity-header {
+  h3,
+  h4 {
+    float: none;
+    display: inline-block !important;
+    vertical-align: middle;
+    max-width: 49%;
+    margin-bottom: 0 !important;
+  }
+
+  h3 + h4 {
+    padding-left: 5px;
+  }
+}
+
+.addOport {
+  span {
+    margin-right: 10px;
+  }
+}

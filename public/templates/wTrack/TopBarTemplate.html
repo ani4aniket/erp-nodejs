@@ -1,0 +1,52 @@
+<h3>Time Card</h3>
+<div id="createBtnHolder" class="btnsBlock">
+    <a href="javascript:;" class="btn blue slim icon-plus" title="Create" id="top-bar-createBtn">New</a>
+    <a href="javascript:;" class="btn blue slim" title="Edit" id="top-bar-editBtn">Edit</a>
+    <a href="javascript:;" class="btn blue slim" title="Save" id="top-bar-saveBtn">Save</a>
+    <a href="javascript:;" class="btn blue slim" title="Remove" id="top-bar-deleteBtn">Delete</a>
+    <span title="Export to csv" id="top-bar-exportToCsvBtn" class="btn slim">Export to Csv</span>
+    <span title="Export to xlsx" id="top-bar-exportToXlsxBtn" class="btn slim">Export to Xlsx</span>
+    <ul class="export">
+        <li class="vacation-legend hidden">
+            <table id="rawTable" class="list">
+                <thead>
+                <tr id="caption">
+                    <th colspan="2">
+                        Vacation
+                    </th>
+                    <th class="V">
+                        V
+                    </th>
+                    <th colspan="2">
+                        Personal
+                    </th>
+                    <th class="P">
+                        P
+                    </th>
+                    <th colspan="2">
+                        Sick
+                    </th>
+                    <th class="S">
+                        S
+                    </th>
+                    <th colspan="2">
+                        Education
+                    </th>
+                    <th class="E">
+                        E
+                    </th>
+                    <th colspan="2">
+                        Holyday
+                    </th>
+                    <th class="H">
+                        H
+                    </th>
+
+                </tr>
+                </thead>
+            </table>
+        </li>
+    </ul>
+    <button id="top-bar-generateBtn" class="btn slim red disabled">Generate Invoice</button>
+    <button id="top-bar-copyBtn" class="btn slim blue">Copy</button>
+</div>

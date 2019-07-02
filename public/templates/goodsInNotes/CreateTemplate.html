@@ -1,0 +1,34 @@
+<div class="form-holder _newForm">
+    <form method="post"
+          action=""
+          class="form"
+          id="stockCorrection">
+        <h4 class="_dialogMainTitle">Delivery-In for order<a class="blue" id="name"> #<%=model.name%></a></h4>
+        <div class="_formWrap">
+            <div class="_formBlock _equal">
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Delivery-in Note Date</span>
+                    <input id="date" class="_animate" readonly/>
+                </div>
+            </div>
+            <div class="_formBlock _equal">
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Warehouse</span>
+                    <div class="_newSelectListWrap">
+                        <a href="javascript:;"
+                           class="current-selected"
+                           id="warehouseDd"
+                           data-id="<%=model.warehouse ? model.warehouse._id : ''%>"><%= model.warehouse ? model.warehouse.name : 'Select Warehouse'%></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="_formWrap">
+            <div class="_formBlock">
+                <div id="productItemsHolder" class="_SkuItemsHolder"></div>
+                <div id="goodsHolder" class="_goodsHolder"></div>
+            </div>
+        </div>
+    </form>
+</div>

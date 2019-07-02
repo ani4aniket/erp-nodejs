@@ -1,0 +1,72 @@
+<%var mapObject = {closeMonth: 'Close Month', Invoice: 'Invoice', expensesInvoice: 'Expenses Invoice', stockReturns: 'Stock Returns', product: 'Product', goodsInNote: 'Delivery-In Note', goodsOutNote: 'Delivery-Out Note', closeDay: 'Close Day', cashTransfer: 'Cash Transfer'  };%>
+<%var checkObj = {};%>
+<% var className = 1;%>
+<% var timestamp = collection.length ? collection[0].timestamp : null;%>
+<% collection.forEach(function(journalEntry, index){ %>
+
+<% className = (timestamp === journalEntry.timestamp) ? className : className * (-1);%>
+<% timestamp = journalEntry.timestamp;%>
+
+<% var currency = journalEntry.currency && journalEntry.currency._id ? journalEntry.currency._id.symbol : '';%>
+<%if (!checkObj[journalEntry.timestamp]) {%>
+<%checkObj[journalEntry.timestamp] = true;%>
+<%var suf = journalEntry.sourceDocument && journalEntry.sourceDocument.name === 'None' ? 'ME_' : 'JE_'%>
+<tr data-index="<%= className %>" data-id="<%=journalEntry._id%>">
+
+    <td><a title="Click to filter" class="clickToFilter textBlue" href="javascript:;"
+           data-id="<%=journalEntry.timestamp%>" data-group="timestamp">
+        <%=journalEntry.timestamp ? suf + journalEntry.timestamp : ''%></a></td>
+
+    <td><%=journalEntry.date%></td>
+
+    <td class="source"><span class="current-selected"
+                             data-id="<%=journalEntry.sourceDocument._id%>"
+                             data-name="<%=journalEntry.sourceDocument.model%>"
+                             data-employee="<%=journalEntry.sourceDocument.employee%>"><%=journalEntry.sourceDocument.name%></span>
+    </td>
+    <td><%=mapObject[journalEntry.sourceDocument.model] || journalEntry.sourceDocument.model%></td>
+
+    <td><a title="Click to filter" class="clickToFilter textBlue" href="javascript:;"
+           data-id="<%=journalEntry.account ? journalEntry.account._id : null%>" data-group="account"><%=journalEntry.account
+        ? journalEntry.account.name : ''%></a></td>
+
+    <td class="<%=journalEntry.debit? 'money' : ''%>" data-amount="<%= journalEntry.debit%>"><%=journalEntry.debit ?
+        currencySplitter(journalEntry.debit.toFixed(2)) : '&nbsp'%>
+        <%if (journalEntry.debitFC) {%>
+        (<%=currency %><%=currencySplitter(journalEntry.debitFC.toFixed(2))%>)
+        <%}%>
+    </td>
+
+    <td class="<%=journalEntry.credit ? 'money' : ''%>" data-amount="<%=journalEntry.credit%>"><%=journalEntry.credit ?
+        currencySplitter(journalEntry.credit.toFixed(2)) : '&nbsp'%>
+        <%if (journalEntry.creditFC) {%>
+        (<%=currency %><%=currencySplitter(journalEntry.creditFC.toFixed(2))%>)
+        <%}%>
+    </td>
+</tr>
+
+<%} else {%>
+<tr data-index="<%= className %>" data-id="<%=journalEntry._id%>">
+
+    <td colspan="4"></td>
+
+    <td><a title="Click to filter" class="clickToFilter textBlue" href="javascript:;"
+           data-id="<%=journalEntry.account ? journalEntry.account._id : null%>" data-group="account"><%=journalEntry.account
+        ? journalEntry.account.name : ''%></a></td>
+
+    <td class="<%=journalEntry.debit? 'money' : ''%>" data-amount="<%= journalEntry.debit%>"><%=journalEntry.debit ?
+        currencySplitter(journalEntry.debit.toFixed(2)) : '&nbsp'%>
+        <%if (journalEntry.debitFC) {%>
+        (<%=currency %><%=currencySplitter(journalEntry.debitFC.toFixed(2))%>)
+        <%}%>
+    </td>
+
+    <td class="<%=journalEntry.credit ? 'money' : ''%>" data-amount="<%=journalEntry.credit%>"><%=journalEntry.credit ?
+        currencySplitter(journalEntry.credit.toFixed(2)) : '&nbsp'%>
+        <%if (journalEntry.creditFC) {%>
+        (<%=currency %><%=currencySplitter(journalEntry.creditFC.toFixed(2))%>)
+        <%}%>
+    </td>
+</tr>
+<%}%>
+<% }) %>

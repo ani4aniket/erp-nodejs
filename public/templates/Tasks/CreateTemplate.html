@@ -1,0 +1,108 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" id="createTaskForm" class="notDialog">
+        <h4 class="_dialogMainTitle">Create Task</h4>
+        <div class="_formWrap _enlargedItemMargin">
+            <div class="_formBlock">
+                <div class="_animateInputBox">
+                    <input type="text"
+                           name="summary"
+                           class="_animate "
+                           id="summaryTask"
+                           required
+                           maxlength="32"/>
+                    <label class="_animate">Summary</label>
+                </div>
+                <div class="_animateTextareaBox counterWrap">
+                    <label for="description" class="_animate">Add task description</label>
+
+                        <textarea id="description"
+                                  name="description"
+                                  class="_animate taskDescriptionCreate"
+                                  required
+                                  maxlength="500"
+
+                        ></textarea>
+
+                    <div class="counter-wrap">
+                        <span class="counter-label">Characters left:</span>
+                        <span class="counter-value" id="counterValue">500</span>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Project</span>
+                    <div class="_newSelectListWrap">
+                        <a id="projectDd"
+                           class="current-selected"
+                           href="javascript:;">Select project
+                        </a>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Stage</span>
+                    <div class="_newSelectListWrap">
+                        <a id="workflowsDd"
+                           class="current-selected"
+                           href="javascript:;">Select stage
+                        </a>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Type</span>
+                    <div class="_newSelectListWrap">
+                        <a id="type"
+                           data-id="Task"
+                           class="current-selected"
+                           href="javascript:;">Select type of task
+                        </a>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">assigned to</span>
+                    <div class="_newSelectListWrap">
+                        <a id="assignedToDd"
+                           class="current-selected"
+                           href="javascript:;">Select assigner
+                        </a>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Priority</span>
+                    <div class="_newSelectListWrap">
+                        <a id="priorityDd"
+                           class="current-selected"
+                           href="javascript:;">Select priority
+                        </a>
+                    </div>
+                </div>
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Start Date</span>
+                    <input class="_animate extrainfo"
+                           type="text"
+                           name="StartDate"
+                           placeholder="Start Date"
+                           id="StartDate"
+                           readonly="">
+                </div>
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Close Date</span>
+                    <input type="text"
+                           maxlength="4"
+                           name="loged"
+                           id="logged"
+                           class="_animate onlyNumber"
+                           placeholder="Logged"/>
+                </div>
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Estimated</span>
+                    <input type="text"
+                           maxlength="4"
+                           name="estimated"
+                           id="estimated"
+                           class="_animate onlyNumber"
+                           placeholder="Estimated"/>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

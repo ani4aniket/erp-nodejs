@@ -1,0 +1,256 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" id="createPersonsForm" class="form">
+        <h4 class="_dialogTitlePositioned">Add New Person</h4>
+        <ul class="dialog-tabs">
+            <li><a class="active" href="javascript:;">Main</a></li>
+            <li><a href="javascript:;">Address</a></li>
+            <li><a href="javascript:;">Sales & Purchases</a></li>
+        </ul>
+        <div class="dialog-tabs-items">
+            <div class="dialog-tabs-item active">
+                <div class="_formWrap">
+                    <div class="_avatarBlock">
+                        <div class="avatar">
+                            <div class="upload">Edit
+                                <input type="file"
+                                       value="Edit"
+                                       id="inputImg"
+                                       accept="image/*">
+                            </div>
+                            <canvas id="avatar"
+                                    width="140"
+                                    height="140">
+                            </canvas>
+                        </div>
+                    </div>
+                    <div class="_formBlock">
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   name="firstName"
+                                   class="_animate"
+                                   id="firstName"
+                                   autofocus
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">First Name</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   name="lastName"
+                                   class="_animate"
+                                   id="lastName"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Last Name</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   name="lastName"
+                                   class="_animate"
+                                   id="jobPositionInput"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Job Position</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <span class="_staticLabel">Date Of Birth</span>
+                            <input type="text"
+                                   class="dateBirth _animate"
+                                   id="dateBirth"
+                                   maxlength="32"
+                                   placeholder="Date of Birth"
+                                   required
+                                   readonly/>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="emailInput"
+                                   required
+                                   maxlength="48"/>
+                            <label class="_animate">Email</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="skype"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Skype</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="LI"
+                                   required
+                                   maxlength="256"/>
+                            <label class="_animate">LinkedIn</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="FB"
+                                   required
+                                   maxlength="256"/>
+                            <label class="_animate">Facebook</label>
+                        </div>
+                    </div>
+                    <div class="_formBlock">
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="phoneInput"
+                                   maxlength="20"
+                                   required/>
+                            <label class="_animate">Phone Number</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="mobileInput"
+                                   maxlength="20"
+                                   required/>
+                            <label class="_animate">Mobile Number</label>
+                        </div>
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Company</span>
+                            <div class="_newSelectListWrap">
+                                <a id="companiesDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select company</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="cropImages form" style="display:none;">
+                        <div class="image_input" style="float: left;margin-right: 20px;"></div>
+                        <img class="image_output"/>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-tabs-item">
+                <div class="_formWrap">
+                    <div class="_formBlock">
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="addressInput"
+                                   maxlength="60"
+                                   required/>
+                            <label class="_animate">Street</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="cityInput"
+                                   maxlength="60"
+                                   required/>
+                            <label class="_animate">City</label>
+                        </div>
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Country</span>
+                            <div class="_newSelectListWrap">
+                                <a href="javascript:;"
+                                   name="country"
+                                   class="current-selected"
+                                   id="countryInputCreate"
+                                   data-id="">Select country</a>
+                            </div>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="stateInput"
+                                   maxlength="32"
+                                   required/>
+                            <label class="_animate">State</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="zipInput"
+                                   maxlength="32"
+                                   required/>
+                            <label class="_animate">Zip code</label>
+                        </div>
+                    </div>
+                    <div class="_formBlock">
+                        <div class="right circleRadioForPersons">
+                            <div class="_circleRadioRadianceWrap">
+                                <label for="defaultShipAdress">
+                                    Same as billing address
+                                </label>
+                                <input  id="defaultShipAdress" type="radio" name="shippingAddress" class="_circleRadioRadiance shippingRadio"   value="0" checked/>
+                                <label for="defaultShipAdress" class="_circleRadioRadianceLabel"></label>
+                            </div>
+                            <div class="_circleRadioRadianceWrap">
+                                <label for="anotherShipAdress">
+                                    Another shipping address
+                                </label>
+                                <input  id="anotherShipAdress"  type="radio" name="shippingAddress" class="_circleRadioRadiance shippingRadio"  value="1"/>
+                                <label for="anotherShipAdress" class="_circleRadioRadianceLabel"></label>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="_formBlock hidden" id="shippingAddress">
+                            <div class="_animateInputBox">
+                                <input type="text"
+                                       class="_animate"
+                                       id="nameInputShipping"
+                                       maxlength="60"
+                                       required/>
+                                <label class="_animate">Full Name</label>
+                            </div>
+                            <div class="_animateInputBox">
+                                <input type="text"
+                                       class="_animate"
+                                       id="addressInputShipping"
+                                       maxlength="60"
+                                       required/>
+                                <label class="_animate">Street</label>
+                            </div>
+                            <div class="_animateInputBox">
+                                <input type="text"
+                                       class="_animate"
+                                       id="cityInputShipping"
+                                       maxlength="60"
+                                       required/>
+                                <label class="_animate">City</label>
+                            </div>
+                            <div class="_animateSelectBox">
+                                <span class="_selectTitle">Country</span>
+                                <div class="_newSelectListWrap">
+                                    <a href="javascript:;"
+                                       name="country"
+                                       class="current-selected"
+                                       id="countryInputCreateShipping"
+                                       data-id="">Select country</a>
+                                </div>
+                            </div>
+                            <div class="_animateInputBox">
+                                <input type="text"
+                                       class="_animate"
+                                       id="stateInputShipping"
+                                       maxlength="32"
+                                       required/>
+                                <label class="_animate">State</label>
+                            </div>
+                            <div class="_animateInputBox">
+                                <input type="text"
+                                       class="_animate"
+                                       id="zipInputShipping"
+                                       maxlength="32"
+                                       required/>
+                                <label class="_animate">Zip code</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-tabs-item">
+                <div id="salesPurchases-container"></div>
+            </div>
+        </div>
+    </form>
+</div>

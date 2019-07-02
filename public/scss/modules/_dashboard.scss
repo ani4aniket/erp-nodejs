@@ -1,0 +1,732 @@
+.dropDownDateRangeContainer {
+  width: 110px;
+  height: 35px;
+  float: right;
+  position: relative;
+}
+
+.dashBoardVocationSearch {
+  margin-top: 7px !important;
+}
+
+.choseDateRange.dropDownDateRange {
+  display: flex;
+  flex-direction: column;
+  height: 22px;
+  width: 110px;
+  padding: 0;
+  margin-right: 0;
+  border: 1px solid $property-box-border-color;
+  background: $white;
+  overflow: hidden;
+  position: absolute;
+
+  &.open {
+    height: auto;
+    z-index: 11;
+
+    .selectArrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .item {
+    height: 22px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-align: center;
+    background: none;
+    white-space: nowrap;
+    order: 1;
+    float: none;
+
+    &:hover {
+      background-color: #fafafa;
+    }
+
+    &.active {
+      order: 0;
+      background: none;
+      color: $black;
+    }
+  }
+
+  .selectArrow {
+    height: 0;
+    width: 0;
+    border: {
+      top: 6px solid $property-box-border-color;
+      left: 4px solid transparent;
+      right: 4px solid transparent;
+    }
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    cursor: pointer;
+  }
+}
+
+.dashboardGraphicsWrap {
+  .halfWidth,
+  .fullWidth {
+    float: left;
+  }
+
+  .halfWidth {
+    width: 50%;
+  }
+
+  .fullWidth {
+    width: 100%;
+  }
+}
+
+
+._customDashboard {
+  position: relative;
+  min-width: 1000px;
+  width: 100%;
+  padding: 5px;
+  background-color: #f1f1f1;
+  overflow: hidden;
+
+  &InputGroup {
+
+    input {
+      float: left;
+      width: 200px;
+      height: 25px;
+      margin-top: 7px;
+
+      & + input {
+        margin-left: 15px;
+      }
+    }
+
+    h3:empty {
+      display: none;
+    }
+  }
+
+  &.disabled {
+    min-height: 100%;
+    background-color: #f5f5f5;
+
+    ._customDashboardGrid {
+      opacity: 0;
+    }
+  }
+
+  &Grid {
+    width: 100%;
+    height: auto;
+
+    .cell {
+      height: 130px;
+      background-color: $white;
+      display: inline-block;
+      box-shadow: $dashboard-cell-shadow;
+    }
+  }
+
+  .panel {
+    display: inline-block;
+    padding-bottom: 30px;
+    border: 1px solid #d7dde4;
+    background-color: $white;
+    box-shadow: 0 9px 10px -6px rgba(126, 142, 159, 0.4);
+    overflow: hidden;
+    border-radius: 3px;
+    z-index: 1;
+
+    &[data-type="table"] {
+      display: flex;
+      flex-direction: column;
+
+      .panel-heading {
+        flex-shrink: 0;
+      }
+
+      .chartHolder {
+        flex-shrink: 1;
+        overflow: auto;
+      }
+    }
+
+    ._customDashboardPanel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-right: 30px;
+      padding-top: 5px;
+
+      &.withActions {
+        padding-right: 60px;
+      }
+
+      ._rightPart,
+      ._panelTopActions {
+        display: flex;
+      }
+
+      .panelHeadingDescr {
+        padding-top: 0;
+        padding-left: 0;
+      }
+    }
+
+    .panel-descriptions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      max-width: 100%;
+      padding: 0 5px 0 15px;
+    }
+
+    ._panelTopActions {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      .editChart,
+      .removeChart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+
+        &:hover {
+          background-color: #7eadcc;
+          color: #fff;
+        }
+      }
+    }
+
+    ._filterDropDownWrap {
+      margin-left: 0;
+
+      .dateFilter {
+        text-align: right;
+      }
+    }
+
+    //.notResize {
+    //  min-height: 400px !important;
+    //  min-width: 400px !important;
+    //}
+
+    .chartName,
+    .chartDataSet {
+      color: #364150;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chartName {
+      font-size: 17px;
+      line-height: 26px;
+      padding-right: 10px;
+    }
+
+    &HeadingDescr {
+      padding: 7px 5px;
+      color: $dashboard-text-color;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      min-width: 100px;
+
+      > span {
+        display: block;
+        font-size: 10px;
+
+        &:first-child {
+          margin-top: 10px;
+        }
+
+      }
+    }
+
+    ._viewAll {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 20px;
+      border-top: 1px solid $dashboard-panel-border;
+      text-decoration: none !important;
+      text-transform: uppercase;
+      color: $dashboard-text-color;
+
+      &:after {
+        content: '\f105';
+        font-family: 'erp-icons';
+        right: 10px;
+        font-size: 20px;
+        line-height: 11px;
+        position: absolute;
+      }
+    }
+
+    .chartHolder {
+
+      text {
+        font-size: 10px;
+
+        &.label {
+          font-size: 16px;
+        }
+
+        &.infoLabel {
+          color: $dashboard-text-color !important;
+          font-size: 15px;
+        }
+
+        &._valueLabel {
+          font-size: 20px;
+        }
+
+        &._label {
+          font-size: 25px;
+        }
+      }
+
+      .revenueCountWrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        word-wrap: break-word;
+
+        + ._overviewOrderWrap {
+          margin-top: 0;
+
+          > ._overviewTable.stripedList {
+            width: 100%;
+            margin: 0;
+
+            tr {
+              border-top: 1px solid #d7dde4;
+              border-bottom: 1px solid #d7dde4;
+              border-left: none;
+              border-right: none;
+
+              td {
+                border: none;
+                background-color: #F7F7F7;
+                vertical-align: top;
+                word-break: break-word;
+                text-align: right;
+                &:hover {
+                  background-color: #F7F7F7;
+                }
+                &:last-child {
+                  .flex {
+                    &:after {
+                      border-right: none;
+                    }
+                  }
+                }
+                .flex {
+                  flex-wrap: wrap;
+                  height: 50px;
+                  position: relative;
+
+                  &:after {
+                    content: '';
+                    border-right: 1px solid #d7dde4;
+                    position: absolute;
+                    height: 100%;
+                    right: -12px;
+                  }
+                }
+                .workflowName {
+                  flex-grow: 2;
+                  width: 100%;
+                  text-transform: uppercase;
+                  align-self: center;
+                  color: $dashboard-text-color;
+                  text-align: center;
+                }
+
+                .count {
+                  display: block;
+                  text-align: center;
+                  align-self: flex-end;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .singleBlockWrap {
+        display: flex;
+        justify-content: space-between;
+
+        .block-icon {
+          flex-shrink: 0;
+          width: 50px;
+          height: 50px;
+          margin: 15px;
+          background: {
+            position: center;
+            repeat: no-repeat;
+            size: cover;
+          };
+        }
+
+        &.salesInvoicesWrap {
+          .block {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            padding: 4px;
+
+            .salesInfo {
+              position: relative;
+
+              &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -100%;
+                display: block;
+                width: 1px;
+                height: 100%;
+                background-color: #d7dde4;
+              }
+
+              span {
+                display: block;
+                text-align: center;
+              }
+            }
+            
+          }
+        }
+
+        .block {
+          display: inline-block;
+          padding: 10px;
+          margin: 5px;
+          //width: calc(50% - 12px);
+          max-width: 200px;
+          //background-color: #F7F7F7;
+          //border: 1px solid #d7dde4;
+
+          > span {
+            text-align: right;
+            line-height: 18px;
+            display: block;
+          }
+
+          .blockTitle {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: $dashboard-text-color;
+            + span {
+              font-size: 20px;
+              line-height: 20px;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+
+    &[data-type="overview"] {
+      .chartHolder {
+        height: calc(100% - 40px);
+
+        .notResize {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+._customDashboardActions {
+  position: fixed;
+  z-index: 3;
+  top: 43px;
+  right: 46px;
+  display: flex;
+  flex-direction: row-reverse;
+
+  ._filterDropDownWrap {
+    margin: 3px 20px;
+
+    > ul > li:first-child{
+      text-align: center;
+    }
+  }
+}
+
+.revenueCountWrap {
+  p {
+    font-size: 18px;
+    color: $black;
+    margin-top: 5px;
+  }
+  span {
+    &._shipped {
+      font-size: 12px;
+    }
+    &._fullfilled {
+      font-size: 12px;
+    }
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $dashboard-text-color;
+  }
+
+  .status {
+    width: 20% !important;
+    min-width: 140px !important;
+
+    &.hidden {
+      display: block !important;
+      visibility: hidden;
+    }
+
+    ._statusOrdersWrap {
+      text-align: left;
+      @extend ._statusOrders;
+      display: flex;
+      align-items: center;
+      line-height: 20px !important;
+
+      > span {
+        width: 70px;
+        font-size: 12px;
+        text-align: left;
+        &:first-child{
+          margin-left: 0;
+          margin-right: 0;
+          width: 70px;
+          font-size: 12px;
+          text-align: left;
+        }
+      }
+
+      ._statusOrders {
+        flex-grow: 2;
+
+        span, p {
+          display: inline-block;
+          font-size: 12px;
+        }
+        > span {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+  }
+}
+
+.chartHolder {
+
+  ._statusOrders {
+    line-height: 20px;
+  }
+
+  .revenueCountWrap {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+._overviewOrderWrap {
+  padding: 0 20px;
+  margin-top: 6px;
+
+  .stripedList {
+
+    thead {
+
+      tr {
+        height: 30px;
+      }
+
+      th {
+        font-family: $base-font-family;
+        font-size: 14px;
+      }
+    }
+
+    tbody {
+
+      tr {
+        height: 32px;
+        border-top: 0 !important;
+      }
+    }
+
+    td {
+      border-bottom: 0;
+
+      + td {
+        text-align: right;
+        border-left: 0 !important;
+      }
+    }
+  }
+
+  ._tableTitle {
+
+    .workflowName {
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .count {
+      line-height: 1;
+      @include rem('font-size', 14px);
+    }
+  }
+}
+
+._gridVisualisation {
+
+  span {
+    display: inline-block;
+  }
+}
+
+._createDashboardForm {
+
+  ._gridVisualWrap {
+    float: right;
+    margin-right: 20px;
+  }
+
+  ._setDescription {
+    margin-top: 5px;
+
+    ._circleRadioGroup {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+._gridVisualWrap {
+  display: inline-block;
+
+  ._gridListTitle {
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #666;
+  }
+
+  ._gridColBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 30px;
+    margin-bottom: 4px;
+    height: 26px;
+  }
+
+  ._gridVisualBoby {
+    display: flex;
+  }
+
+  ._gridRowBar {
+    position: relative;
+    width: 26px;
+    margin-right: 4px;
+
+    ._gridListTitle {
+      position: absolute;
+      top: 0;
+      right: 4px;
+      width: 10px;
+      word-break: break-word;
+      text-align: center;
+      line-height: 12px;
+    }
+  }
+
+  .gridColList,
+  .gridRowList {
+
+    li {
+      width: 26px;
+      height: 26px;
+      text-align: center;
+      line-height: 26px;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 3px;
+      font-weight: 600;
+
+      &.active {
+        background-color: #7eadcc;
+        color: #fff;
+      }
+    }
+  }
+
+  .gridColList {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .gridRowList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+  }
+
+  ._gridVisual {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    padding: 2px;
+    background-color: #EBEEEF;
+  }
+}
+
+._gridVisual {
+
+  li {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  span {
+    flex-grow: 1;
+    background-color: #fff;
+    margin: 2px;
+    box-shadow: 1px 1px 5px rgba(126, 142, 159, 0.4);
+    border-radius: 2px;
+  }
+}
+
+._overviewTable {
+  ._tableTitle {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

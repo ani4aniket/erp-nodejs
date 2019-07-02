@@ -1,0 +1,101 @@
+._taskTimeBlock {
+
+  .inputDateActionBlock {
+    float: left;
+
+    .timepicker {
+      border: none;
+      height: auto;
+    }
+  }
+}
+
+._taskDueDate {
+  width: 100px !important;
+  height: 22px;
+}
+
+input._taskDueDate {
+  color: #364150;
+  font-family: $semibold-font-family;
+}
+
+._addTaskTitleBlock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 34px;
+  background: #f3f3f3;
+  border: 1px solid #c8c8d3;
+  border-top: 0;
+  border-bottom: 0;
+
+  > label {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  > .current-selected {
+    line-height: 30px;
+    margin-right: 10px;
+  }
+
+  .editTags {
+    padding: 2px 8px;
+    cursor: pointer;
+  }
+
+  ._addTaskTitle {
+    padding: 10px;
+    line-height: 1.2;
+
+    label {
+      display: inline-block !important;
+      margin-right: 5px;
+    }
+
+    .current-selected {
+      margin-left: 0;
+    }
+  }
+
+  .categoryHolder {
+    text-align: center;
+  }
+
+  ._addTaskTitle,
+  .tagsLabel {
+    color: #364150;
+  }
+
+  .inputDateActonBlock {
+    display: flex;
+  }
+
+  #timepickerOne,
+  ._taskDueDate {
+    width: 100px;
+    height: 34px;
+    background-color: #f3f3f3;
+    text-align: center;
+    border: 0;
+    font-family: $semibold-font-family;
+    color: #364150;
+    cursor: pointer;
+
+    &:hover {
+      background: #7eadcc;
+      color: #fff;
+    }
+  }
+
+  ._taskTimeBlock {
+    display: flex;
+    align-items: center;
+
+    #categoryHolder {
+      margin-right: 20px;
+    }
+  }
+}

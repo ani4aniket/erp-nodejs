@@ -1,0 +1,129 @@
+<div>
+    <div class="formTitle">
+        <div>
+            <h3 class="left">Payroll Payment</h3>
+        </div>
+    </div>
+    <div class="createBtnHolder payRollHolder">
+        <a href="javascript:;" class="btn blue slim" title="Remove" id="deleteBtn">Delete</a>
+    </div>
+
+    <table class="list payRoll-list">
+        <colgroup class="borders" span="6">
+            <col span="1" width="5%">
+            <col span="1" width="35%">
+            <col span="1" width="15%">
+            <col span="1" width="15%">
+            <col span="1" width="15%">
+            <col span="1" width="15%">
+            <col span="1" width="15%">
+        </colgroup>
+        <thead>
+        <tr>
+            <th><a id="expandAll">#</a></th>
+            <!--<th></th>-->
+            <th class="oe_sortable_sub" data-sort="employee.name">Complete Name<span
+                    class="arrow down"></span><span
+                    class="arrow up"></span></th>
+            <th>Month</th>
+
+            <th class="oe_sortable_sub" data-sort="calc">Calc<span class="arrow down"></span><span
+                    class="arrow up"></span></th>
+            <th class="oe_sortable_sub" data-sort="paid">Balance<span class="arrow down"></span><span
+                    class="arrow up"></span></th>
+            <th class="oe_sortable_sub" data-sort="diff">Pay<span class="arrow down"></span><span
+                    class="arrow up"></span></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td id="payRoll-Table" colspan="8">
+                <div class="scrollit">
+                    <table class="list enable_hover" id="payRoll-listTable">
+                        <colgroup class="borders" span="6">
+                            <col span="1" width="5%">
+                            <col span="1" width="35%">
+                            <col span="1" width="15%">
+                            <col span="1" width="15%">
+                            <col span="1" width="15%">
+                            <col span="1" width="15%">
+                        </colgroup>
+                        <tbody id="payRoll-TableBody" class="_payRoll-TableBody">
+                        <% var total = 0;%>
+                        <% collection.forEach(function(model, index){ %>
+                        <%var cid = model.cid;%>
+                        <%model = model.toJSON();%>
+
+                        <tr data-id="<%=cid%>">
+                            <td data-content="number" class="centerCell"><%=index+1%></td>
+                            <!--<td class="notForm centerCell"><input id="<%=cid%>" type="checkbox" value="<%=cid%>"-->
+                            <!--class="checkbox"/></td>-->
+                            <td class="" data-content="supplier"><%=model.supplier ? model.supplier.name.first + ' ' +
+                                model.supplier.name.last :
+                                ''%>
+                            </td>
+                            <td><%=model.month + '/' + model.year%></td>
+                            <td data-type="input" class="cash calc money" data-content="onCash"
+                                data-cash="<%=model.paidAmount%>"><span><%=currencySplitter(model.paidAmount.toFixed(2))%></span>
+                            </td>
+
+                            <td data-content="onCash" class="differenceAmount money">0</td>
+
+                            <td data-type="input" data-content="onCash" data-cash="<%=model.paidAmount%>"
+                                class="editable cash paidAmount money">
+                                <span><%=currencySplitter(model.paidAmount.toFixed(2))%></span>
+                            </td>
+
+                            <%total += parseFloat(model.paidAmount.toFixed(2));%>
+                        </tr>
+                        <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot id="payRoll-listTotal"></tfoot>
+
+    </table>
+    <div class="totalContainer">
+        <div class="half-block left">
+            <dl class="opp-info text-right">
+                <dt><label for="currencyDd">Currency</label></dt>
+                <dd >
+                    <a id="currencyDd" class="current-selected _newSelectListWrap" data-id="565eab29aeb95fa9c0f9df2d"
+                       href="javascript:;">USD</a>
+                </dd>
+                <dt>
+                    <label for="paymentMethod">Bank account
+                    </label>
+                </dt>
+                <dd>
+                    <a id="paymentMethod" class="current-selected _newSelectListWrap" href="javascript:;">Select</a>
+                </dd>
+                <div id='journalDiv'>
+                    <dt>
+                        <label for="paymentMethod">Journal</label>
+                    </dt>
+                    <dd class="_newSelectListWrap">
+                        <a id="journal" class="current-selected" href="javascript:;">Select</a>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+        <div class="half-block right">
+            <dl class="opp-info payrollDateBlock text-right">
+                <dt><label for="dateOfPayment">Date of payment</label></dt>
+                <dd>
+                    <input type="text" id="dateOfPayment" value="" readonly/>
+                </dd>
+                <dt data-id="value" class="totalName"><label>Total Amount</label></dt>
+                <dd>
+                    <span data-id="value" class="money" id="total" data-cash="<%=total%>"><%=currencySplitter(total.toFixed(2))%></span>
+                </dd>
+            </dl>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

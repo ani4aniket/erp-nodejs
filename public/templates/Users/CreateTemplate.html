@@ -1,0 +1,88 @@
+    <div class="form-holder _newForm">
+    <form method="post" action="" id="createUserForm">
+        <div class="_formWrap">
+            <div class="_avatarBlock">
+                <div class="avatar left">
+                    <div class="upload">Edit
+                        <input type="file"
+                               value="Edit"
+                               id="inputImg"
+                               accept="image/*">
+                    </div>
+                    <canvas id="avatar"
+                            width="140"
+                            height="140">
+                    </canvas>
+                </div>
+            </div>
+            <div class="_formBlock">
+                <div class="_animateInputBox _withInfo">
+                    <input type="text"
+                           name="login"
+                           class="_animate"
+                           id="login"
+                           autofocus
+                           required
+                           value=""
+                           maxlength="24"/>
+                    <label class="_animate">User Name</label>
+                    <span class="tips icon-info" data-id="login"></span>
+                </div>
+                <div class="_animateInputBox _withInfo">
+                    <input type="password"
+                           name="confirmpassword"
+                           class="_animate"
+                           id="confirmpassword"
+                           maxlength="32"
+                           required/>
+                    <label class="_animate">Password</label>
+                    <span class="tips icon-info" data-id="confirmpassword"></span>
+                </div>
+                <div class="_animateInputBox _withInfo">
+                    <input type="password"
+                           name="password"
+                           class="_animate"
+                           id="password"
+                           required
+                           value=""
+                           maxlength="32"/>
+                    <label class="_animate">Confirm Password</label>
+                    <span class="tips icon-info" data-id="password"></span>
+                </div>
+                <div class="_animateInputBox _withInfo">
+                    <input type="confirmpassword"
+                           name="email"
+                           class="_animate"
+                           id="email"
+                           maxlength="48"
+                           value=""
+                           required/>
+                    <label class="_animate">Email</label>
+                    <span class="tips icon-info" data-id="email"></span>
+                </div>
+                <div class="_animateSelectBox _withInfo">
+                    <span class="_selectTitle">Profile</span>
+                    <div class="_newSelectListWrap">
+                        <a href="javascript:;"
+                           class="current-selected"
+                           id="profilesDd"
+                           data-id="address_country">Select profile</a>
+                    </div>
+                    <span class="tips icon-info" data-id="profilesDd"></span>
+                </div>
+            </div>
+        </div>
+        <div class="cropImages form" style="display:none;">
+            <div class="formTitle">
+                <h3 class="left">Crop Images</h3>
+
+                <div class="clearfix"></div>
+            </div>
+            <br/>
+
+            <div class="image_input" style="float: left;margin-right: 20px;"></div>
+            <img class="image_output"/>
+
+        </div>
+    </form>
+</div>

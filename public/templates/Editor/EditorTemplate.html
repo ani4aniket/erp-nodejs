@@ -1,0 +1,81 @@
+<div class="noteWrapper">
+    <ul class="chart-tabs">
+        <li><a class="active" id="noteTab" href="javascript:;">New Note</a></li>
+        <li><a href="javascript:;" id="taskTab" class="">Create Task</a></li>
+    </ul>
+    <div class="dialog-tabs-items">
+        <div class="editorTab dialog-tabs-item active" id="note">
+            <div class="addNote createHolder">
+                <div class="area_holder _withCounter counterWrap">
+                    <textarea class="counterEl" id="noteArea" placeholder="Add a Note...Max 500 symbols." maxlength="500"></textarea>
+                    <div class="counter-wrap">
+                        <span class="counter-label">Characters left:</span>
+                        <span class="counter-value" id="counterValue">500</span>
+                    </div>
+                    <a href="javascript:;" class="attach_file">
+                        <span class="icon-attach"></span>
+                    </a>
+                </div>
+                <!-- <div>
+                     <a class="addTitle" href="javascript:;">Add a title</a>
+                 </div>
+
+                 <div class="title-wrapper">
+                     <label>Note Title</label>
+                     <input type="text" id="noteTitleArea" value="" maxlength="64">
+                 </div>-->
+
+                <div class="buttons">
+                    <buttom class="btn blue btnSave" id="addNote">
+                        <span>Save</span>
+                    </buttom>
+                    <buttom class="btn cancelNote" id="cancelNote">
+                        <span>Cancel</span>
+                    </buttom>
+                    <div class="clearfix">
+                    </div>
+                </div>
+                <input type="hidden" id="getNoteKey" value="">
+            </div>
+        </div>
+
+        <div class="editorTab dialog-tabs-item" id="task">
+            <div class="addTask createHolder">
+                <div class="addTaskTitle _addTaskTitleBlock">
+                    <div class="_addTaskTitle">
+                        <label>Assigned To</label>
+                        <a  href="javascript:;"  class="current-selected" data-id="<%= assignedTo ? assignedTo._id : '' %>" id="assignedToDd"><%= assignedTo ? assignedTo.fullName : 'Select' %></a>
+                    </div>
+                    <div class="categoryHolder" id="categoryHolder"></div>
+                    <div class="inputDateActonBlock">
+                        <input type="text" id="timepickerOne" name="timepicker-one" class="timepicker" readonly/>
+                        <input type="text" class="date _taskDueDate" id="taskDueDate"
+                               value="<%= date %>" maxlength="32"
+                               placeholder="Date" readonly/>
+                    </div>
+                </div>
+                <div class="area_holder _withCounter counterWrap">
+                    <textarea id="taskArea" class="taskArea personsTaskArea" placeholder="Description...Max 500 symbols." maxlength="500"></textarea>
+
+                    <div class="counter-wrap">
+                        <span class="counter-label">Characters left:</span>
+                        <span class="counter-value" id="counterValue">500</span>
+                    </div>
+
+                    <a href="javascript:;" class="attach_file">
+                        <span class="icon-attach"></span>
+                    </a>
+
+                </div>
+                <div class="buttons">
+                    <span class="btn blue btnSave" id="addTask">Save</span>
+                    <span class="btn" id="cancelTask">Cancel</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="timeline" class="_timeline">
+    </div>
+
+</div>

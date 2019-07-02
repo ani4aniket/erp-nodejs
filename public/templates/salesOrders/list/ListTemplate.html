@@ -1,0 +1,25 @@
+<% salesOrdersCollection.forEach(function(order, index){ %>
+    <tr class="centerCell" data-id="<%=order._id%>"
+        <% if (order.workflow && order.workflow.status !== 'New') { %>
+            class="notEditable"
+        <% } %>
+    >
+        <td class="notForm centerCell">
+            <input type="checkbox" value="<%=order._id%>" class="checkbox
+                <% if (order.proformaCounter || (order.workflow && order.workflow.name !== 'Not Invoiced')) { %>
+                    notRemovable
+                <% } %>" <%if (order.workflow && order.workflow.name !== 'Not Invoiced') { %>
+            disabled='disabled'
+            <% } %>
+            />
+        </td>
+        <td><%=order.name%></td>
+        <td><%=(order.supplier) ? order.supplier.name.first + ' ' + order.supplier.name.last : ''%></td>
+        <td><%=(order.salesManager) ? order.salesManager.name.first + ' ' + order.salesManager.name.last : ''%></td>
+        <td class="total"><%=(order.currency && order.currency._id ? order.currency._id.symbol : '') + ((order.paymentInfo) ? currencySplitter(order.paymentInfo.total) : '0.00') %></td>
+        <td id='<%=order._id%>'>
+            <span><%=order.workflow ? order.workflow.name: 'undefined'%></span>
+        </td>
+        <td><%=order.orderDate%></td>
+    </tr>
+<% }) %>

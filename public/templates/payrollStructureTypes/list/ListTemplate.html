@@ -1,0 +1,8 @@
+<% payrollComponentTypes.forEach(function(payrollComponentType, index){ %>
+<tr data-id="<%=payrollComponentType._id%>">
+    <td data-content="number" class="centerCell"><%=startNumber + index + 1%></td>
+    <td data-content="payrollComponentType" data-id="<%=payrollComponentType ? payrollComponentType._id : null%>">
+        <span> <%=payrollComponentType.name%></span>
+    </td>
+</tr>
+<% }) %>

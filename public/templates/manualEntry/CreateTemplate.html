@@ -1,0 +1,91 @@
+<div class="form-holder _newForm _newManualEntry">
+    <form method="post" action="" class="_manualEntry">
+        <h4 class="_dialogTitlePositioned">Manual Entry</h4>
+        <div class="_formWrap">
+            <div class="_formBlock _equal _btnWrap">
+                <a href="javascript:;"
+                   class="btn blue slim icon-plus"
+                   title="Create Journal"
+                   id="createBtn">New Journal
+                </a>
+            </div>
+            <div class="_formBlock _equal">
+                <div class="_animateInputBox">
+                    <span class="_staticLabel">Date</span>
+                    <input type="text"
+                           class="_animate"
+                           id="date"
+                           placeholder="Choose date"
+                           readonly/>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Source Document</span>
+                    <div class="_newSelectListWrap">
+                        <a id="sourceDocumentDd"
+                           class="current-selected">Select source document</a>
+                    </div>
+                </div>
+                <div id="employeesDdWrap" class="_animateSelectBox">
+                    <span class="_selectTitle">Source Document</span>
+                    <div class="_newSelectListWrap">
+                        <a id="employeesDd"
+                           class="current-selected">Select employee</a>
+                    </div>
+                </div>
+            </div>
+            <div class="_formBlock _equal">
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Journal</span>
+                    <div class="_newSelectListWrap">
+                        <a id="journalsDd"
+                           class="current-selected">Select journal</a>
+                    </div>
+                </div>
+                <div class="_animateSelectBox">
+                    <span class="_selectTitle">Currency</span>
+                    <div class="_newSelectListWrap">
+                        <a id="currencyDd"
+                           class="current-selected">Select currency</a>
+                    </div>
+                </div>
+            </div>
+            <div class="_formBlock _equal">
+                <table class="stripedList">
+                    <colgroup>
+                        <col width="200px">
+                        <col width="50%">
+                        <col width="50%">
+                        <col width="40px">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>Account</th>
+                        <th>Debit</th>
+                        <th>Credit</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody class="enableTableOdd" id="manualTableBody">
+                    <tr id="dataTrDebit" class="trs">
+                        <td><a id="debitAccountDd" class="current-selected" href="javascript:;">Select</a></td>
+                        <td class="editable money debit" data-type="input">0</td>
+                        <td class="money credit" data-type="input">0</td>
+                        <td class="_tipBox">
+                            <span class="tips icon-info" data-id="debitAccountDd"></span>
+                        </td>
+                    </tr>
+                    <tr id="dataTrCredit" class="trs">
+                        <td><a id="creditAccountDd" class="current-selected" href="javascript:;">Select</a></td>
+                        <td class="money debit" data-type="input">0</td>
+                        <td class="editable money credit" data-type="input">0</td>
+                        <td class="_tipBox">
+                            <span class="tips icon-info" data-id="creditAccountDd"></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="javascript:;" class="btn blue slim _addRow" id="addNewRow">Add new row</a>
+            </div>
+        </div>
+    </form>
+</div>

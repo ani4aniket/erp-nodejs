@@ -1,0 +1,669 @@
+
+
+.propertyContainer {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.opportunity-content {
+  //.fa-comment-o,
+  //.fa-paperclip {
+  //  color: #2c3e50;
+  //}
+  //.fa {
+  //  &:nth-child(n+2) {
+  //    margin-left: 10px;
+  //  }
+  //}
+  .projectType {
+    color: #549ecf;
+  }
+}
+
+.propertyBox {
+  position: relative;
+  display: table;
+  border: 1px solid $lightgrey;
+  padding: 10px 25px 10px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 3px;
+
+  .propertyImg,
+  .propertyBody {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .removeProperty {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    padding-top: 3px;
+    text-align: center;
+    font-size: 12px;
+    color: $property-text-color;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .propertyImg {
+    width: 40px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .propertyBody {
+    padding-left: 15px;
+    font-size: 13px;
+  }
+
+  .propertyFullName {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  a {
+    color: $property-link-color;
+    word-break: break-all;
+  }
+}
+
+.separateBlock {
+  text-align: center;
+}
+
+.propertyFormList {
+  display: table !important;
+  width: 100%;
+
+  label,
+  .inputBox {
+    display: table-cell !important;
+    //vertical-align: bottom;
+  }
+
+  label {
+    width: 100px !important;
+    text-align: left;
+    padding-right: 15px;
+  }
+
+  .inputBox {
+    input:not([type=checkbox]) {
+      border: none;
+      border-bottom: 1px solid $lightgrey;
+      outline: none;
+      width: 100%;
+      padding: 6px 0;
+
+      &._socialContact {
+        padding-right: 32px;
+      }
+
+      &:focus {
+        //background: $drop-down-list-bg;
+        border: none ;
+        border-bottom: 1px solid $property-box-border-color;
+      }
+    }
+  }
+}
+
+.propertySubmit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.propertyEditBtn {
+  display: none;
+  margin-top: 15px;
+
+  &.showButtons {
+    display: block;
+  }
+
+  .btn + .btn {
+    margin-left: 10px;
+  }
+}
+
+.tagsRow,
+.attachWrapper,
+.selectCompany,
+.moduleList {
+  padding: 10px 20px 20px;
+
+  .tagsTitle {
+    border-bottom: none !important;
+    margin-bottom: 13px;
+  }
+}
+
+._inputColumn {
+
+  .formTitleWrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+  }
+
+  .formTitle {
+    font-family: $semibold-font-family;
+  }
+}
+
+.formTitle {
+  word-break: break-all;
+}
+
+.tagsRow {
+  .editTags {
+    &:hover {
+      background: none;
+      text-decoration: none;
+    }
+  }
+}
+
+.singleNote {
+  line-height: 20px;
+}
+
+//.attachWrapper,
+//.selectCompany {
+//  .input-file {
+//    width: 100%;
+//    margin: 0 0 20px;
+//    padding: 20px;
+//    height: auto;
+//    color: $black;
+//    font-size: 16px;
+//    border-radius: 3px;
+//
+//    &:hover {
+//      background: $add-company-btn-hover-bg;
+//      -webkit-transition: all .3s;
+//      transition: all .3s;
+//    }
+//
+//    &.smallBtn {
+//      display: block;
+//      width: 90px;
+//      margin: 15px auto 0;
+//      padding: 6px 12px;
+//      font-size: 13px;
+//      float: none;
+//    }
+//
+//    .inputAttach {
+//      cursor: pointer !important;
+//    }
+//  }
+//
+//  .atachPlaceHolder,
+//  .addCompanyBtn {
+//    i {
+//      margin-right: 5px;
+//      font-size: 12px;
+//    }
+//  }
+//
+//  .inputAttach {
+//    width: 100% !important;
+//    height: 100% !important;
+//    max-width: 100% !important;
+//  }
+//}
+
+.selectCompany {
+  position: relative;
+
+  .addCompanyBtn {
+    width: 100%;
+    margin: 0;
+    padding: 15px !important;
+    height: auto;
+    color: $black;
+    font-size: 16px;
+
+    &:hover {
+      background: $add-company-btn-hover-bg;
+      text-decoration: none;
+    }
+  }
+
+  ._companySaveButton {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(126, 173, 204, 0.36);
+    }
+  }
+
+  .propertyBox {
+    margin-bottom: 0;
+    margin-top: 13px;
+
+    + .person-info {
+      margin-top: 20px;
+    }
+  }
+}
+
+.ui-dialog {
+  .ui-dialog-content.opportunitiesModal {
+    padding: 20px;
+
+    .tagsTitle {
+      border-bottom: none;
+      text-align: left;
+    }
+
+    h2.tagsTitle {
+      font-size: 18px;
+    }
+
+    h4.tagsTitle {
+      font-size: 13px;
+    }
+
+    input.searchTagInput {
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  .dropDownList {
+
+    ul {
+      max-height: 191px;
+      border-top: 1px solid #c8c8d3;
+      border-bottom: 1px solid #c8c8d3;
+      margin: 10px 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    li {
+      padding: 8px 12px;
+      cursor: pointer;
+      margin-bottom: 5px !important;
+
+      &:hover {
+        background: $drop-down-list-bg;
+      }
+    }
+
+    span {
+      display: block;
+      font-size: 12px;
+    }
+
+    .propertyNameList {
+      color: $black;
+      margin-bottom: 5px;
+    }
+  }
+
+  //.createNewCompany {
+  //  font-size: 13px;
+  //  color: $black;
+  //  background: $create-bg;
+  //  padding: 6px 12px;
+  //  border-radius: 3px;
+  //
+  //  &:hover {
+  //    text-decoration: none;
+  //  }
+  //}
+}
+
+.newCompanyContainer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.dealTitle {
+  input:not([type=checkbox]) {
+    border: none !important;
+  }
+
+  .dealTitleName,
+  .dealTitlePrice,
+  span {
+    font-size: 18px !important;
+  }
+
+  .dealTitleName {
+    width: 410px;
+    max-width: 410px !important;
+  }
+
+  .dealTitlePrice {
+    width: 80px;
+    text-align: right;
+  }
+}
+
+.moduleList,
+.attachments {
+  border-radius: 3px;
+  border: 1px solid $lightgrey;
+}
+
+.attachments {
+  &._popupAttachments {
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+.moduleList {
+  .tags-container {
+    label {
+      float: left;
+    }
+  }
+}
+
+.tagsLabel {
+  display: inline-block;
+  line-height: 18px;
+  color: #000;
+}
+
+.moduleList,
+.attachments {
+  .largeBtn {
+    font-size: 16px !important;
+  }
+}
+
+.tags-container {
+  label {
+    text-align: left;
+  }
+}
+
+.attach-container{
+  &._noMarginTop {
+    .attachments {
+      margin-top: 0;
+    }
+  }
+}
+
+.attachments {
+  margin: 10px 0;
+}
+
+.largeBtn {
+  width: 100%;
+  padding: 14px 20px !important;
+  height: auto;
+  color: $black;
+  font-size: 16px !important;
+  border-radius: 3px;
+
+  &:hover {
+    background: $create-bg;
+    text-decoration: none;
+  }
+
+  i {
+    margin-right: 5px;
+    font-size: 12px;
+  }
+}
+
+.area_holder {
+  position: relative;
+
+  textarea {
+    height: 100px;
+    padding: 10px;
+  }
+
+  ._titleBlueBorder {
+    margin: 0;
+
+    + textarea {
+      border-top: 0;
+      &:focus {
+        border-color: #7eadcc;
+      }
+    }
+  }
+
+  .attach_file {
+    position: absolute;
+    right: 15px !important;
+    bottom: 10px !important;
+    font-size: 18px;
+  }
+}
+
+.addNote,
+.addTask {
+  margin-top: 0 !important;
+  width: 100%;
+
+  .buttons {
+    display: none;
+  }
+
+  &.active {
+    padding: 0 !important;
+
+    .buttons {
+      display: block;
+    }
+
+    textarea {
+
+    }
+  }
+}
+
+.addTask {
+  .hasDatepicker {
+    float: right;
+    border: none !important;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .current-selected {
+    display: inline-block;
+    margin-left: 5px;
+    font-family: $semibold-font-family;
+  }
+}
+
+.current-selected {
+  display: inline-block;
+}
+
+.noteWrapper  {
+  .buttons {
+    margin-top: 10px !important;
+
+    .btn + .btn {
+      margin-left: 10px;
+    }
+  }
+}
+
+.amountBox {
+  position: relative;
+
+  .amountDollar {
+    position: absolute;
+    left: 0;
+    top: 7px;
+  }
+
+  input:not([type=checkbox]) {
+    padding-left: 15px !important;
+  }
+}
+
+._animateInputBox {
+
+  .amountDollar {
+    @include rem('font-size', 16px);
+  }
+}
+
+.assignName {
+  padding-left: 13px;
+}
+.propertyFormList {
+  .assignName {
+    padding-left: 0;
+  }
+}
+
+.ui-datepicker {
+  min-width: 175px;
+}
+
+.social {
+  margin-top: 20px;
+}
+
+.ui-dialog {
+  .ui-dialog-buttonpane {
+    border-top: none;
+  }
+}
+
+._listModalColumn {
+  width: 33.333%;
+  padding: 0 10px;
+  float: left;
+}
+
+.ui-dialog, ._warehouseForm {
+  ._location._listModal{
+    ._modalSelect > input{
+      width: 90% !important;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+  }
+  ._listModal {
+    padding: 10px 20px;
+
+    .modal_title {
+      margin-bottom: 20px;
+      color: $sales-modal-select-text-color;
+    }
+
+    ._modalList {
+      margin-bottom: 5px;
+      &._selectBlock{
+        &+._modalList{
+          clear: both;
+        }
+        ._modalLabel{
+          float: left;
+        }
+        ._modalSelect{
+          float: left;
+          input[type='checkbox'] {
+            width: auto !important;
+            margin-top: 0px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    ._modalLabel {
+
+      > label {
+        display: inline-block;
+        margin-bottom: 5px;
+        color: $sales-modal-select-text-color;
+        font-family: $fontSemiBold;
+      }
+    }
+
+    ._modalSelect {
+      &._newSelectListWrap{
+        .newSelectList, input{
+          max-width: 100% !important;
+          width: 100%;
+        }
+      }
+      > a, > input {
+        font-size: 12px;
+        height: 30px;
+        display: block;
+        padding: 5px;
+        width: 100% !important;
+        max-width: 100% !important;
+        //min-height: 35px;
+        min-height: 30px;
+        line-height: 28px !important;
+        border: 1px solid $sales-modal-select-border-color;
+        border-radius: 3px;
+        padding: 0 0 0 10px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      > a {
+        cursor: pointer;
+      }
+    }
+
+
+
+    ._inputContainer {
+      display: inline-block;
+      white-space: nowrap;
+      & + ._inputContainer {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

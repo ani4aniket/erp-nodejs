@@ -1,0 +1,17 @@
+<tr class="productItem" data-id="false">
+    <td data-name="Shareholder" class="errorContent _newSelectListWrap" data-content="employeesDd">
+        <a class="current-selected" data-id="employeesDd" href="javascript:;">select</a>
+    </td>
+    <td data-name="productDescr">
+        <span>
+            <input type="text" class="statusInfo" maxlength="40" size="15">
+        </span>
+    </td>
+    <%var currencyClassVal;%>
+    <%currencyClassVal = currencyClass(currency._id)%>
+    <td data-name="price" class="<%=currencyClassVal%>"><span><input type="text" class="statusInfo" maxlength="9" size="7" value="0.00"></span>
+    </td>
+    <td class="taxes <%=currencyClassVal%>"><span>0.00</span></td>
+    <td class="amount <%=currencyClassVal%>"><span>0.00</span></td>
+</tr>
+

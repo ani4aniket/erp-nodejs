@@ -1,0 +1,393 @@
+._progressbarWrap {
+  padding: 20px;
+
+  .dialog-tabs-items {
+    padding: 20px 0;
+
+    h4 {
+      font-size: 16px;
+    }
+
+    ._progressBarItems {
+      width: 75%;
+      min-width: 300px;
+
+      ._statusInfo {
+        display: flex;
+        padding-bottom: 5px;
+        > p {
+          text-transform: uppercase;
+          width: 80px;
+        }
+        > ._statusProductBar {
+          flex-grow: 2;
+          text-align: center;
+        }
+      }
+
+      .bar._progressBar {
+        width: 0;
+      }
+    }
+
+    .btnsBlock {
+      margin: 10px 0;
+
+      button {
+        background-color: #f2f2f2;
+        border: 1px solid #d8dde6;
+        border-radius: 4px;
+        margin: 5px 0;
+        padding: 10px;
+        float: left;
+        color: green;
+
+        &:first-child {
+          color: red;
+        }
+
+        + button {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    #statusBlock {
+      color: green;
+    }
+  }
+}
+
+/*Apps Wrapper*/
+._appsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: calc(100vh - #{$topbarHeight + $subTopbar});
+  padding: 20px;
+  background-color: #ecf1f5;
+  overflow: auto;
+}
+
+._appItem {
+  width: 400px;
+  height: 370px;
+  padding: 30px;
+  margin: 7px;
+  border-radius: 5px;
+  background-color: #fff;
+
+  ._channelInfoWrap {
+    display: flex;
+    margin-bottom: 20px;
+
+    .channelImg {
+      margin-right: 20px;
+    }
+  }
+
+  ._syncInfoWrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    ._channelName {
+      color: #2e2e2e;
+      font-size: 16px;
+      font-family: "OpenSans SemiBold", Arial, Helvetica, sans-serif;
+      margin-right: 10px;
+    }
+  }
+}
+
+._channelStatus {
+  display: flex;
+}
+
+
+._channelStatus {
+  ._statusItem {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+
+    .channelRowHeader {
+      font-size: 14px;
+      color: #2e2e2e;
+    }
+
+    .channelRowValue {
+      margin-top: auto;
+    }
+  }
+
+  ._showLogWrap {
+    flex-grow: 1;
+    align-self: flex-end;
+  }
+}
+
+._channelInfoWrap {
+  ._channelName {
+    margin-bottom: 10px;
+    color: #2e2e2e;
+    font-size: 16px;
+    font-family: $semibold-font-family;
+  }
+
+  ._syncInfo {
+    color: #666;
+    font-size: 13px;
+
+    b {
+      color: #2e2e2e;
+    }
+  }
+}
+
+[data-content="connectingStatus"] {
+
+  .btn.connection {
+    min-width: 120px;
+  }
+}
+
+._channelContainer {
+  display: flex;
+
+  ._channelitem {
+    flex-grow: 1;
+    width: 100px;
+    height: 60px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background: #e3e3e3;
+    }
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+._channelNameContainer {
+  font-size: 14px;
+  + .ui-dialog-buttonpane {
+    margin-top: 10px !important;
+  }
+
+  .mainContent {
+    display: flex;
+    align-items: center;
+  }
+  ._listModal {
+    flex-grow: 1;
+    ._modalLabel {
+      label {
+        font-size: 18px;
+        line-height: 26px;
+        color: #3e88b9;
+      }
+    }
+  }
+}
+
+._appsWrap .app,
+._channelNameContainer {
+  .channelImg {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+._appsWrap .app {
+  .channelImg {
+
+    &.magento,
+    &.shopify,
+    &.etsy {
+      width: 70px;
+      background-size: cover;
+    }
+
+    &.magento {
+      height: 81px;
+      background-position: -5px 0;
+    }
+
+    &.shopify {
+      height: 77px;
+      background-position: -3px 0px;
+    }
+
+    &.etsy {
+      height: 65px;
+      background-position: 0 -4px;
+    }
+  }
+}
+
+._channelNameContainer {
+  .channelImg {
+
+    &.shopify,
+    &.magento,
+    &.etsy {
+      background-position: center center;
+    }
+  }
+
+  ._animateInputBox {
+    margin: 0;
+  }
+}
+
+._inventoryProductWrap {
+  ul {
+    display: table;
+    vertical-align: middle;
+    li {
+      display: table-cell;
+      vertical-align: middle;
+      float: left;
+
+      .channelImg {
+        display: table-cell;
+
+        + span {
+          min-height: 25px;
+          display: table-cell;
+          padding: 0 5px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+.channelImg {
+  width: 40px;
+  height: 40px;
+
+  &.magento {
+    background: url('../images/magento.svg') no-repeat;
+  }
+
+  &.shopify {
+    background: url('../images/shopify.svg') no-repeat;
+  }
+
+  &.etsy {
+    background: url('../images/etsy.svg') no-repeat;
+  }
+
+  &.woo {
+    background: url('../images/wooLogo.svg') center center no-repeat;
+  }
+}
+
+td {
+  .channelImg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+._switcher {
+  display: flex;
+  width: 46px;
+  height: 20px;
+  padding: 1px;
+  border-radius: 11px;
+  background-color: #c1c1c1;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}
+
+.success {
+  ._switcher {
+    background-color: #7eadcc;
+
+    &:after {
+      margin-left: auto;
+    }
+  }
+}
+
+.appActionBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  ._switcherWrap {
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: 'Disconnected';
+      margin-left: 10px;
+      font: {
+        size: 14px;
+      }
+      color: #2e2e2e;
+      line-height: 1;
+    }
+  }
+
+  ._settingsBtn {
+    display: flex;
+    height: 20px;
+    margin-left: auto;
+    font-size: 20px;
+    color: #2e2e2e;
+    cursor: pointer;
+    transition: transform 250ms ease;
+
+    &:hover {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+._switcherWrap {
+  &.success {
+    &:after {
+      content: 'Connected';
+    }
+  }
+}
+
+//conflicted & unlinked products
+
+.conflictUnlinkProducts {
+  display: flex;
+
+  .conflictedWrap, .unlinkedWrap {
+    flex-grow: 1;
+    padding-top: 15px;
+  }
+
+  h3 {
+    padding: 0 20px;
+  }
+
+  .top-bar {
+    display: block;
+    padding: 0 20px;
+    border-bottom: 0;
+  }
+}

@@ -1,0 +1,33 @@
+h2 {
+  &.green {
+    color: #32c5d2;
+  }
+}
+
+h3{
+  @extend %text-overflow;
+  color: #3e88b9;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.blue {
+  color: $mainText-color-selected;
+}
+
+.blueText {
+  color: #3e88b9;
+}
+
+.textGrey {
+  color: #9a9a9e;
+}
+
+.fontBold {
+  font-family: $bold-font-family;
+}
+
+.fontSemiBold {
+  font-family: $semibold-font-family;
+}
+

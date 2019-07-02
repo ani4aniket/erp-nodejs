@@ -1,0 +1,112 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" class="form" id="invoiceForm">
+        <h4 class="_dialogTitlePositioned">Add New Dividend Declaration</h4>
+        <ul class="dialog-tabs" data-class="mainTabs">
+            <li><a class="active" href="javascript:;">Main</a></li>
+            <li><a href="javascript:;">Assignees</a></li>
+        </ul>
+        <div class="dialog-tabs-items mainTabs">
+            <div class="dialog-tabs-item mainTabs active">
+                <div class="_formWrap">
+                    <div class="_formBlock _equal">
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Currency</span>
+                            <div class="_newSelectListWrap">
+                                <a id="currencyDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select currency</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_formBlock _equal">
+                        <div class="_animateInputBox">
+                            <span class="_staticLabel">Invoice Date</span>
+                            <input type="text"
+                                   name="invoiceDate"
+                                   class="_animate extrainfo"
+                                   id="invoice_date"
+                                   value=""
+                                   placeholder="Invoice Date"
+                                   required
+                                   readonly/>
+                        </div>
+                        <div class="_animateInputBox">
+                            <span class="_staticLabel">Invoice Date</span>
+                            <input type="text"
+                                   name="dueDate"
+                                   class="_animate extrainfo"
+                                   id="due_date"
+                                   value=""
+                                   placeholder="Due Date"
+                                   required
+                                   readonly/>
+                        </div>
+                    </div>
+                </div>
+                <ul class="dialog-tabs" data-class="childTabs">
+                    <li><a class="active" href="javascript:;">Dividend declaration</a></li>
+                    <li><a href="javascript:;">Other Info</a></li>
+                    <li><a href="javascript:;">Payments</a></li>
+                </ul>
+                <div class="dialog-tabs-items childTabs">
+                    <div class="dialog-tabs-item childTabs active">
+                        <div id="invoiceItemsHolder"></div>
+                    </div>
+                    <div class="dialog-tabs-item childTabs">
+                        <div class="_formWrap">
+                            <div class="_formBlock _equal">
+                                <div class="_animateSelectBox">
+                                    <span class="_selectTitle">Bank Account</span>
+                                    <div class="_newSelectListWrap">
+                                        <a id="bank_account"
+                                           class="current-selected"
+                                           href="javascript:;">Select bank account
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="_animateSelectBox">
+                                    <span class="_selectTitle">Responsible</span>
+                                    <div class="_newSelectListWrap">
+                                        <a id="salesPerson"
+                                           class="current-selected"
+                                           href="javascript:;">Select responsible
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="_animateSelectBox">
+                                    <span class="_selectTitle">Payment Terms</span>
+                                    <div class="_newSelectListWrap">
+                                        <a id="payment_terms"
+                                           class="current-selected"
+                                           href="javascript:;">Select payment terms
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="_formBlock _equal">
+                                <div class="_animateSelectBox">
+                                    <span class="_selectTitle">Force Period</span>
+                                    <div class="_newSelectListWrap">
+                                        <a id="force_period"
+                                           class="current-selected"
+                                           href="javascript:;">Select force period
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dialog-tabs-item childTabs">
+                        <div id="payments-container" class="_dividendPayments"></div>
+                    </div>
+                    <div class="dialog-tabs-item childTabs">
+                        <div id="attach-container"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-tabs-item mainTabs">
+                <div class="assignees-container _formWrap _innedFlexDiv"></div>
+            </div>
+        </div>
+    </form>
+</div>

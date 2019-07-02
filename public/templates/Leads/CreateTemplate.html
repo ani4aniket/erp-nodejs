@@ -1,0 +1,244 @@
+<div class="form-holder _newForm">
+    <form method="post" action="" class="_leadForm" id="leadForm">
+        <h4 class="_dialogTitlePositioned">Add New Lead</h4>
+        <ul class="dialog-tabs">
+            <li><a href="javascript:;" class="active">Lead</a></li>
+            <li><a href="javascript:;">Person</a></li>
+            <li><a href="javascript:;">Company</a></li>
+        </ul>
+        <div class="dialog-tabs-items">
+            <div class="dialog-tabs-item active">
+                <div class="_formWrap _enlargedItemMargin">
+                    <div class="_formBlock">
+                        <div class="_animateInputBox _withInfo">
+                            <input type="text"
+                                   class="_animate "
+                                   id="name"
+                                   required
+                                   maxlength="48"/>
+                            <label class="_animate">Subject</label>
+                            <span class="tips icon-info" data-id="name"></span>
+                        </div>
+                        <div class="_animateSelectBox _withInfo">
+                            <span class="_selectTitle">Source</span>
+                            <div class="_newSelectListWrap">
+                                <a id="sourceDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select source
+                                </a>
+                            </div>
+                            <span class="tips icon-info" data-id="sourceDd"></span>
+                        </div>
+                        <div class="_animateSelectBox _withInfo">
+                            <span class="_selectTitle">Assigned to</span>
+                            <div class="_newSelectListWrap">
+                                <a id="salesPerson"
+                                   class="current-selected"
+                                   href="javascript:;">Select assignee
+                                </a>
+                            </div>
+                            <span class="tips icon-info" data-id="salesPerson"></span>
+                        </div>
+                        <div class="_animateSelectBox _withInfo">
+                            <span class="_selectTitle">Stage</span>
+                            <div class="_newSelectListWrap">
+                                <a id="workflowsDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select stage
+                                </a>
+                            </div>
+                            <span class="tips icon-info" data-id="workflowsDd"></span>
+                        </div>
+                        <div class="_animateSelectBox _withInfo">
+                            <span class="_selectTitle">Priority</span>
+                            <div class="_newSelectListWrap">
+                                <a id="priorityDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select priority
+                                </a>
+                            </div>
+                            <span class="tips icon-info" data-id="priorityDd"></span>
+                        </div>
+                        <div class="_animateInputBox _withInfo">
+                            <span class="_staticLabel">Close Date</span>
+                            <input class="_animate extrainfo"
+                                   type="text"
+                                   name="Close Date"
+                                   placeholder="Close Date"
+                                   id="expectedClosingDate"
+                                   readonly="">
+                            <span class="tips icon-info" data-id="expectedClosingDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-tabs-item">
+                <div class="_formWrap _enlargedItemMargin">
+                    <div class="_formBlock">
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Person</span>
+                            <div class="_newSelectListWrap">
+                                <a id="customerDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select person
+                                </a>
+                            </div>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate name"
+                                   id="first"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">First Name</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate name"
+                                   id="last"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Last Name</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="jobPosition"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Job Position</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <span class="_staticLabel">Date of Birth</span>
+                            <input class="_animate extrainfo"
+                                   type="text"
+                                   name="Date of Birth"
+                                   id="dateBirthOnCreate"
+                                   required
+                                   readonly="">
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="email"
+                                   required
+                                   maxlength="48"/>
+                            <label class="_animate">Email</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="phone"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Phone Number</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="skype"
+                                   value=""
+                                   required
+                                   maxlength="256"/>
+                            <label class="_animate">Skype</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="LI"
+                                   required
+                                   maxlength="256"/>
+                            <label class="_animate">LinkedIn</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-tabs-item">
+                <div class="_formWrap _enlargedItemMargin">
+                    <div class="_formBlock">
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Company</span>
+                            <div class="_newSelectListWrap">
+                                <a id="companyDd"
+                                   class="current-selected"
+                                   href="javascript:;">Select company
+                                </a>
+                            </div>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate"
+                                   id="company"
+                                   data-id=""
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Company Name</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate address"
+                                   id="street"
+                                   name="street"
+                                   required
+                                   maxlength="60"/>
+                            <label class="_animate">Street</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate address"
+                                   id="city"
+                                   name="city"
+                                   required
+                                   maxlength="60"/>
+                            <label class="_animate">City</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate address"
+                                   id="state"
+                                   name="state"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">State</label>
+                        </div>
+                        <div class="_animateInputBox">
+                            <input type="text"
+                                   class="_animate address"
+                                   id="zip"
+                                   name="zip"
+                                   required
+                                   maxlength="32"/>
+                            <label class="_animate">Zip Code</label>
+                        </div>
+                        <div class="_animateSelectBox">
+                            <span class="_selectTitle">Country</span>
+                            <div class="_newSelectListWrap">
+                                <a class="address current-selected"
+                                   id="country"
+                                   name="country">Select country
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="_formWrap">
+                <div class="_formBlock counterWrap">
+                    <div class="_animateTextareaBox counterEl">
+                        <textarea id="internalNotes"
+                                  class="_animate internal_Notes"
+                                  required
+                                  maxlength="2500" ></textarea>
+                        <label for="internalNotes" class="_animate">Internal Notes</label>
+                        <span class="attach_file icon-attach"></span>
+                        <div class="counter-wrap">
+                            <span class="counter-label">Characters left:</span>
+                            <span class="counter-value" id="counterValue">2500</span>
+                        </div>
+                    </div>
+                    <div class="attach-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

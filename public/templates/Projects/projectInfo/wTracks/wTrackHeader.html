@@ -1,0 +1,136 @@
+<div id="searchContainer"></div>
+<div id="createBtnHolder" class="btnsBlock _underTabs">
+    <a href="javascript:;" class="btn blue slim" title="Save" id="savewTrack">Save</a>
+    <a href="javascript:;" class="btn blue slim" title="Remove" id="deletewTrack">Delete</a>
+    <a href="javascript:;" class="icon-plus btn blue slim" title="Create" id="createBtn">New Time Card</a>
+    <!--<button id="top-bar-generateBtn" class="red disabled">Generate Invoice</button>-->
+    <button id="top-bar-copyBtn" class="btn slim red disabled">Copy</button>
+</div>
+<div class="clearfix"></div>
+<div class="_timeCardTableWrap">
+    <table class="list stripedList">
+        <colgroup>
+            <col width="43px">
+            <col width="5%">
+            <col width="9%">
+            <col width="7%">
+            <col width="9%">
+            <col width="9%">
+            <col width="8%">
+            <col width="5%">
+            <col width="6%">
+            <col width="6%">
+            <col width="6%">
+            <col width="5%">
+            <col width="4%">
+            <col width="5%">
+            <col width="4%">
+            <col width="4%">
+            <col width="4%">
+            <col width="4%">
+        </colgroup>
+        <thead>
+        <tr>
+            <th class="centerCell">
+                <label class="_customCHeckbox">
+                    <input type="checkbox" id="checkAll" class="checkAll"/>
+                    <span></span>
+                </label>
+            </th>
+            <th>Type</th>
+            <th class="oe_sortable" data-sort="jobs.name">
+                Sprint<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <!--<th class="oe_sortable" data-sort="project.projectmanager.name">
+                Assigned<span class="arrow down"></span><span class="arrow up"></span>
+            </th>-->
+            <th class="oe_sortable sortDn" data-sort="project.name">
+                Project<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+           <!-- <th class="oe_sortable" data-sort="project.workflow">
+                Project Status<span class="arrow down"></span><span class="arrow up"></span>
+            </th>-->
+            <th class="oe_sortable" data-sort="project.customer">
+                Customer<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="employee.name">
+                Employee<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="department.name">
+                Department<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="year">
+                Year<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="month">
+                Month<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="week">
+                Week<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <!--<th class="oe_sortable" data-sort="rate">-->
+                <!--Rate<span class="arrow down"></span><span class="arrow up"></span>-->
+            <!--</th>-->
+            <th class="oe_sortable" data-sort="worked">
+                Hours<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="Mo">
+                Mo<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="Tu">
+                Tu<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="We">
+                We<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="Th">
+                Th<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="Fr">
+                Fr<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="Sa">
+                Sa<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="Su">
+                Su<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+           <!-- <th class="oe_sortable" data-sort="isPaid">
+                Status<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="revenue">
+                Revenue<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th class="oe_sortable" data-sort="cost">
+                Cost<span class="arrow down"></span><span class="arrow up"></span>
+            </th>
+            <th>
+                Profit
+            </th>
+            <th class="oe_sortable" data-sort="amount">
+                Amount<span class="arrow down"></span><span class="arrow up"></span>
+            </th>-->
+        </tr>
+        </thead>
+        <tbody id="listTable"></tbody>
+        <tfoot id="listFooter">
+        <tr>
+            <td colspan="10"></td>
+            <td><span id="hours">0</span></td>
+            <td><span id="monHours">0</span></td>
+            <td><span id="tueHours">0</span></td>
+            <td><span id="wedHours">0</span></td>
+            <td><span id="thuHours">0</span></td>
+            <td><span id="friHours">0</span></td>
+            <td><span id="satHours">0</span></td>
+            <td><span id="sunHours">0</span></td>
+            <!--<td></td>-->
+            <!--<td><span id="revenue" class="money">0</span></td>
+            <td><span id="cost" class="money">0</span></td>
+            <td><span id="profit" class="money">0</span></td>
+            <td><span id="amount" class="money">0</span></td>-->
+            <!--<td></td>-->
+        </tr>
+        </tfoot>
+    </table>
+</div>

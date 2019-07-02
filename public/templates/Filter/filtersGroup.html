@@ -1,0 +1,24 @@
+<div class="groupName ">
+    <span id="<%= filterViewName %>"><%= groupName %></span>
+</div>
+<div id="<%= filterViewName %>Container" class="ulContent hidden">
+    <div class="_filterContent">
+        <% if (paginationBool){%>
+        <div class="_animateInputBox">
+            <input class="_animate"
+                   id="<%=filterViewName%>Input"
+                   required/>
+            <label for="<%=filterViewName%>Input"
+                   class="_animate">Search</label>
+        </div>
+        <%}%>
+        <ul id="<%=filterViewName%>Ul" class="filterValues"></ul>
+    </div>
+    <% if (paginationBool){%>
+    <div class="miniStylePagination">
+        <a class="prev" href="javascript:;">&lt; Prev</a>
+        <span class="counter"></span>
+        <a class="next" href="javascript:;">Next &gt;</a>
+    </div>
+    <%}%>
+</div>

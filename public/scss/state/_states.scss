@@ -1,0 +1,60 @@
+.label-success {
+  background-color: #5cb85c;
+}
+
+.label-warning {
+  background-color: #f0ad4e;
+}
+
+.label-danger {
+  background-color: #d9534f;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.fired {
+  background-color: rgba(235, 0, 4, 0.73) !important;
+  color: #fff!important;
+}
+
+.textLightGrey {
+  color: #c5c7c7;
+}
+
+.textBlue {
+  color: #27a0cd;
+}
+
+.textGrey {
+  color: #9a9a9e;
+}
+
+tr.redBorder {
+  background-color: red !important;
+  * {
+    color: #fff !important;
+  }
+  td {
+    border-color: red !important;
+  }
+  &:hover {
+    background-color: red !important;
+    * {
+      color: #fff !important;
+    }
+    td {
+      border-color: red !important;
+    }
+  }
+}
+
+tr.greyBorder {
+  background-color: #e5d7e8;
+}
+
+td.invalidValue {
+  color: red !important;
+  font-family: $semibold-font-family;
+}

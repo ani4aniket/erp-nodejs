@@ -1,0 +1,61 @@
+<% products.forEach(function(product){ %>
+<tr class="productItem" data-id="<%=product.product._id%>">
+    <td data-name="productName" class="width20">
+        <div class="">
+        <%if(editable) {%>
+            <div class="jobsWescWrap _newSelectListWrap ">
+                <a class="current-selected productsDd" href="javascript:;" data-id="<%= product ? product.product._id : null%>"><%=product.product.name%></a>
+                <textarea class="productDescr"><%= product ? product.product.info.description : ''%></textarea>
+            </div>
+
+        <%} else {%>
+            <div class="jobsWescWrap _newSelectListWrap">
+                <a href="javascript:;"><%=product.product.name%></a>
+                <textarea class="productDescr" readonly><%= product ? product.product.info.description : ''%></textarea>
+                <%}%>
+            </div>
+
+        </div>
+    </td>
+    <% if (forSales) {%>
+        <% if (product.jobs) { %>
+            <td data-name="jobs" data-content="<%=product.jobs._id%>" class="textEllipsis jobs selectJobTd ">
+                <div class="jobsWescWrap _newSelectListWrap ">
+                    <a class="<%=editable ? 'current-selected jobs' : ''%>" id="jobs" data-id="<%=product.jobs._id%>" href="javascript:;"><%=product.jobs.name%></a>
+                    <textarea class="jobsDescription"><%=product.jobs.description%></textarea>
+                </div>
+
+            </td>
+        <% } %>
+    <% } %>
+    <!--<td data-name="scheduledDate" class="<%=editable && !forSales ? 'editable' : ''%>">
+        <span class="datepicker">
+            <%=product.scheduledDate%>
+        </span>
+        <input type="text" class="datepicker notVisible" readonly>
+    </td>--> <!--commented on 14 Mar, in quotationEdit commit -->
+
+    <td data-name="quantity" class="<%=!forSales ? 'editable' : ''%>">
+        <% if (forSales){ %>
+        <span><%=product.quantity%></span>
+        <% } else if (!editable) { %>
+        <span><%=product.quantity%></span>
+        <% } else { %>
+        <input id="quantity" class="quantity statusInfo" maxlength="9" size=10 type="text"
+               value="<%=product.quantity%>"/>
+        <% } %>
+    </td>
+    <td data-name="price" class="<%=editable || editablePrice  ? 'editable' : ''%> forNum"><% if(editable || editablePrice) { %><span class="currencySymbol"><%=(currency && currency._id ? currency._id.symbol : '') %></span><input id="editInput" class="statusInfo" maxlength="9" size=7 type="text" value="<%=currencySplitter(product.unitPrice.toString())%>" /><% } else { %><span><%=currencySplitter(product.unitPrice.toString())%></span><% } %></td>
+    <td  data-name="taxes" class="<%=editable  ? 'editable' : ''%>"><span class="currencySymbol"><%=(currency && currency._id ? currency._id.symbol : '') %></span><span class="sum"><%= product.taxes ?  currencySplitter(product.taxes.toString()) : ''%></span></td>
+    <td class="subtotal"><span class="currencySymbol"><%=(currency && currency._id ? currency._id.symbol : '') %></span><span class="sum"><%= product.subTotal ? currencySplitter(product.subTotal.toString()) : ''%></span></td>
+    <td></td>
+</tr>
+<% }); %>
+<%if(editable) {%>
+<tr>
+    <td colspan="6" class="addProductItem">
+        <a href="javascript:;" class="btn blue slim">Add an item</a>
+    </td>
+</tr>
+<%}%>
+
