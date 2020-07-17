@@ -33,7 +33,7 @@
     "html-pdf": "2.1.0",
     "isodate": "0.1.4",
     "js-zimbra": "^1.0.0-beta.6",
-    "lodash": "3.8.0",
+    "lodash": "4.17.19",
     "money": "0.2.0",
     "mongodb": "2.0.44",
     "mongoose": "4.13.7",
